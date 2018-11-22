@@ -1,0 +1,7 @@
+{
+  "name": "palace_app_ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

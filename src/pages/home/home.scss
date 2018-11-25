@@ -1,3 +1,31 @@
 page-home {
 
+  .header_text{
+    color: white;
+    text-align: center;
+    padding-top: 6.8vh;
+
+  }
+
+  .super-class {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+  .single-slide{
+    height: 42vh;
+    border-radius: 50%;
+  }
+
+  .slide-color1{
+    background-color: red;
+  }
+
+  .slide-color2{
+    background-color: green;
+  }
+
+  .slide-color3{
+    background-color: blue;
+  }
 }

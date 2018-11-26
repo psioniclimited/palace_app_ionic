@@ -1,24 +1,10 @@
 page-home {
 
-  .super-class {
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-  }
-  .single-slide{
-    height: 42vh;
-    border-radius: 50%;
+  .cards{
+    display: inline;
+    position: static;
+    text-align: left;
   }
 
-  .slide-color1{
-    background-color: red;
-  }
 
-  .slide-color2{
-    background-color: green;
-  }
-
-  .slide-color3{
-    background-color: blue;
-  }
 }

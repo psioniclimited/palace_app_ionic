@@ -13,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 export class HomePage {
 
   @ViewChild(Slides) slides: Slides;
+  sliderOptions = { pager: true, autoHeight: true };
+  // myColour: string  = 'green';
 
   constructor(public navCtrl: NavController,private statusBar: StatusBar) {
     this.statusBar.overlaysWebView(true);
@@ -23,7 +25,12 @@ export class HomePage {
 
   slideChanged() {
     let currentIndex = this.slides.getActiveIndex();
+    // this.myColour = 'red';
     console.log('Current index is', currentIndex);
+  }
+
+  slideWillCHange() {
+    console.log('sdfsaldkjfhskldhfkshfksdjfh');
   }
 
 }

@@ -1,7 +1,7 @@
-<ion-header no-border>
+<ion-header>
 
   <ion-navbar>
-    <ion-buttons end>
+    <ion-buttons >
       <button ion-button menuToggle end>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -11,9 +11,26 @@
 
 </ion-header>
 <ion-content style="background-color: #f3f3f3">
-  <ion-card class="cards">
+  <ion-card no-margin no-padding class="cards">
     <img  src="assets/imgs/resort_map.png"/>
   </ion-card>
+  <p class="facilities">FACILITIES</p>
+  <ion-slides no-margin no-padding (ionSlideDidChange)="slideChanged()" class="slide-height"
+               pager="false"
+               slidesPerView="1.5" spaceBetween="1" centeredSlides=true loop="true" pager >
+    <ion-slide class="pool">
+        <img  src="assets/imgs/pool.png"/>
+      <p class="slide-text">pppp pppp pppp pppp</p>
+    </ion-slide>
+    <ion-slide class="pool">
+        <img  src="assets/imgs/pool.png"/>
+      <p class="slide-text">cccc cccc cccc cccc</p>
+    </ion-slide>
+    <ion-slide class="pool">
+      <img  src="assets/imgs/pool.png"/>
+      <p class="slide-text">dddd dddd dddd dddd</p>
+    </ion-slide>
+  </ion-slides>
   <!--<ion-slides class="super-class">-->
 
     <!--<ion-slide class="single-slide slide-color1">-->

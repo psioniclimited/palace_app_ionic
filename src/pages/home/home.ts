@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ViewChild } from '@angular/core';
-import { Slides } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {ViewChild} from '@angular/core';
+import {Slides} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {FacalitiesPage} from "../facalities/facalities";
 
 
 @Component({
@@ -13,10 +13,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 export class HomePage {
 
   @ViewChild(Slides) slides: Slides;
-  sliderOptions = { pager: true, autoHeight: true };
+  sliderOptions = {pager: true, autoHeight: true};
+
   // myColour: string  = 'green';
 
-  constructor(public navCtrl: NavController,private statusBar: StatusBar) {
+  constructor(public navCtrl: NavController, private statusBar: StatusBar) {
     this.statusBar.overlaysWebView(true);
     this.statusBar.styleLightContent();
 
@@ -31,8 +32,13 @@ export class HomePage {
 
   slideTapped(event) {
     // let index = this.slides.ge
-    // console.log(event.clickedIndex);
-    console.log(event);
+    const index = event.clickedIndex;
+    if (index === 1) {
+      this.navCtrl.push(FacalitiesPage);
+    }
+    console.log(index);
+
+    // console.log(event);
   }
 
 }

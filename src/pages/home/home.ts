@@ -29,8 +29,10 @@ export class HomePage {
     console.log('Current index is', currentIndex);
   }
 
-  slideWillCHange() {
-    console.log('sdfsaldkjfhskldhfkshfksdjfh');
+  slideTapped(event) {
+    // let index = this.slides.ge
+    // console.log(event.clickedIndex);
+    console.log(event);
   }
 
 }

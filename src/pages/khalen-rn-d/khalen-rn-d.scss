@@ -1,0 +1,104 @@
+page-khalen-rn-d {
+
+  .toolbar{
+    box-shadow: 0px 1vh 1.50vh #757575;
+    height: 8vh;
+  }
+
+  .cards{
+    display: inline;
+
+  }
+
+  .facilities{
+    position: absolute;
+    width: 62%;
+    top: 46%;
+    left: 70%;
+    transform: translate(-58%, -50%);
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  .slide-height{
+    //background-color: red;
+    height: 45vh;
+
+  }
+  .pool{
+    width: 40%;
+
+  }
+  .swiper-slide img{
+    width: 100%;
+    //max-width: 150%;
+    //height: auto;
+    //max-height: 100%;
+  }
+
+  .slide-text{
+    position: absolute;
+    width: 62%;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 0.875em;
+    font-weight: normal;
+    //text-align: justify;
+  }
+
+  .swiper-slide-next{
+    //width: 120%;
+    //height: 120%;
+  }
+  //.swiper-slide {
+  //  width: 90% !important;
+  //  &:last-child {
+  //    width: 100% !important;
+  //  }
+  //}
+  .pool.swiper-slide.swiper-slide-active{
+    //width: 245px !important;
+    margin-right: 1px;
+  }
+
+  //.pool.swiper-slide.swiper-slide-next{
+  //  width: 60vw !important;
+  //  filter: blur(2px) !important;
+  //  margin-left: 6vw;
+  //}
+  ////
+  //.pool.swiper-slide.swiper-slide-prev{
+  //  width: 61vw !important;
+  //  margin-right: 4vw !important;
+  //  filter: blur(2px) !important;
+  //
+  //}
+  //pool swiper-slide swiper-slide-prev
+  .slide-height.first-slide {
+    height: 87vh !important;
+  }
+  .slide-height.middle-slide {
+    position: absolute;
+    top: 60% !important;
+    height: 15vh !important;
+  }
+  .pool.custom-middle-slide-pool.swiper-slide {
+    width: 40% !important;
+    height: 110px !important;
+  }
+  .pool.custom-middle-slide-pool.swiper-slide .slide-zoom {
+
+  }
+ .middle-slide-img {
+    width: 40% !important;
+  }
+  //.swiper-pagination-fraction, .swiper-pagination-custom,
+  //  .swiper-container-horizontal > .swiper-pagination-bullets {
+  //    position: absolute !important;
+  //  }
+  //.swiper-pagination-fraction, .swiper-pagination-custom,
+  //.swiper-container-horizontal > .swiper-pagination-bullets button:nth-child(1) {
+  //  background: url('assets/imgs/facility_pool.png') !important;
+  //}
+}

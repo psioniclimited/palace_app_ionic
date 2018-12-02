@@ -4,11 +4,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  settingsPage = HomePage;
+  // settingsPage = HomePage;
+  settingsPage = KhalenRnDPage;
 
   @ViewChild('nav') nav: NavController;
 

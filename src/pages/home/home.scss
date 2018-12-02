@@ -2,6 +2,7 @@ page-home {
 
   .toolbar{
     box-shadow: 0px 1vh 1.50vh #757575;
+    height: 8vh;
   }
 
   .cards{
@@ -64,6 +65,7 @@ page-home {
   .pool.swiper-slide.swiper-slide-next{
     width: 60vw !important;
     filter: blur(2px) !important;
+    margin-left: 6vw;
   }
   //
   .pool.swiper-slide.swiper-slide-prev{

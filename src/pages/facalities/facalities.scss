@@ -4,13 +4,23 @@ page-facalities {
     box-shadow: 0px 1vh 1.50vh #757575;
   }
 
+  .col-padding{
+    padding-left: 3vw;
+  }
+
   .card-image{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 200%;
-    width: 145%;
-    margin-left: -4vw;
+  }
+
+  .card-paragraph-text{
+  font-size: 1rem;
+  }
+
+  .button-color{
+    background-color: #c2ad6c;
+    color: black;
   }
 
   //.card-title-text{

@@ -5,15 +5,30 @@ page-facalities {
   }
 
   .card-image{
-    float: left;
-    padding: 0 20vh 0vh 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 200%;
+    width: 145%;
+    margin-left: -4vw;
   }
 
-  .card-title-text{
-    position: absolute;
-    right: 26vw;
-    font-weight: bold;
-    font-size: 3vh;
-  }
+  //.card-title-text{
+  //  position: absolute;
+  //  right: 26vw;
+  //  font-weight: bold;
+  //  font-size: 3vh;
+  //}
+  //
+  //.card-paragraph{
+  //  position: absolute;
+  //  right: 26vw;
+  //  font-weight: normal;
+  //  font-size: 2vh;
+  //  transform: translate(72%, 43%);
+  //  text-align: justify;
+  //}
+
+
 
 }

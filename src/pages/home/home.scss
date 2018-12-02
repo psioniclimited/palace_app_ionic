@@ -63,12 +63,15 @@ page-home {
 
   .pool.swiper-slide.swiper-slide-next{
     width: 60vw !important;
+    filter: blur(2px) !important;
   }
   //
   .pool.swiper-slide.swiper-slide-prev{
     width: 61vw !important;
     margin-right: 4vw !important;
+    filter: blur(2px) !important;
 
   }
   //pool swiper-slide swiper-slide-prev
+
 }

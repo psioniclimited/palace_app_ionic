@@ -30,17 +30,26 @@ export class KhalenRnDPage {
     this.slides.lockSwipes(true);
   }
 
-  goToSlide() {
-    this.slides.slideTo(1, 500);
+  goToSlide(index) {
+    this.slides.slideTo(index, 500);
   }
 
-  experiment(){
+  experiment(event){
     this.slides.lockSwipes(false);
-    const length = this.slides.length();
-    console.log(length);
-    this.smallSlider.slideTo(1, 500);
-    this.goToSlide();
+    const index= this.smallSlider.getActiveIndex();
+    // let newIndex = (index );
+    // // console.log(index);
+    // this.smallSlider.slideTo(10 , 500);
+    // this.goToSlide(index);
+    // console.log(index);
+    console.log(event.clickedIndex);
+    this.smallSlider.slideTo(event.clickedIndex,500);
+    this.slides.slideTo(event.clickedIndex,500);
     this.slides.lockSwipes(true);
+  }
+
+  bigSliderEnd(){
+    // console.log('end');
   }
 
 }

@@ -13,7 +13,7 @@
 <ion-content style="background-color: #f3f3f3">
   <ion-slides no-margin no-padding
               class="slide-height first-slide"
-              centeredSlides="true" loop="true">
+              centeredSlides="true"  #bigSlider>
     <ion-slide class="pool">
       <img  src="assets/imgs/test01.png"/>
     </ion-slide>
@@ -28,7 +28,7 @@
   <!--middle slide-->
   <ion-slides no-margin no-padding
               class="slide-height middle-slide"
-              slidesPerView="4" spaceBetween="-55" centeredSlides="true" loop="true">
+              slidesPerView="3" spaceBetween="-55" centeredSlides="true"  (ionSlideTap)="experiment()" #smallSlider>
     <ion-slide class="pool custom-middle-slide-pool">
       <img class="middle-slide-img" src="assets/imgs/facility_pool.png"/>
     </ion-slide>

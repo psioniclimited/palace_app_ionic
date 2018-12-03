@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Slides } from 'ionic-angular';
 
 /**
  * Generated class for the KhalenRnDPage page.
@@ -15,11 +16,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class KhalenRnDPage {
 
+  @ViewChild('bigSlider') slides: Slides;
+  @ViewChild('smallSlider') smallSlider: Slides;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad KhalenRnDPage');
+  }
+  ionViewWillEnter(){
+    this.slides.lockSwipes(true);
+  }
+
+  goToSlide() {
+    this.slides.slideTo(1, 500);
+  }
+
+  experiment(){
+    this.slides.lockSwipes(false);
+    const length = this.slides.length();
+    console.log(length);
+    this.smallSlider.slideTo(1, 500);
+    this.goToSlide();
+    this.slides.lockSwipes(true);
   }
 
 }

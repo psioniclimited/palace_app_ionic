@@ -41,7 +41,7 @@
               slidesPerView="5" spaceBetween="-55" centeredSlides="true"
               (ionSlideTap)="experiment($event)" #smallSlider [loop]="true" >
     <ion-slide class="pool custom-middle-slide-pool">
-      <img class="middle-slide-img" src="assets/imgs/cycling.png"/>
+      <img class="middle-slide-img" [src]="picToView"/>
     </ion-slide>
     <ion-slide class="pool custom-middle-slide-pool">
       <img class="middle-slide-img" src="assets/imgs/boating.png"/>

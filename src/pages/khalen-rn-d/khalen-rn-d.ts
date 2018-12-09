@@ -19,6 +19,8 @@ export class KhalenRnDPage {
   @ViewChild('bigSlider') slides: Slides;
   @ViewChild('smallSlider') smallSlider: Slides;
 
+  picToView = 'assets/imgs/cycling.png';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
@@ -35,6 +37,7 @@ export class KhalenRnDPage {
   }
 
   experiment(event){
+    this.picToView = 'assets/imgs/boating.png';
     this.slides.lockSwipes(false);
     const index= this.smallSlider.getActiveIndex();
     // let newIndex = (index );

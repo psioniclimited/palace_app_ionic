@@ -44,37 +44,20 @@ page-khalen-rn-d {
     color: black;
     font-size: 0.875em;
     font-weight: normal;
-    //text-align: justify;
+
   }
 
   .swiper-slide-next{
-    //width: 120%;
-    //height: 120%;
+
   }
-  //.swiper-slide {
-  //  width: 90% !important;
-  //  &:last-child {
-  //    width: 100% !important;
-  //  }
-  //}
+
   .pool.swiper-slide.swiper-slide-active{
     //width: 245px !important;
     margin-right: 1px;
+
   }
 
-  //.pool.swiper-slide.swiper-slide-next{
-  //  width: 60vw !important;
-  //  filter: blur(2px) !important;
-  //  margin-left: 6vw;
-  //}
-  ////
-  //.pool.swiper-slide.swiper-slide-prev{
-  //  width: 61vw !important;
-  //  margin-right: 4vw !important;
-  //  filter: blur(2px) !important;
-  //
-  //}
-  //pool swiper-slide swiper-slide-prev
+
   .slide-height.first-slide {
     height: 87vh !important;
   }
@@ -92,13 +75,11 @@ page-khalen-rn-d {
   }
  .middle-slide-img {
     width: 40% !important;
+
   }
-  //.swiper-pagination-fraction, .swiper-pagination-custom,
-  //  .swiper-container-horizontal > .swiper-pagination-bullets {
-  //    position: absolute !important;
-  //  }
-  //.swiper-pagination-fraction, .swiper-pagination-custom,
-  //.swiper-container-horizontal > .swiper-pagination-bullets button:nth-child(1) {
-  //  background: url('assets/imgs/facility_pool.png') !important;
-  //}
+
+  .pool.custom-middle-slide-pool.swiper-slide.swiper-slide-duplicate.swiper-slide-active{
+    background-color: red;
+  }
+
 }

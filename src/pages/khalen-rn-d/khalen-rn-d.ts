@@ -1,6 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Slides } from 'ionic-angular';
+import * as $ from 'jquery'
 
 /**
  * Generated class for the KhalenRnDPage page.
@@ -14,45 +14,101 @@ import { Slides } from 'ionic-angular';
   selector: 'page-khalen-rn-d',
   templateUrl: 'khalen-rn-d.html',
 })
-export class KhalenRnDPage {
+export class KhalenRnDPage{
+  clicked: boolean;
+  current_angle = 0;
 
-  @ViewChild('bigSlider') slides: Slides;
-  @ViewChild('smallSlider') smallSlider: Slides;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {}
 
-  picToView = 'assets/imgs/cycling.png';
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+  doSomething ($event) {
+    console.log("Hello Bondhu");
+    var element = event.target as HTMLElement;
+    if(element.classList.contains('small-slider-img-far-left')) {
+      this.clicked = true;
+      console.log("True");
+    }
+    else {
+      console.log("False");
+    }
+    console.log(element);
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad KhalenRnDPage');
+  buttonOnClink(el: string){
+    if(el === 'boat' && this.current_angle == 0) {
+      // console.log ("boat=> current_angle = " + this.current_angle);
+      // this.current_angle += 30;
+      // // this.current_angle = this.current_angle - this.current_angle;
+      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+    }
+    else if(el === 'boat' && this.current_angle != 0) {
+      console.log ("boat=> current_angle = " + this.current_angle);
+      this.current_angle = this.current_angle - this.current_angle;
+      $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+    }
+    else if (el === 'fish' && this.current_angle == 0) {
+      this.current_angle -= 45;
+      // this.current_angle = this.current_angle - this.current_angle;
+      $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
+      $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      console.log (this.current_angle);
+    }
+    else if (el === 'fish' && this.current_angle != 0) {
+      console.log ("I'm here");
+      this.current_angle = -45;
+      $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
+      $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      console.log (this.current_angle);
+    }
+    else if (el === 'cycling' && this.current_angle == 0) {
+      this.current_angle -= 90;
+      // this.current_angle = this.current_angle - this.current_angle;
+      $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
+      $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    }
+    else if (el === 'cycling' && this.current_angle != 0) {
+      this.current_angle = -90;
+      // this.current_angle = this.current_angle - this.current_angle;
+      $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
+      $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+      $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    }
+    else if(el === 'climbing' && this.current_angle == 0) {
+      console.log ("boat=> current_angle = " + this.current_angle);
+      this.current_angle += 45;
+      // this.current_angle = this.current_angle - this.current_angle;
+      $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
+      $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+    }
   }
-  ionViewWillEnter(){
-    this.slides.lockSwipes(true);
-  }
-
-  goToSlide(index) {
-    this.slides.slideTo(index, 500);
-  }
-
-  experiment(event){
-    this.picToView = 'assets/imgs/boating.png';
-    this.slides.lockSwipes(false);
-    const index= this.smallSlider.getActiveIndex();
-    // let newIndex = (index );
-    // // console.log(index);
-    // this.smallSlider.slideTo(10 , 500);
-    // this.goToSlide(index);
-    // console.log(index);
-    console.log(event.clickedIndex);
-    this.smallSlider.slideTo(event.clickedIndex,500);
-    this.slides.slideTo(event.clickedIndex,500);
-    this.slides.lockSwipes(true);
-  }
-
-  bigSliderEnd(){
-    // console.log('end');
-  }
-
 }

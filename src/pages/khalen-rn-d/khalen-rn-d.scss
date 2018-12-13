@@ -92,7 +92,8 @@ page-khalen-rn-d {
     position: relative;
     width: 310px;
     height: 310px;
-    border: 1px solid rgba(0,0,0,0.1);
+    //border: 1px solid rgba(0,0,0,0.1);
+    border: transparent;
     border-radius: 50%;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
@@ -121,8 +122,8 @@ page-khalen-rn-d {
     height: 70px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 15px;   /* -child size/2 */
-    left: 230px;   /* parent size/2 - child size/2 */
+    top: 0px;
+    left: 213px;
   }
   #child-03 {
     position: absolute;
@@ -130,8 +131,8 @@ page-khalen-rn-d {
     height: 60px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 120px;
-    left: 280px;
+    top: 85px;
+    left: 266px;
   }
   #child-04 {
     position: absolute;
@@ -139,8 +140,8 @@ page-khalen-rn-d {
     height: 70px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 15px;
-    left: 0px;
+    top: 0px;
+    left: 20px;
   }
   #child-05 {
     position: absolute;
@@ -148,14 +149,69 @@ page-khalen-rn-d {
     height: 60px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 120px;
-    left: -30px;
+    top: 85px;
+    left: -25px;
+  }
+  #child-duplicate,
+  #child-02-duplicate, #child-03-duplicate,
+  #child-04-duplicate, #child-05-duplicate {
+  //display: none;
+  }
+  #child-duplicate {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+    top: 265px;
+    left: 110px;
+  }
+  #child-02-duplicate {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+    top: 240px;
+    left: 20px;
+  }
+  #child-03-duplicate {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+    top: 160px;
+    left: -25px;
+  }
+  #child-04-duplicate {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+    top: 238px;
+    left: 214px;
+  }
+  #child-05-duplicate {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+    top: 160px;
+    left: 265px;
   }
   #child img,
   #child-02 img,
   #child-03 img,
   #child-04 img,
-  #child-05 img{
+  #child-05 img,
+  #child-duplicate,
+  #child-02-duplicate img,
+  #child-03-duplicate img,
+  #child-04-duplicate img,
+  #child-05-duplicate img{
     max-width: 100%;
     border-radius: 50%;
   }

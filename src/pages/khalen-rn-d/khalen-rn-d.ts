@@ -37,109 +37,103 @@ export class KhalenRnDPage{
   }
   buttonOnClink(el: string){
     if(el === 'boat' && this.current_angle == 0) {
-      // console.log ("boat=> current_angle = " + this.current_angle);
-      // this.current_angle += 30;
-      // // this.current_angle = this.current_angle - this.current_angle;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      $("#child-02, #child-03, #child-04, #child-05").show( "slow" );
+      $("#child-02-duplicate, #child-03-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
     }
     else if(el === 'boat' && this.current_angle != 0) {
-      console.log ("boat=> current_angle = " + this.current_angle);
       this.current_angle = this.current_angle - this.current_angle;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
       this.rotateClockWise(this.current_angle);
+      $("#child-02, #child-03, #child-04, #child-05").show( "slow" );
+      $("#child-02-duplicate, #child-03-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
     }
     else if (el === 'fish' && this.current_angle == 0) {
       this.current_angle -= 45;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
       this.rotateAntiClockWise(this.current_angle);
-      console.log (this.current_angle);
+      $("#child-05").hide( );
+      $("#child-05-duplicate").show( "slow" );
     }
     else if (el === 'fish' && this.current_angle != 0) {
       console.log ("I'm here");
       this.current_angle = -45;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
       this.rotateAntiClockWise(this.current_angle);
-      console.log (this.current_angle);
+      $("#child-05").hide( );
+      $("#child-05-duplicate").show( "slow" );
     }
     else if (el === 'cycling' && this.current_angle == 0) {
       this.current_angle -= 90;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
       this.rotateAntiClockWise(this.current_angle);
+      $("#child-04, #child-05, #child-02-duplicate, #child-03-duplicate").hide( );
+      $("#child-04-duplicate, #child-05-duplicate").show( "slow" );
     }
     else if (el === 'cycling' && this.current_angle != 0) {
       this.current_angle = -90;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate( '+ (-1*this.current_angle) + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
       this.rotateAntiClockWise(this.current_angle);
+      $("#child-04, #child-05, #child-02-duplicate, #child-03-duplicate").hide( );
+      $("#child-04-duplicate, #child-05-duplicate").show( "slow" );
     }
     else if(el === 'climbing' && this.current_angle == 0) {
-      this.current_angle += 45;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      this.current_angle += 41;
       this.rotateClockWise(this.current_angle);
+      $("#child-03, #child-02-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
+      $("#child-03-duplicate").show( "slow" );
     }
     else if(el === 'climbing' && this.current_angle != 0) {
-      this.current_angle = 45;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
+      this.current_angle = 41;
       this.rotateClockWise(this.current_angle);
+      $("#child-03, #child-02-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
+      $("#child-03-duplicate").show( "slow" );
     }
     else if(el === 'tennis' && this.current_angle == 0) {
       this.current_angle += 90;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
       this.rotateClockWise(this.current_angle);
+      $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide( );
+      $("#child-02-duplicate, #child-03-duplicate").show( "slow" );
     }
     else if(el === 'tennis' && this.current_angle != 0) {
       this.current_angle = 90;
-      // $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
-      // $("#child").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-02").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-03").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-04").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
-      // $("#child-05").css({ transform: 'rotate(-' + this.current_angle + 'deg)' });
       this.rotateClockWise(this.current_angle);
+      $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide( );
+      $("#child-02-duplicate, #child-03-duplicate").show( "slow" );
+    }
+    else if(el === 'cycling-duplicate' && this.current_angle == 0) {
+      this.current_angle += 135;
+      this.rotateClockWise(this.current_angle);
+    }
+    else if(el === 'cycling-duplicate' && this.current_angle != 0) {
+      this.current_angle = 135;
+      this.rotateClockWise(this.current_angle);
+    }
+    else if(el === 'fish-duplicate' && this.current_angle == 0) {
+      this.current_angle += 180;
+      this.rotateClockWise(this.current_angle);
+    }
+    else if(el === 'fish-duplicate' && this.current_angle != 0) {
+      this.current_angle = 180;
+      this.rotateClockWise(this.current_angle);
+    }
+    else if (el === 'climbing-duplicate' && this.current_angle == 0) {
+      this.current_angle -= 141;
+      this.rotateAntiClockWise(this.current_angle);
+    }
+    else if (el === 'climbing-duplicate' && this.current_angle != 0) {
+      this.current_angle = -141;
+      this.rotateAntiClockWise(this.current_angle);
+    }
+    else if (el === 'tennis-duplicate' && this.current_angle == 0) {
+      this.current_angle -= 135;
+      this.rotateAntiClockWise(this.current_angle);
+    }
+    else if (el === 'tennis-duplicate' && this.current_angle != 0) {
+      this.current_angle = -135;
+      this.rotateAntiClockWise(this.current_angle);
+    }
+    else if (el === 'boat-duplicate' && this.current_angle == 0) {
+      this.current_angle -= 180;
+      this.rotateAntiClockWise(this.current_angle);
+    }
+    else if (el === 'boat-duplicate' && this.current_angle != 0) {
+      this.current_angle = -180;
+      this.rotateAntiClockWise(this.current_angle);
     }
   }
   rotateClockWise(current_angle) {
@@ -149,6 +143,11 @@ export class KhalenRnDPage{
     $("#child-03").css({ transform: 'rotate(-' + current_angle + 'deg)' });
     $("#child-04").css({ transform: 'rotate(-' + current_angle + 'deg)' });
     $("#child-05").css({ transform: 'rotate(-' + current_angle + 'deg)' });
+    $("#child-duplicate").css({ transform: 'rotate(-' + current_angle + 'deg)' });
+    $("#child-02-duplicate").css({ transform: 'rotate(-' + current_angle + 'deg)' });
+    $("#child-03-duplicate").css({ transform: 'rotate(-' + current_angle + 'deg)' });
+    $("#child-04-duplicate").css({ transform: 'rotate(-' + current_angle + 'deg)' });
+    $("#child-05-duplicate").css({ transform: 'rotate(-' + current_angle + 'deg)' });
   }
   rotateAntiClockWise(current_angle) {
     $("#parent").css({ transform: 'rotate(' + this.current_angle + 'deg)' });
@@ -157,5 +156,10 @@ export class KhalenRnDPage{
     $("#child-03").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
     $("#child-04").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
     $("#child-05").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    $("#child-duplicate").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    $("#child-02-duplicate").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    $("#child-03-duplicate").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    $("#child-04-duplicate").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
+    $("#child-05-duplicate").css({ transform: 'rotate(' + (-1*this.current_angle) + 'deg)' });
   }
 }

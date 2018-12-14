@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage} from 'ionic-angular';
 import * as $ from 'jquery'
 
 /**
@@ -15,15 +15,20 @@ import * as $ from 'jquery'
   templateUrl: 'khalen-rn-d.html',
 })
 export class KhalenRnDPage{
-  clicked: boolean;
+
   current_angle = 0;
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams
-  ) {}
+  constructor() {}
 
-  buttonOnClink(el: string){
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#child-03").on("swipe",function(event){
+        alert("this is me");
+      });
+    });
+  }
+
+  buttonOnClick(el: string){
     if(el === 'boat' && this.current_angle == 0) {
 
       this.boatActionCurrentAngleZero();

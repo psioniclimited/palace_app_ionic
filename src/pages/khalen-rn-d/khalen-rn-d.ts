@@ -63,6 +63,7 @@ export class KhalenRnDPage{
 
       $("#child-02, #child-03, #child-04, #child-05").show( 300 );
       $("#child-02-duplicate, #child-03-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
+
     }
 
     else if (el === 'fish' && this.current_angle == 0) {
@@ -134,78 +135,135 @@ export class KhalenRnDPage{
     }
 
     else if(el === 'climbing' && this.current_angle == 0) {
-      this.current_angle += 7;
+
+      this.current_angle += 5.5;
+
       this.rotateClockWise(this.current_angle);
-      // $("#child-03, #child-02-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
-      // $("#child-03-duplicate").show( "slow" );
+
+      $("#child-04").css({width: '60px', height: '60px', top: '-37px', left: '604px'});
+      $("#child-05").css({width: '55px', height: '55px', top: '-20px', left: '537px'});
+      $("#child").css({width: '55px', height: '55px', top: '-33px', left: '677px'});
+      $("#child-02").css({width: '50px', height: '50px', top: '-25px', left: '745px'});
+      $("#child-03-duplicate").css({width: '50px', height: '50px', top: '1px', left: '477px'});
+
+
+      $("#child-03, #child-02-duplicate, #child-04-duplicate, #child-05-duplicate").hide();
+      $("#child-03-duplicate, #child, #child-02, #child-04, #child-05").show(300);
+
     }
 
     else if(el === 'climbing' && this.current_angle != 0) {
-      this.current_angle = 7;
+
+      this.current_angle = 5.5;
+
       this.rotateClockWise(this.current_angle);
-      // $("#child-03, #child-02-duplicate, #child-04-duplicate, #child-05-duplicate").hide( );
-      // $("#child-03-duplicate").show( "slow" );
+
+      $("#child-04").css({width: '60px', height: '60px', top: '-37px', left: '604px'});
+      $("#child-05").css({width: '55px', height: '55px', top: '-20px', left: '537px'});
+      $("#child").css({width: '55px', height: '55px', top: '-33px', left: '677px'});
+      $("#child-02").css({width: '50px', height: '50px', top: '-25px', left: '745px'});
+      $("#child-03-duplicate").css({width: '50px', height: '50px', top: '1px', left: '477px'});
+
+
+      $("#child-03, #child-02-duplicate, #child-04-duplicate, #child-05-duplicate").hide();
+      $("#child-03-duplicate, #child, #child-02, #child-04, #child-05").show(300);
     }
 
     else if(el === 'tennis' && this.current_angle == 0) {
-      this.current_angle += 13;
+
+      this.current_angle += 10.5;
+
       this.rotateClockWise(this.current_angle);
-      // $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide( );
-      // $("#child-02-duplicate, #child-03-duplicate").show( "slow" );
+
+      $("#child-05").css({width: '60px', height: '60px', top: '-30px', left: '543px'});
+      $("#child-04").css({width: '55px', height: '55px', top: '-32px', left: '616px'});
+      $("#child").css({width: '50px', height: '50px', top: '-29px', left: '684px'});
+      $("#child-02-duplicate").css({width: '50px', height: '50px', top: '20px', left: '421px'});
+      $("#child-03-duplicate").css({width: '55px', height: '55px', top: '-7px', left: '478px'});
+
+      $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide();
+      $("#child, #child-04, #child-05, #child-02-duplicate, #child-03-duplicate").show(300);
+
     }
+
     else if(el === 'tennis' && this.current_angle != 0) {
-      this.current_angle = 13;
+
+      this.current_angle = 10.5;
+
       this.rotateClockWise(this.current_angle);
-      // $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide( );
-      // $("#child-02-duplicate, #child-03-duplicate").show( "slow" );
+
+      $("#child-05").css({width: '60px', height: '60px', top: '-30px', left: '543px'});
+      $("#child-04").css({width: '55px', height: '55px', top: '-32px', left: '616px'});
+      $("#child").css({width: '50px', height: '50px', top: '-29px', left: '684px'});
+      $("#child-02-duplicate").css({width: '50px', height: '50px', top: '20px', left: '421px'});
+      $("#child-03-duplicate").css({width: '55px', height: '55px', top: '-7px', left: '478px'});
+
+      $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide();
+      $("#child, #child-04, #child-05, #child-02-duplicate, #child-03-duplicate").show(300);
+
     }
+
     else if(el === 'cycling-duplicate' && this.current_angle == 0) {
-      // this.current_angle += 135;
-      // this.rotateClockWise(this.current_angle);
+
       this.current_angle -= 13;
       this.rotateAntiClockWise(this.current_angle);
     }
     else if(el === 'cycling-duplicate' && this.current_angle != 0) {
-      // this.current_angle = 135;
-      // this.rotateClockWise(this.current_angle);
+
       this.current_angle = -13;
       this.rotateAntiClockWise(this.current_angle);
     }
     else if(el === 'fish-duplicate' && this.current_angle == 0) {
-      // this.current_angle += 180;
-      //       // this.rotateClockWise(this.current_angle);
+
       this.current_angle -= 8;
       this.rotateAntiClockWise(this.current_angle);
     }
     else if(el === 'fish-duplicate' && this.current_angle != 0) {
-      // this.current_angle = 180;
-      // this.rotateClockWise(this.current_angle);
+
       this.current_angle = -8;
       this.rotateAntiClockWise(this.current_angle);
     }
     else if (el === 'climbing-duplicate' && this.current_angle == 0) {
-      // this.current_angle -= 141;
-      // this.rotateAntiClockWise(this.current_angle);
+
       this.current_angle += 7;
       this.rotateClockWise(this.current_angle);
     }
     else if (el === 'climbing-duplicate' && this.current_angle != 0) {
-      // this.current_angle = -141;
-      // this.rotateAntiClockWise(this.current_angle);
+
       this.current_angle = 7;
       this.rotateClockWise(this.current_angle);
     }
     else if (el === 'tennis-duplicate' && this.current_angle == 0) {
-      // this.current_angle -= 135;
-      // this.rotateAntiClockWise(this.current_angle);
-      this.current_angle += 13;
+
+      this.current_angle += 10.5;
       this.rotateClockWise(this.current_angle);
+
+      $("#child-05").css({width: '60px', height: '60px', top: '-30px', left: '543px'});
+      $("#child-04").css({width: '55px', height: '55px', top: '-32px', left: '616px'});
+      $("#child").css({width: '50px', height: '50px', top: '-29px', left: '684px'});
+      $("#child-02-duplicate").css({width: '50px', height: '50px', top: '20px', left: '421px'});
+      $("#child-03-duplicate").css({width: '55px', height: '55px', top: '-7px', left: '478px'});
+
+      $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide();
+      $("#child, #child-04, #child-05, #child-02-duplicate, #child-03-duplicate").show(300);
+
     }
+
     else if (el === 'tennis-duplicate' && this.current_angle != 0) {
-      // this.current_angle = -135;
-      // this.rotateAntiClockWise(this.current_angle);
-      this.current_angle = 13;
+
+      this.current_angle = 10.5;
+
       this.rotateClockWise(this.current_angle);
+
+      $("#child-05").css({width: '60px', height: '60px', top: '-30px', left: '543px'});
+      $("#child-04").css({width: '55px', height: '55px', top: '-32px', left: '616px'});
+      $("#child").css({width: '50px', height: '50px', top: '-29px', left: '684px'});
+      $("#child-02-duplicate").css({width: '50px', height: '50px', top: '20px', left: '421px'});
+      $("#child-03-duplicate").css({width: '55px', height: '55px', top: '-7px', left: '478px'});
+
+      $("#child-02, #child-03, #child-04-duplicate, #child-05-duplicate").hide();
+      $("#child, #child-04, #child-05, #child-02-duplicate, #child-03-duplicate").show(300);
+
     }
     else if (el === 'boat-duplicate' && this.current_angle == 0) {
       this.current_angle -= 180;

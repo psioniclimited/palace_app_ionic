@@ -87,120 +87,109 @@ page-khalen-rn-d {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: #000;
   }
   #parent {
     position: relative;
-    width: 310px;
-    height: 310px;
-    //border: 1px solid rgba(0,0,0,0.1);
-    border: transparent;
+    width: 1405px;
+    height: 1405px;
+    border: 2px solid grey;
     border-radius: 50%;
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
+    -webkit-transition: -webkit-transform 0.7s linear;
+    transition: -webkit-transform 0.7s linear;
     transition: transform 0.7s linear;
+    transition: transform 0.7s linear, -webkit-transform 0.7s linear;
+    margin-top: 110%;
   }
   #child {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: -40px;   /* -child size/2 */
-    left: 110px;   /* parent size/2 - child size/2 */
+    top: -40px;
+    left: 672px;
   }
-  #child {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
-    top: -40px;   /* -child size/2 */
-    left: 110px;   /* parent size/2 - child size/2 */
-  }
+
   #child-02 {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 0px;
-    left: 213px;
+    top: -30px;
+    left: 745px;
   }
   #child-03 {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 85px;
-    left: 266px;
+    top: -15px;
+    left: 811px;
   }
   #child-04 {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 0px;
-    left: 20px;
+    top: -30px;
+    left: 604px;
   }
   #child-05 {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 85px;
-    left: -25px;
+    top: -15px;
+    left: 543px;
   }
-  #child-duplicate,
+
   #child-02-duplicate, #child-03-duplicate,
   #child-04-duplicate, #child-05-duplicate {
-  //display: none;
+  display: none;
   }
-  #child-duplicate {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
-    top: 265px;
-    left: 110px;
-  }
+
   #child-02-duplicate {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 240px;
-    left: 20px;
+    top: 30px;
+    left: 427px;
   }
   #child-03-duplicate {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 160px;
-    left: -25px;
+    top: 7px;
+    left: 485px;
   }
   #child-04-duplicate {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 238px;
-    left: 214px;
+    top: 30px;
+    left: 925px;
   }
   #child-05-duplicate {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     transform: rotate(0deg);
     transition: transform 0.7s linear;
-    top: 160px;
-    left: 265px;
+    top: 7px;
+    left: 868px;
   }
   #child img,
   #child-02 img,

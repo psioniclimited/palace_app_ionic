@@ -23,7 +23,6 @@ export class KhalenRnDPage{
   swipeEvent(e, el:string, detectEl:string) {
 
     // console.log('swiped => ' + el);
-    // console.log(detectEl);
     // console.log(e.deltaX);
     if(detectEl === 'smallImg'){
       this.buttonOnClick(el);

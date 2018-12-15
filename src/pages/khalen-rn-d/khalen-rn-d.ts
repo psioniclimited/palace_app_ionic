@@ -30,42 +30,42 @@ export class KhalenRnDPage{
     }
     else if (detectEl === 'largeImg') {
       if(el === 'boat') {
-        if(e.deltaX > 0 && this.current_angle === 0) {
+        if(e.deltaX > 0) {
           this.buttonOnClick('climbing');
         }
-        else if ((e.deltaX < 0 && this.current_angle === 0)) {
+        else if (e.deltaX < 0) {
           this.buttonOnClick('fish');
         }
       }
       else if(el === 'fish') {
-        if(e.deltaX > 0 && this.current_angle === 0) {
+        if(e.deltaX > 0) {
           this.buttonOnClick('boat');
         }
-        else if ((e.deltaX < 0 && this.current_angle === 0)) {
+        else if (e.deltaX < 0) {
           this.buttonOnClick('cycling');
         }
       }
       else if(el === 'cycling') {
-        if(e.deltaX > 0 && this.current_angle === 0) {
+        if(e.deltaX > 0) {
           this.buttonOnClick('fish');
         }
-        else if ((e.deltaX < 0 && this.current_angle === 0)) {
+        else if (e.deltaX < 0) {
           this.buttonOnClick('tennis');
         }
       }
       else if(el === 'climbing') {
-        if(e.deltaX > 0 && this.current_angle === 0) {
+        if(e.deltaX > 0) {
           this.buttonOnClick('tennis');
         }
-        else if ((e.deltaX < 0 && this.current_angle === 0)) {
+        else if (e.deltaX < 0) {
           this.buttonOnClick('boat');
         }
       }
       else if(el === 'tennis') {
-        if(e.deltaX > 0 && this.current_angle === 0) {
+        if(e.deltaX > 0) {
           this.buttonOnClick('cycling');
         }
-        else if ((e.deltaX < 0 && this.current_angle === 0)) {
+        else if (e.deltaX < 0) {
           this.buttonOnClick('climbing');
         }
       }

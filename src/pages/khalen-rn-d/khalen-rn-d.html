@@ -11,34 +11,35 @@
 
 </ion-header>
 <ion-content style="background-color: #f3f3f3">
+
   <div class="large-images-div">
-  <img src="assets/imgs/cycling-test01.jpg" class="large-images-div-img large-img-cycle" alt="img01">
-  <img src="assets/imgs/fishing-test01.jpg" class="large-images-div-img large-img-fish" alt="img02">
-  <img src="assets/imgs/boating-test01.jpg" class="large-images-div-img large-img-boat" alt="img03">
-  <img src="assets/imgs/trekking-test01.jpg" class="large-images-div-img large-img-trek" alt="img02">
-  <img src="assets/imgs/tennis-test01.jpg" class="large-images-div-img large-img-tennis" alt="img03">
+    <img src="assets/imgs/boating-test01.jpg" (swipe)="swipeEvent($event, 'boat', 'largeImg')" class="large-images-div-img large-img-boat" alt="img03">
+    <img src="assets/imgs/fishing-test01.jpg" (swipe)="swipeEvent($event, 'fish', 'largeImg')" class="large-images-div-img large-img-fish" alt="img02">
+    <img src="assets/imgs/cycling-test01.jpg" (swipe)="swipeEvent($event, 'cycling', 'largeImg')" class="large-images-div-img large-img-cycle" alt="img01">
+    <img src="assets/imgs/trekking-test01.jpg" (swipe)="swipeEvent($event, 'climbing', 'largeImg')" class="large-images-div-img large-img-trek" alt="img02">
+    <img src="assets/imgs/tennis-test01.jpg" (swipe)="swipeEvent($event, 'tennis', 'largeImg')" class="large-images-div-img large-img-tennis" alt="img03">
   </div>
 
-  <div class="circular_path" data-role="page" id="pageone">
+  <div class="circular_path">
     <div id="parent">
       <div id="child">
-        <img id="child-img" (swipe)="swipeEvent($event, 'boat')" (click)="buttonOnClick('boat')" src="assets/imgs/test-icons/Boating.png" alt="">
+        <img id="child-img" (swipe)="swipeEvent($event, 'boat', 'smallImg')" (click)="buttonOnClick('boat')" src="assets/imgs/test-icons/Boating.png" alt="img">
         1
       </div>
       <div id="child-02">
-      <img id="child-img-02" (swipe)="swipeEvent($event, 'fish')" (click)="buttonOnClick('fish')" src="assets/imgs/test-icons/Fishing w.png" alt="">
+        <img id="child-img-02" (swipe)="swipeEvent($event, 'fish', 'smallImg')" (click)="buttonOnClick('fish')" src="assets/imgs/test-icons/Fishing w.png" alt="img">
         2
       </div>
       <div id="child-03">
-        <img id="child-img-03" (swipe)="swipeEvent($event, 'cycling')" (click)="buttonOnClick('cycling')" src="assets/imgs/test-icons/cycling-W.png" alt="">
+        <img id="child-img-03" (swipe)="swipeEvent($event, 'cycling', 'smallImg')" (click)="buttonOnClick('cycling')" src="assets/imgs/test-icons/cycling-W.png" alt="img">
         3
       </div>
       <div id="child-04">
-        <img id="child-img-04" (swipe)="swipeEvent($event, 'climbing')" (click)="buttonOnClick('climbing')" src="assets/imgs/test-icons/Climbing-w.png" alt="">
+        <img id="child-img-04" (swipe)="swipeEvent($event, 'climbing', 'smallImg')" (click)="buttonOnClick('climbing')" src="assets/imgs/test-icons/Climbing-w.png" alt="img">
         4
       </div>
       <div id="child-05">
-        <img id="child-img-05" (swipe)="swipeEvent($event, 'tennis')" (click)="buttonOnClick('tennis')" src="assets/imgs/test-icons/Table-Tennis-w.png" alt="">
+        <img id="child-img-05" (swipe)="swipeEvent($event, 'tennis', 'smallImg')" (click)="buttonOnClick('tennis')" src="assets/imgs/test-icons/Table-Tennis-w.png" alt="img">
         5
       </div>
     </div>

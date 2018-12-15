@@ -2,92 +2,39 @@ page-khalen-rn-d {
   .content.content-md {
     //background: #fff !important;
   }
-  .large-imgages-div-img {
+  .large-images-div-img {
     position: absolute;
     width: 100%;
     z-index: 500;
   }
-  #small-slider-below {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+  .large-images-div-img.large-img-cycle{
+    transform: translate(200%, 0);
+     transition: transform 0.7s linear;
   }
-  .small-slider-img-div {
-
+  .large-images-div-img.large-img-fish{
+    transform: translate(100%, 0);
+     transition: transform 0.7s linear;
   }
-  .small-slider-img {
-    width: 18%;
+  .large-images-div-img.large-img-boat{
+    transform: translate(0, 0);
+     transition: transform 0.7s linear;
   }
-  .small-slider-img-middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, 30%, 0);
-    -webkit-transform: translate3d(-50%, 30%, 0);
-    transition: transform 0.7s linear;
+  .large-images-div-img.large-img-trek{
+    transform: translate(-100%, 0);
+     transition: transform 0.7s linear;
   }
-  .small-slider-img-middle-left {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-190%, 80%, 0px);
-    -webkit-transform: translate3d(-190%, 80%, 0px);
-    width: 16%;
-  }
-  .small-slider-img-far-left {
-    position: absolute;
-    width: 15%;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-315%, 175%, 0);
-    -webkit-transform: translate3d(-315%, 175%, 0);
-  }
-  .small-slider-img-middle-right {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(90%, 80%, 0px);
-    -webkit-transform: translate3d(90%, 80%, 0px);
-    width: 16%;
-  }
-  .small-slider-img-far-right {
-    position: absolute;
-    width: 15%;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(220%, 175%, 0);
-    -webkit-transform: translate3d(220%, 175%, 0);
-  }
-  .img-active {
-    //transform: translate3d(-50%, 30%, 0) !important;
-    //-webkit-transform: translate3d(-50%, 30%, 0) !important;
-    //transition: 1.5s !important;
-    width: 18%;
-    z-index: 10;
-    animation: dial 1s ease-in forwards;
+  .large-images-div-img.large-img-tennis{
+    transform: translate(-200%, 0);
+     transition: transform 0.7s linear;
   }
 
-  @keyframes dial {
-    0% {
-      opacity: 0;
-      transform: translate3d(-315%, 175%, 0);
-    }
-    50% {
-      transform: translate3d(-190%, 80%, 0px);
-    }
-    100% {
-      transform: translate3d(-50%, 30%, 0);
-    }
-  }
   // #######################################################################################################################################################
-  .test_circular_path {
+  .circular_path {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #000;
+    z-index: 1000;
   }
   #parent {
     position: relative;
@@ -150,57 +97,11 @@ page-khalen-rn-d {
     left: 543px;
   }
 
-  #child-02-duplicate, #child-03-duplicate,
-  #child-04-duplicate, #child-05-duplicate {
-  display: none;
-  }
-
-  #child-02-duplicate {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
-    top: 30px;
-    left: 427px;
-  }
-  #child-03-duplicate {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
-    top: 7px;
-    left: 485px;
-  }
-  #child-04-duplicate {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
-    top: 30px;
-    left: 925px;
-  }
-  #child-05-duplicate {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transform: rotate(0deg);
-    transition: transform 0.7s linear;
-    top: 7px;
-    left: 868px;
-  }
   #child img,
   #child-02 img,
   #child-03 img,
   #child-04 img,
-  #child-05 img,
-  #child-duplicate,
-  #child-02-duplicate img,
-  #child-03-duplicate img,
-  #child-04-duplicate img,
-  #child-05-duplicate img{
+  #child-05 img{
     max-width: 100%;
     border-radius: 50%;
   }

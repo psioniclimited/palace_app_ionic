@@ -11,44 +11,34 @@
 
 </ion-header>
 <ion-content style="background-color: #f3f3f3">
-  <!--<div class="large-images-div">-->
-  <!--<img src="assets/imgs/cycling-test01.jpg" class="large-imgages-div-img" alt="img01">-->
-  <!--<img src="assets/imgs/fishing-test01.jpg" class="large-imgages-div-img" alt="img02">-->
-  <!--<img src="assets/imgs/boating-test01.jpg" class="large-imgages-div-img" alt="img03">-->
-  <!--<img src="assets/imgs/trekking-test01.jpg" class="large-imgages-div-img" alt="img02">-->
-  <!--<img src="assets/imgs/tennis-test01.jpg" class="large-imgages-div-img" alt="img03">-->
-  <!--</div>-->
-  <!--<div id="small-slider-below">-->
-  <!--<img class="small-slider-img small-slider-img-far-left" [ngClass]="{ 'img-active': clicked }" (click)="doSomething($event)" src="assets/imgs/test-icons/cycling-W.png" alt="img far left">-->
+  <div class="large-images-div">
+  <img src="assets/imgs/cycling-test01.jpg" class="large-images-div-img large-img-cycle" alt="img01">
+  <img src="assets/imgs/fishing-test01.jpg" class="large-images-div-img large-img-fish" alt="img02">
+  <img src="assets/imgs/boating-test01.jpg" class="large-images-div-img large-img-boat" alt="img03">
+  <img src="assets/imgs/trekking-test01.jpg" class="large-images-div-img large-img-trek" alt="img02">
+  <img src="assets/imgs/tennis-test01.jpg" class="large-images-div-img large-img-tennis" alt="img03">
+  </div>
 
-  <!--<img class="small-slider-img small-slider-img-middle-left" src="assets/imgs/test-icons/Fishing w.png" alt="img left">-->
-
-  <!--<img class="small-slider-img small-slider-img-middle" src="assets/imgs/test-icons/Boating.png" alt="img">-->
-
-  <!--<img class="small-slider-img small-slider-img-middle-right" src="assets/imgs/test-icons/Climbing-w.png" alt="img right">-->
-
-  <!--<img class="small-slider-img small-slider-img-far-right" src="assets/imgs/test-icons/Table-Tennis-w.png" alt="img far right">-->
-  <!--</div>-->
-  <div class="test_circular_path"  data-role="page" id="pageone">
+  <div class="circular_path" data-role="page" id="pageone">
     <div id="parent">
       <div id="child">
-        <img id="child-img" (click)="buttonOnClick('boat')" src="assets/imgs/test-icons/Boating.png" alt="">
+        <img id="child-img" (swipe)="swipeEvent($event, 'boat')" (click)="buttonOnClick('boat')" src="assets/imgs/test-icons/Boating.png" alt="">
         1
       </div>
       <div id="child-02">
-      <img id="child-img-02" (click)="buttonOnClick('fish')" src="assets/imgs/test-icons/Fishing w.png" alt="">
+      <img id="child-img-02" (swipe)="swipeEvent($event, 'fish')" (click)="buttonOnClick('fish')" src="assets/imgs/test-icons/Fishing w.png" alt="">
         2
       </div>
       <div id="child-03">
-        <img id="child-img-03" (click)="buttonOnClick('cycling')" src="assets/imgs/test-icons/cycling-W.png" alt="">
+        <img id="child-img-03" (swipe)="swipeEvent($event, 'cycling')" (click)="buttonOnClick('cycling')" src="assets/imgs/test-icons/cycling-W.png" alt="">
         3
       </div>
       <div id="child-04">
-        <img id="child-img-04" (click)="buttonOnClick('climbing')" src="assets/imgs/test-icons/Climbing-w.png" alt="">
+        <img id="child-img-04" (swipe)="swipeEvent($event, 'climbing')" (click)="buttonOnClick('climbing')" src="assets/imgs/test-icons/Climbing-w.png" alt="">
         4
       </div>
       <div id="child-05">
-        <img id="child-img-05" (click)="buttonOnClick('tennis')" src="assets/imgs/test-icons/Table-Tennis-w.png" alt="">
+        <img id="child-img-05" (swipe)="swipeEvent($event, 'tennis')" (click)="buttonOnClick('tennis')" src="assets/imgs/test-icons/Table-Tennis-w.png" alt="">
         5
       </div>
     </div>

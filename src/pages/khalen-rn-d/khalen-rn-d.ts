@@ -20,6 +20,13 @@ export class KhalenRnDPage{
 
   constructor() {}
 
+  swipeEvent(e, el:string) {
+
+    // console.log('swiped => ' + el);
+
+    this.buttonOnClick(el);
+
+  }
 
   buttonOnClick(el: string){
     if(el === 'boat' && this.current_angle == 0) {
@@ -159,6 +166,13 @@ export class KhalenRnDPage{
     $("#child-03").css({ width: '50px', height: '50px', top: '-15px', left: '811px' });
     $("#child-04").css({ width: '55px', height: '55px', top: '-30px', left: '604px' });
     $("#child-05").css({ width: '50px', height: '50px', top: '-15px', left: '543px' });
+
+    $(".large-images-div-img.large-img-boat").css({ transform: 'translate(0, 0)' });
+    $(".large-images-div-img.large-img-fish").css({ transform: 'translate(100%, 0)' });
+    $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(200%, 0)' });
+    $(".large-images-div-img.large-img-trek").css({ transform: 'translate(-100%, 0)' });
+    $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-200%, 0)' });
+
   }
 
   positionSetByFish() {
@@ -167,6 +181,12 @@ export class KhalenRnDPage{
     $("#child-03").css({ width: '55px', height: '55px', top: '-20px', left: '817px' });
     $("#child-04").css({ width: '50px', height: '50px', top: '-26px', left: '614px' });
     $("#child-05").css({ width: '50px', height: '50px', top: '2px', left: '881px' });
+
+    $(".large-images-div-img.large-img-boat").css({ transform: 'translate(-100%, 0)' });
+    $(".large-images-div-img.large-img-fish").css({ transform: 'translate(0%, 0)' });
+    $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(100%, 0)' });
+    $(".large-images-div-img.large-img-trek").css({ transform: 'translate(-200%, 0)' });
+    $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-300%, 0)' });
   }
 
   positionSetByCycle() {
@@ -175,6 +195,12 @@ export class KhalenRnDPage{
     $("#child-02").css({width: '55px', height: '55px', top: '-30px', left: '745px'});
     $("#child-04").css({width: '50px', height: '50px', top: '26px', left: '945px'});
     $("#child-05").css({width: '55px', height: '55px', top: '-2px', left: '881px'});
+
+    $(".large-images-div-img.large-img-boat").css({ transform: 'translate(-200%, 0)' });
+    $(".large-images-div-img.large-img-fish").css({ transform: 'translate(-100%, 0)' });
+    $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(0%, 0)' });
+    $(".large-images-div-img.large-img-trek").css({ transform: 'translate(-300%, 0)' });
+    $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-400%, 0)' });
   }
 
   positionSetByClimb() {
@@ -183,6 +209,12 @@ export class KhalenRnDPage{
     $("#child").css({width: '55px', height: '55px', top: '-33px', left: '677px'});
     $("#child-02").css({width: '50px', height: '50px', top: '-25px', left: '745px'});
     $("#child-03").css({width: '50px', height: '50px', top: '1px', left: '477px'});
+
+    $(".large-images-div-img.large-img-boat").css({ transform: 'translate(100%, 0)' });
+    $(".large-images-div-img.large-img-fish").css({ transform: 'translate(200%, 0)' });
+    $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(300%, 0)' });
+    $(".large-images-div-img.large-img-trek").css({ transform: 'translate(0%, 0)' });
+    $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-100%, 0)' });
   }
 
   positionSetByTennis() {
@@ -191,6 +223,12 @@ export class KhalenRnDPage{
     $("#child").css({width: '50px', height: '50px', top: '-29px', left: '684px'});
     $("#child-02").css({width: '50px', height: '50px', top: '20px', left: '421px'});
     $("#child-03").css({width: '55px', height: '55px', top: '-7px', left: '478px'});
+
+    $(".large-images-div-img.large-img-boat").css({ transform: 'translate(200%, 0)' });
+    $(".large-images-div-img.large-img-fish").css({ transform: 'translate(300%, 0)' });
+    $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(400%, 0)' });
+    $(".large-images-div-img.large-img-trek").css({ transform: 'translate(100%, 0)' });
+    $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(0%, 0)' });
 
   }
 }

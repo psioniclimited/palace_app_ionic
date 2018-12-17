@@ -31,11 +31,14 @@ page-restaurant {
     color: black;
     border-radius: 0.4em;
     font-weight: bold;
+    font-size: 50%;
     height: 5vh;
   }
 
   .card-title-text{
-    font-weight: bolder;
+    font-weight: bold;
+    font-size: 90%;
+    width:100%;
   }
 
 }

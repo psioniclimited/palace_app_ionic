@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {FacalitiesPage} from "../pages/facalities/facalities";
 import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
+import {RestaurantPage} from "../pages/restaurant/restaurant";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     FacalitiesPage,
-    KhalenRnDPage
+    KhalenRnDPage,
+    RestaurantPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
     MyApp,
     HomePage,
     FacalitiesPage,
-    KhalenRnDPage
+    KhalenRnDPage,
+    RestaurantPage
   ],
   providers: [
     StatusBar,

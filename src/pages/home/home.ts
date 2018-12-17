@@ -4,6 +4,8 @@ import {ViewChild} from '@angular/core';
 import {Slides} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {FacalitiesPage} from "../facalities/facalities";
+import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
+import {RestaurantPage} from "../restaurant/restaurant";
 
 
 @Component({
@@ -35,6 +37,10 @@ export class HomePage {
     const index = event.clickedIndex;
     if (index === 1) {
       this.navCtrl.push(FacalitiesPage);
+    } else if (index === 3) {
+      this.navCtrl.push(KhalenRnDPage);
+    } else if(index === 2){
+      this.navCtrl.push(RestaurantPage);
     }
     console.log(index);
 

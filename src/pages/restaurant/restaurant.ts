@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 
 /**
- * Generated class for the FacalitiesPage page.
+ * Generated class for the RestaurantPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 
 @IonicPage()
 @Component({
-  selector: 'page-facalities',
-  templateUrl: 'facalities.html',
+  selector: 'page-restaurant',
+  templateUrl: 'restaurant.html',
 })
-export class FacalitiesPage {
+export class RestaurantPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FacalitiesPage');
-  }
-
-  rndPage(){
-    // this.navCtrl.push(KhalenRnDPage);
+    console.log('ionViewDidLoad RestaurantPage');
   }
 
 }

@@ -9,8 +9,8 @@ import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // settingsPage = HomePage;
-  settingsPage = KhalenRnDPage;
+  settingsPage = HomePage;
+  // settingsPage = KhalenRnDPage;
 
   @ViewChild('nav') nav: NavController;
 

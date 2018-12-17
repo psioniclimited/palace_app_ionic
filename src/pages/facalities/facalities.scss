@@ -4,9 +4,8 @@ page-facalities {
     box-shadow: 0px 1vh 1.50vh #757575;
     height: 8vh;
   }
-
   .col-padding{
-    padding-left: 3vw;
+    padding-left: 2vw;
   }
 
   .card-image{
@@ -15,31 +14,31 @@ page-facalities {
     transform: translateY(-50%);
   }
 
+  .margin-left-info{
+    margin-left: 3vw;
+  }
+
   .card-paragraph-text{
-  font-size: 1rem;
+    font-size: 1rem;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    padding-bottom: 2vh;
   }
 
   .button-color{
     background-color: #c2ad6c;
     color: black;
+    border-radius: 0.4em;
+    font-weight: bold;
+    font-size: 50%;
+    height: 5vh;
   }
 
-  //.card-title-text{
-  //  position: absolute;
-  //  right: 26vw;
-  //  font-weight: bold;
-  //  font-size: 3vh;
-  //}
-  //
-  //.card-paragraph{
-  //  position: absolute;
-  //  right: 26vw;
-  //  font-weight: normal;
-  //  font-size: 2vh;
-  //  transform: translate(72%, 43%);
-  //  text-align: justify;
-  //}
-
-
+  .card-title-text{
+    font-weight: bold;
+    font-size: 90%;
+    width:100%;
+  }
 
 }

@@ -14,17 +14,28 @@ page-restaurant {
     transform: translateY(-50%);
   }
 
+  .margin-left-info{
+    margin-left: 3vw;
+  }
+
   .card-paragraph-text{
     font-size: 1rem;
     text-align: justify;
     text-align-last: left;
-    padding-left: 3vw;
     hyphens: auto;
+    padding-bottom: 2vh;
   }
 
   .button-color{
     background-color: #c2ad6c;
     color: black;
+    border-radius: 0.4em;
+    font-weight: bold;
+    height: 5vh;
+  }
+
+  .card-title-text{
+    font-weight: bolder;
   }
 
 }

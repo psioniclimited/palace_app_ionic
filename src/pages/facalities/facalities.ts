@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 
 /**
@@ -16,7 +17,7 @@ import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 })
 export class FacalitiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -27,4 +28,12 @@ export class FacalitiesPage {
     // this.navCtrl.push(KhalenRnDPage);
   }
 
+  timingAlert(){
+    const alert = this.alertCtrl.create({
+      title: 'New Friend!',
+      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }

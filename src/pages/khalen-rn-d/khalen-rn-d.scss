@@ -4,26 +4,28 @@ page-khalen-rn-d {
     position: absolute;
     width: 100%;
     z-index: 500;
+    max-width: 101%;
+    width: 101%;
   }
   .large-images-div-img.large-img-cycle{
     transform: translate(200%, 0);
-     transition: transform 0.7s linear;
+    transition: transform 0.7s linear;
   }
   .large-images-div-img.large-img-fish{
     transform: translate(100%, 0);
-     transition: transform 0.7s linear;
+    transition: transform 0.7s linear;
   }
   .large-images-div-img.large-img-boat{
     transform: translate(0, 0);
-     transition: transform 0.7s linear;
+    transition: transform 0.7s linear;
   }
   .large-images-div-img.large-img-trek{
     transform: translate(-100%, 0);
-     transition: transform 0.7s linear;
+    transition: transform 0.7s linear;
   }
   .large-images-div-img.large-img-tennis{
     transform: translate(-200%, 0);
-     transition: transform 0.7s linear;
+    transition: transform 0.7s linear;
   }
 
   // #######################################################################################################################################################
@@ -31,8 +33,8 @@ page-khalen-rn-d {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 50%);
-    height: 115px;
+    transform: translate(-50%, 23%);
+    height: 285px;
     overflow: hidden;
     z-index: 1000;
   }
@@ -41,6 +43,7 @@ page-khalen-rn-d {
     width: 1405px;
     height: 1405px;
     border: transparent;
+    background: #f3f3f3;
     border-radius: 50%;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -105,5 +108,57 @@ page-khalen-rn-d {
     max-width: 100%;
     border-radius: 50%;
   }
-
+  .child-text {
+    z-index: 1500;
+    position: absolute;
+    top: 83%;
+    width: 100%;
+  }
+  .text-01 {
+    position: absolute;
+    width: 100%;
+    padding:0 40px;
+    z-index: 1500;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    text-align: justify;
+  }
+  .custom-child-text-p-tag {
+    position: absolute;
+    width: 100%;
+    padding: 0 40px;
+    z-index: 1500;
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -35%);
+    transform: translate(-50%, -35%);
+    font-family: 'Montserrat';
+    font-size: 14px;
+  }
+  #p-tag-02, #p-tag-03, #p-tag-04, #p-tag-05 {
+    opacity: 0;
+  }
+  #p-tag-02
+  {
+    background: green;
+  }
+  #p-tag-03
+  {
+    background: yellow;
+  }
+  #p-tag-04
+  {
+    background: blue;
+  }
+  #p-tag-05
+  {
+    background: magenta;
+  }
+  .custom-boat-circle{
+    fill: #b29d5d;
+  }
+  .custom-boat-path {
+    fill: #fff;
+  }
 }

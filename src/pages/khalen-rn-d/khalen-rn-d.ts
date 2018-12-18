@@ -17,7 +17,7 @@ import * as $ from 'jquery'
 export class KhalenRnDPage{
 
   current_angle = 0;
-
+  middle_string = '';
   constructor() {}
 
   swipeEvent(e, el:string, detectEl:string) {
@@ -74,74 +74,74 @@ export class KhalenRnDPage{
 
   buttonOnClick(el: string){
     if(el === 'boat' && this.current_angle == 0) {
-
+      this.middle_string = el;
       this.boatAction();
 
     }
 
     else if(el === 'boat' && this.current_angle != 0) {
-
+      this.middle_string = el;
       this.current_angle = this.current_angle - this.current_angle;
       this.boatActionCurrentAngleNotZero(this.current_angle);
 
     }
 
     else if (el === 'fish' && this.current_angle == 0) {
-
-      this.current_angle = -6;
+      this.middle_string = el;
+      this.current_angle -= 6;
       this.fishAction(this.current_angle);
 
     }
 
     else if (el === 'fish' && this.current_angle != 0) {
-
+      this.middle_string = el;
       this.current_angle = -6;
       this.fishAction(this.current_angle);
 
     }
 
     else if (el === 'cycling' && this.current_angle == 0) {
-
+      this.middle_string = el;
       this.current_angle -= 11.5;
       this.cycleAction(this.current_angle);
 
     }
 
     else if (el === 'cycling' && this.current_angle != 0) {
-
+      this.middle_string = el;
       this.current_angle = -11.5;
       this.cycleAction(this.current_angle);
 
     }
 
     else if(el === 'climbing' && this.current_angle == 0) {
-
+      this.middle_string = el;
       this.current_angle += 5.5;
       this.climbAction(this.current_angle);
 
     }
 
     else if(el === 'climbing' && this.current_angle != 0) {
-
+      this.middle_string = el;
       this.current_angle = 5.5;
       this.climbAction(this.current_angle);
 
     }
 
     else if(el === 'tennis' && this.current_angle == 0) {
-
+      this.middle_string = el;
       this.current_angle += 10.5;
       this.tennisAction(this.current_angle);
+      console.log("whiat is this? => this is " + this.middle_string);
 
     }
 
     else if(el === 'tennis' && this.current_angle != 0) {
-
+      this.middle_string = el;
       this.current_angle = 10.5;
       this.tennisAction(this.current_angle);
-
+      console.log("whiat is this? => this is " + this.middle_string);
     }
-
   }
 
   boatAction() {
@@ -217,20 +217,60 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-trek").css({ transform: 'translate(-100%, 0)' });
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-200%, 0)' });
 
+    $("#p-tag-02, #p-tag-03, #p-tag-04, #p-tag-05").css({ opacity: '0' });
+    $("#p-tag-01").css({ opacity: '1', transition: '0.3s' });
+
+    $(".custom-boat-circle").css({ fill: '#b29d5d' });
+    $(".custom-boat-path").css({ fill: '#fff' });
+    $(".custom-fish-circle").css({ fill: '#fff' });
+    $(".custom-fish-path").css({ fill: '#000' });
+    $(".custom-cycling-circle").css({ fill: '#fff' });
+    $(".custom-cycling-path").css({ fill: '#000' });
+    $(".custom-climbing-circle").css({ fill: '#fff' });
+    $(".custom-climbing-path").css({ fill: '#000' });
+    $(".custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-tennis-path").css({ fill: '#000' });
   }
 
   positionSetByFish() {
     $("#child-02").css({ width: '60px', height: '60px', top: '-37px', left: '745px' });
     $("#child").css({ width: '55px', height: '55px', top: '-35px', left: '677px' });
     $("#child-03").css({ width: '55px', height: '55px', top: '-20px', left: '817px' });
-    $("#child-04").css({ width: '50px', height: '50px', top: '-26px', left: '614px' });
-    $("#child-05").css({ width: '50px', height: '50px', top: '2px', left: '881px' });
+    $("#child-04").css({ width: '50px', height: '50px', top: '-26px', left: '614px'});
+    $("#child-05").css({ width: '50px', height: '50px', top: '2px', left: '881px'});
+
+    // setTimeout(function(){
+    //   $("#child-05").css({ opacity: '0', transition: '.2s'});
+    // }, 200);
+    // // $("#child-05").css({ width: '50px', height: '50px', top: '2px', left: '881px'});
+    // setTimeout(function(){
+    //   // alert("Hello");
+    //   $("#child-05").css({ width: '50px', height: '50px', top: '2px', left: '881px'});
+    //
+    // }, 410);
+    // setTimeout(function(){
+    //   $("#child-05").css({ opacity: '1', transition: '.2s'});
+    // }, 700);
 
     $(".large-images-div-img.large-img-boat").css({ transform: 'translate(-100%, 0)' });
     $(".large-images-div-img.large-img-fish").css({ transform: 'translate(0%, 0)' });
     $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(100%, 0)' });
     $(".large-images-div-img.large-img-trek").css({ transform: 'translate(-200%, 0)' });
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-300%, 0)' });
+
+    $("#p-tag-01, #p-tag-03, #p-tag-04, #p-tag-05").css({ opacity: '0' });
+    $("#p-tag-02").css({ opacity: '1', transition: '0.7s' });
+
+    $(".custom-boat-circle").css({ fill: '#fff' });
+    $(".custom-boat-path").css({ fill: '#000' });
+    $(".custom-fish-circle").css({ fill: '#b29d5d' });
+    $(".custom-fish-path").css({ fill: '#fff' });
+    $(".custom-cycling-circle").css({ fill: '#fff' });
+    $(".custom-cycling-path").css({ fill: '#000' });
+    $(".custom-climbing-circle").css({ fill: '#fff' });
+    $(".custom-climbing-path").css({ fill: '#000' });
+    $(".custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-tennis-path").css({ fill: '#000' });
   }
 
   positionSetByCycle() {
@@ -245,6 +285,20 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(0%, 0)' });
     $(".large-images-div-img.large-img-trek").css({ transform: 'translate(-300%, 0)' });
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-400%, 0)' });
+
+    $("#p-tag-01, #p-tag-02, #p-tag-04, #p-tag-05").css({ opacity: '0' });
+    $("#p-tag-03").css({ opacity: '1', transition: '0.7s' });
+
+    $(".custom-boat-circle").css({ fill: '#fff' });
+    $(".custom-boat-path").css({ fill: '#000' });
+    $(".custom-fish-circle").css({ fill: '#fff' });
+    $(".custom-fish-path").css({ fill: '#000' });
+    $(".custom-cycling-circle").css({ fill: '#b29d5d' });
+    $(".custom-cycling-path").css({ fill: '#fff' });
+    $(".custom-climbing-circle").css({ fill: '#fff' });
+    $(".custom-climbing-path").css({ fill: '#000' });
+    $(".custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-tennis-path").css({ fill: '#000' });
   }
 
   positionSetByClimb() {
@@ -259,6 +313,20 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-cycle").css({ transform: 'translate(300%, 0)' });
     $(".large-images-div-img.large-img-trek").css({ transform: 'translate(0%, 0)' });
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-100%, 0)' });
+
+    $("#p-tag-01, #p-tag-02, #p-tag-03, #p-tag-05").css({ opacity: '0' });
+    $("#p-tag-04").css({ opacity: '1', transition: '0.7s' });
+
+    $(".custom-boat-circle").css({ fill: '#fff' });
+    $(".custom-boat-path").css({ fill: '#000' });
+    $(".custom-fish-circle").css({ fill: '#fff' });
+    $(".custom-fish-path").css({ fill: '#000' });
+    $(".custom-cycling-circle").css({ fill: '#fff' });
+    $(".custom-cycling-path").css({ fill: '#000' });
+    $(".custom-climbing-circle").css({ fill: '#b29d5d' });
+    $(".custom-climbing-path").css({ fill: '#fff' });
+    $(".custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-tennis-path").css({ fill: '#000' });
   }
 
   positionSetByTennis() {
@@ -274,5 +342,12 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-trek").css({ transform: 'translate(100%, 0)' });
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(0%, 0)' });
 
+    $("#p-tag-01, #p-tag-02, #p-tag-03, #p-tag-04").css({ opacity: '0' });
+    $("#p-tag-05").css({ opacity: '1', transition: '0.7s' });
+
+    $(".custom-boat-circle, .custom-fish-circle, .custom-cycling-circle, .custom-climbing-circle").css({ fill: '#fff' });
+    $(".custom-boat-path, .custom-fish-path, .custom-cycling-path, .custom-climbing-path").css({ fill: '#000' });
+    $(".custom-tennis-circle").css({ fill: '#b29d5d', transiton: '0.7s'});
+    $(".custom-tennis-path").css({ fill: '#fff', transiton: '0.7s'});
   }
 }

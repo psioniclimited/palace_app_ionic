@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
+import {MoviesPage} from "../movies/movies";
 
 /**
  * Generated class for the FacalitiesPage page.
@@ -35,5 +36,9 @@ export class FacalitiesPage {
       buttons: ['OK']
     });
     alert.present();
+  }
+
+  theaterPage() {
+    this.navCtrl.push(MoviesPage);
   }
 }

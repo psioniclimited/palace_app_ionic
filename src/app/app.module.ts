@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import {FacalitiesPage} from "../pages/facalities/facalities";
 import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../pages/restaurant/restaurant";
+import {MoviesPage} from "../pages/movies/movies";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {RestaurantPage} from "../pages/restaurant/restaurant";
     HomePage,
     FacalitiesPage,
     KhalenRnDPage,
-    RestaurantPage
+    RestaurantPage,
+    MoviesPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import {RestaurantPage} from "../pages/restaurant/restaurant";
     HomePage,
     FacalitiesPage,
     KhalenRnDPage,
-    RestaurantPage
+    RestaurantPage,
+    MoviesPage
   ],
   providers: [
     StatusBar,

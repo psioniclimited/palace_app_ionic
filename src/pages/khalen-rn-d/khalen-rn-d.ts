@@ -76,56 +76,56 @@ export class KhalenRnDPage{
     if(el === 'boat' && this.current_angle == 0) {
       this.middle_string = el;
       this.boatAction();
-
+      console.log('EL value with zero => ' + el);
     }
 
     else if(el === 'boat' && this.current_angle != 0) {
       this.middle_string = el;
       this.current_angle = this.current_angle - this.current_angle;
       this.boatActionCurrentAngleNotZero(this.current_angle);
-
+      console.log('EL value with not-zero => ' + el);
     }
 
     else if (el === 'fish' && this.current_angle == 0) {
       this.middle_string = el;
       this.current_angle -= 6;
       this.fishAction(this.current_angle);
-
+      console.log('EL value with zero => ' + el);
     }
 
     else if (el === 'fish' && this.current_angle != 0) {
       this.middle_string = el;
       this.current_angle = -6;
       this.fishAction(this.current_angle);
-
+      console.log('EL value with not-zero => ' + el);
     }
 
     else if (el === 'cycling' && this.current_angle == 0) {
       this.middle_string = el;
       this.current_angle -= 11.5;
       this.cycleAction(this.current_angle);
-
+      console.log('EL value with zero => ' + el);
     }
 
     else if (el === 'cycling' && this.current_angle != 0) {
       this.middle_string = el;
       this.current_angle = -11.5;
       this.cycleAction(this.current_angle);
-
+      console.log('EL value with not-zero => ' + el);
     }
 
     else if(el === 'climbing' && this.current_angle == 0) {
       this.middle_string = el;
       this.current_angle += 5.5;
       this.climbAction(this.current_angle);
-
+      console.log('EL value with zero => ' + el);
     }
 
     else if(el === 'climbing' && this.current_angle != 0) {
       this.middle_string = el;
       this.current_angle = 5.5;
       this.climbAction(this.current_angle);
-
+      console.log('EL value with not-zero => ' + el);
     }
 
     else if(el === 'tennis' && this.current_angle == 0) {
@@ -133,7 +133,7 @@ export class KhalenRnDPage{
       this.current_angle += 10.5;
       this.tennisAction(this.current_angle);
       console.log("whiat is this? => this is " + this.middle_string);
-
+      console.log('EL value with zero => ' + el);
     }
 
     else if(el === 'tennis' && this.current_angle != 0) {
@@ -141,6 +141,7 @@ export class KhalenRnDPage{
       this.current_angle = 10.5;
       this.tennisAction(this.current_angle);
       console.log("whiat is this? => this is " + this.middle_string);
+      console.log('EL value with not-zero => ' + el);
     }
   }
 
@@ -218,18 +219,15 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-200%, 0)' });
 
     $("#p-tag-02, #p-tag-03, #p-tag-04, #p-tag-05").css({ opacity: '0' });
-    $("#p-tag-01").css({ opacity: '1', transition: '0.3s' });
+    setTimeout(function(){
+      $("#p-tag-01").css({ opacity: '1', transition: '0.7s' });
+    }, 500);
 
-    $(".custom-boat-circle").css({ fill: '#b29d5d' });
-    $(".custom-boat-path").css({ fill: '#fff' });
-    $(".custom-fish-circle").css({ fill: '#fff' });
-    $(".custom-fish-path").css({ fill: '#000' });
-    $(".custom-cycling-circle").css({ fill: '#fff' });
-    $(".custom-cycling-path").css({ fill: '#000' });
-    $(".custom-climbing-circle").css({ fill: '#fff' });
-    $(".custom-climbing-path").css({ fill: '#000' });
-    $(".custom-tennis-circle").css({ fill: '#fff' });
-    $(".custom-tennis-path").css({ fill: '#000' });
+
+    $(".custom-boat-circle").css({ fill: '#b29d5d', transition: '0.5s' });
+    $(".custom-boat-path").css({ fill: '#fff', transition: '0.5s' });
+    $(".custom-fish-circle, .custom-cycling-circle, .custom-climbing-circle, .custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-fish-path, .custom-cycling-path, .custom-climbing-path, .custom-tennis-path").css({ fill: '#000' });
   }
 
   positionSetByFish() {
@@ -259,18 +257,14 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-300%, 0)' });
 
     $("#p-tag-01, #p-tag-03, #p-tag-04, #p-tag-05").css({ opacity: '0' });
-    $("#p-tag-02").css({ opacity: '1', transition: '0.7s' });
+    setTimeout(function(){
+      $("#p-tag-02").css({ opacity: '1', transition: '0.7s' });
+    }, 500);
 
-    $(".custom-boat-circle").css({ fill: '#fff' });
-    $(".custom-boat-path").css({ fill: '#000' });
-    $(".custom-fish-circle").css({ fill: '#b29d5d' });
-    $(".custom-fish-path").css({ fill: '#fff' });
-    $(".custom-cycling-circle").css({ fill: '#fff' });
-    $(".custom-cycling-path").css({ fill: '#000' });
-    $(".custom-climbing-circle").css({ fill: '#fff' });
-    $(".custom-climbing-path").css({ fill: '#000' });
-    $(".custom-tennis-circle").css({ fill: '#fff' });
-    $(".custom-tennis-path").css({ fill: '#000' });
+    $(".custom-boat-circle, .custom-cycling-circle, .custom-climbing-circle, .custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-boat-path, .custom-cycling-path, .custom-climbing-path, .custom-tennis-path").css({ fill: '#000' });
+    $(".custom-fish-circle").css({ fill: '#b29d5d', transition: '0.5s' });
+    $(".custom-fish-path").css({ fill: '#fff', transition: '0.5s' });
   }
 
   positionSetByCycle() {
@@ -287,18 +281,14 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-400%, 0)' });
 
     $("#p-tag-01, #p-tag-02, #p-tag-04, #p-tag-05").css({ opacity: '0' });
-    $("#p-tag-03").css({ opacity: '1', transition: '0.7s' });
+    setTimeout(function(){
+      $("#p-tag-03").css({ opacity: '1', transition: '0.7s' });
+    }, 500);
 
-    $(".custom-boat-circle").css({ fill: '#fff' });
-    $(".custom-boat-path").css({ fill: '#000' });
-    $(".custom-fish-circle").css({ fill: '#fff' });
-    $(".custom-fish-path").css({ fill: '#000' });
-    $(".custom-cycling-circle").css({ fill: '#b29d5d' });
-    $(".custom-cycling-path").css({ fill: '#fff' });
-    $(".custom-climbing-circle").css({ fill: '#fff' });
-    $(".custom-climbing-path").css({ fill: '#000' });
-    $(".custom-tennis-circle").css({ fill: '#fff' });
-    $(".custom-tennis-path").css({ fill: '#000' });
+    $(".custom-boat-circle, .custom-fish-circle, .custom-climbing-circle, .custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-boat-path, .custom-fish-path, .custom-climbing-path, .custom-tennis-path").css({ fill: '#000' });
+    $(".custom-cycling-circle").css({ fill: '#b29d5d', transition: '0.5s' });
+    $(".custom-cycling-path").css({ fill: '#fff', transition: '0.5s' });
   }
 
   positionSetByClimb() {
@@ -315,18 +305,14 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(-100%, 0)' });
 
     $("#p-tag-01, #p-tag-02, #p-tag-03, #p-tag-05").css({ opacity: '0' });
-    $("#p-tag-04").css({ opacity: '1', transition: '0.7s' });
+    setTimeout(function(){
+      $("#p-tag-04").css({ opacity: '1', transition: '0.7s' });
+    }, 500);
 
-    $(".custom-boat-circle").css({ fill: '#fff' });
-    $(".custom-boat-path").css({ fill: '#000' });
-    $(".custom-fish-circle").css({ fill: '#fff' });
-    $(".custom-fish-path").css({ fill: '#000' });
-    $(".custom-cycling-circle").css({ fill: '#fff' });
-    $(".custom-cycling-path").css({ fill: '#000' });
-    $(".custom-climbing-circle").css({ fill: '#b29d5d' });
-    $(".custom-climbing-path").css({ fill: '#fff' });
-    $(".custom-tennis-circle").css({ fill: '#fff' });
-    $(".custom-tennis-path").css({ fill: '#000' });
+    $(".custom-boat-circle, .custom-fish-circle, .custom-cycling-circle, .custom-tennis-circle").css({ fill: '#fff' });
+    $(".custom-boat-path, .custom-fish-path, .custom-cycling-path, .custom-tennis-path").css({ fill: '#000' });
+    $(".custom-climbing-circle").css({ fill: '#b29d5d', transiton: '0.5s' });
+    $(".custom-climbing-path").css({ fill: '#fff', transiton: '0.5s' });
   }
 
   positionSetByTennis() {
@@ -343,11 +329,13 @@ export class KhalenRnDPage{
     $(".large-images-div-img.large-img-tennis").css({ transform: 'translate(0%, 0)' });
 
     $("#p-tag-01, #p-tag-02, #p-tag-03, #p-tag-04").css({ opacity: '0' });
-    $("#p-tag-05").css({ opacity: '1', transition: '0.7s' });
+    setTimeout(function(){
+      $("#p-tag-05").css({ opacity: '1', transition: '0.7s' });
+    }, 500);
 
     $(".custom-boat-circle, .custom-fish-circle, .custom-cycling-circle, .custom-climbing-circle").css({ fill: '#fff' });
     $(".custom-boat-path, .custom-fish-path, .custom-cycling-path, .custom-climbing-path").css({ fill: '#000' });
-    $(".custom-tennis-circle").css({ fill: '#b29d5d', transiton: '0.7s'});
-    $(".custom-tennis-path").css({ fill: '#fff', transiton: '0.7s'});
+    $(".custom-tennis-circle").css({ fill: '#b29d5d', transiton: '0.5s'});
+    $(".custom-tennis-path").css({ fill: '#fff', transiton: '0.5s'});
   }
 }

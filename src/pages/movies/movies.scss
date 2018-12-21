@@ -5,9 +5,60 @@ page-movies {
     height: 8vh;
   }
 
+  .image-posters{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
   .large-movies-div-img{
     border-radius: 6%;
     box-shadow: 1.5vw 1vh 1.50vh #757575;
   }
+  
+  .large-movies-div-img.first-image{
+    position: absolute;
+    top: 30px;
+    left: 0;
+  }
+
+  .large-movies-div-img.second-image{
+    position: relative;
+    top: 50px;
+    left: 30px;
+    z-index: -1;
+    }
+
+  .large-movies-div-img.third-image{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    z-index: -2;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

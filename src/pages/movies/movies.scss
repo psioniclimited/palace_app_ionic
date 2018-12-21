@@ -24,17 +24,23 @@ page-movies {
   }
 
   .large-movies-div-img.second-image{
+    width: 70%;
+    height: 70%;
     position: relative;
     top: 50px;
-    left: 30px;
+    left: 70px;
     z-index: -1;
+    filter: blur(2px);
     }
 
   .large-movies-div-img.third-image{
+    width: 70%;
+    height: 70%;
     position: absolute;
-    top: 80px;
-    left: 50px;
+    top: 100px;
+    left: 90px;
     z-index: -2;
+    filter: blur(8px);
   }
 
 

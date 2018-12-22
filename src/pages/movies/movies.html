@@ -9,9 +9,9 @@
     <ion-row>
       <ion-col col-12>
         <div class="image-posters">
-          <img src="assets/imgs/movies/kungfu.png"  class="large-movies-div-img  first-image" alt="img01">
-          <img src="assets/imgs/movies/parrot.png"  class="large-movies-div-img second-image" alt="img02">
-          <img src="assets/imgs/movies/iceAge.png"  class="large-movies-div-img third-image" alt="img03">
+          <img src="assets/imgs/movies/kungfu.png" [class]="firstImage" alt="img01">
+          <img src="assets/imgs/movies/parrot.png"  [class]="secondImage" alt="img02">
+          <img src="assets/imgs/movies/iceAge.png"  [class]="thirdImage" alt="img03">
         </div>
       </ion-col>
     </ion-row>
@@ -19,7 +19,7 @@
       <ion-col col-12>
         <div class="move-btn">
           <p>
-            <button ion-button color="dark" clear icon-only>
+            <button ion-button color="dark" clear icon-only (click)="makeItMove()">
               <ion-icon name='people'></ion-icon>
               Movies
             </button>

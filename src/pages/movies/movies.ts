@@ -13,6 +13,8 @@ export class MoviesPage {
   secondImage:string = 'large-movies-div-img second-image';
   thirdImage:string = 'large-movies-div-img third-image';
 
+  count:number = 1;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,11 +23,31 @@ export class MoviesPage {
     console.log('ionViewDidLoad MoviesPage');
   }
 
-  makeItMove(){
-    console.log('working');
-    this.firstImage = 'large-movies-div-img third-image';
-    this.secondImage = 'large-movies-div-img  first-image';
-    this.thirdImage = 'large-movies-div-img second-image';
+  makeItMove(x:number){
+    console.log(x);
+
+     if (x > 3) {
+      this.count = 1;
+    }
+
+    if(this.count === 1) {
+      this.firstImage = 'large-movies-div-img third-image';
+      this.secondImage = 'large-movies-div-img  first-image';
+      this.thirdImage = 'large-movies-div-img second-image';
+    } else if (this.count === 2) {
+      this.firstImage = 'large-movies-div-img second-image';
+      this.secondImage = 'large-movies-div-img  third-image';
+      this.thirdImage = 'large-movies-div-img  first-image';
+    } else if (this.count === 3) {
+
+      this.firstImage = 'large-movies-div-img first-image';
+      this.secondImage = 'large-movies-div-img second-image';
+      this.thirdImage = 'large-movies-div-img third-image';
+
+    }
+
+
+    this.count++;
   }
 
 }

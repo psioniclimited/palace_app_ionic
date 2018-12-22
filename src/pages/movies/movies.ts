@@ -45,8 +45,6 @@ export class MoviesPage {
       this.thirdImage = 'large-movies-div-img third-image';
 
     }
-
-
     this.count++;
   }
 

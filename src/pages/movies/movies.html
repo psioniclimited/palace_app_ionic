@@ -5,36 +5,29 @@
 </ion-header>
 
 <ion-content no-padding no-margin style="background-color: #f3f3f3">
-  <ion-grid no-padding no-margin>
-    <ion-row>
-      <ion-col col-12 class="movie-heading">
-        <p>NOW SHOWING</p>
-        <p class="movie-title">KUNG FU PANDA 3</p>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12>
-        <div class="image-posters">
-          <img src="assets/imgs/movies/kungfu.png" [class]="firstImage" alt="img01">
-          <img src="assets/imgs/movies/parrot.png"  [class]="secondImage" alt="img02">
-          <img src="assets/imgs/movies/iceAge.png"  [class]="thirdImage" alt="img03">
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12>
-        <div class="move-btn">
-          <p>
-            <button ion-button color="dark" clear icon-only (click)="makeItMove(count)">
-              <ion-icon name='people'></ion-icon>
-              Movies
-            </button>
-          </p>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
 
+  <div class="movie-heading">
+    <p>NOW SHOWING</p>
+    <p class="movie-title">KUNG FU PANDA 3</p>
+  </div>
+
+
+  <div class="image-posters">
+    <img src="assets/imgs/movies/kungfu.png" [class]="firstImage" alt="img01">
+    <img src="assets/imgs/movies/parrot.png" [class]="secondImage" alt="img02">
+    <img src="assets/imgs/movies/iceAge.png" [class]="thirdImage" alt="img03">
+  </div>
+
+
+  <div class="move-btn">
+    <p>
+      <button ion-button color="dark" clear icon-only (click)="makeItMove(count)">
+        <ion-icon name='people'></ion-icon>
+        Movies
+      </button>
+    </p>
+  </div>
 
 
 </ion-content>

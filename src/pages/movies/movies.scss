@@ -10,6 +10,7 @@ page-movies {
     width: 100%;
     top: 0;
     left: 0;
+    margin-left: 2vw;
   }
 
   .large-movies-div-img{
@@ -41,6 +42,16 @@ page-movies {
     left: 90px;
     z-index: -2;
     filter: blur(8px);
+  }
+
+  .movie-heading{
+    margin-left: 2vw;
+  }
+
+  .movie-title{
+    margin-top: -2.50vh;
+    font-weight: bold;
+    font-size: 2rem;
   }
 
   .move-btn{

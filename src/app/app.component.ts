@@ -5,12 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
+import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   // settingsPage = HomePage;
-  settingsPage = KhalenRnDPage;
+  // settingsPage = KhalenRnDPage;
+  settingsPage = CustomSliderPage;
 
   @ViewChild('nav') nav: NavController;
 

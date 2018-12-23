@@ -1,0 +1,35 @@
+custom-recreation-slider {
+
+  .custom-path-slider-container {
+    position: absolute;
+    width: 768px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    //background: red;
+    //z-index: 1000;
+    overflow: hidden !important;
+  }
+  .path-slider-holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -5.5%);
+    width: 1405px;
+    height: 1405px;
+    /* border-top-left-radius: 50%; */
+    border-radius: 90%;
+    background: #f3f3f3;
+    z-index: 1000;
+  }
+  .path-slider__item.path-slider__current-item {
+    margin-top: -10px;
+  }
+  //.item__circle {
+  //  opacity: 0;
+  //}
+  //.item_01, .item_02, .item_03, .item_12, .item_13  {
+  //  opacity: 1;
+  //}
+}

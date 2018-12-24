@@ -33,6 +33,7 @@ export class CustomRecreationSliderComponent {
     var afterItemPosition = '.postion-' + 'a' + el;
     var beforeItemPosition = '.postion-' + 'b' + el;
 
+    this.triggerSlider(el);
     this.showText(el);
     this.itemHideAndSeek(item, afterItem, beforeItem, farAfterItem, farBeforeItem, hideItems);
     this.adjacentItemsResizing(
@@ -90,5 +91,222 @@ export class CustomRecreationSliderComponent {
       $('' + farBeforeItem ).css({ opacity: '1', transition: '0.5s' });
     }, 500);
 
+  }
+
+  triggerSlider(el:string) {
+  if(el === '01') {
+    $(".large-img-item01").css({ opacity: '1', transform: 'translate(0, 0)', transition: '0.4s'});
+
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(100%, 0)'});
+  }
+  else if(el === '02') {
+    $(".large-img-item02").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(100%, 0)'});
+  }
+  else if(el === '03') {
+    $(".large-img-item03").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(100%, 0)'});
+
+  }
+  else if(el === '04') {
+    $(".large-img-item04").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(100%, 0)'});
+
+  }
+  else if(el === '05') {
+    $(".large-img-item05").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(100%, 0)'});
+
+  }
+  else if(el === '06') {
+    $(".large-img-item06").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(100%, 0)'});
+
+  }
+  else if(el === '07') {
+    $(".large-img-item07").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(100%, 0)'});
+
+  }
+  else if(el === '08') {
+    $(".large-img-item08").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(100%, 0)'});
+
+  }
+  else if(el === '09') {
+    $(".large-img-item09").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(100%, 0)'});
+  }
+  else if(el === '10') {
+    $(".large-img-item10").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(100%, 0)'});
+  }
+  else if(el === '11') {
+    $(".large-img-item11").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item12").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(100%, 0)'});
+  }
+  else if(el === '12') {
+    $(".large-img-item12").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item13").css({ opacity: '0', transform: 'translate(-100%, 0)'});
+    $(".large-img-item01").css({ opacity: '0', transform: 'translate(-110%, 0)'});
+    $(".large-img-item02").css({ opacity: '0', transform: 'translate(-120%, 0)'});
+    $(".large-img-item03").css({ opacity: '0', transform: 'translate(-130%, 0)'});
+    $(".large-img-item04").css({ opacity: '0', transform: 'translate(-140%, 0)'});
+    $(".large-img-item05").css({ opacity: '0', transform: 'translate(-150%, 0)'});
+    $(".large-img-item06").css({ opacity: '0', transform: 'translate(150%, 0)'});
+    $(".large-img-item07").css({ opacity: '0', transform: 'translate(140%, 0)'});
+    $(".large-img-item08").css({ opacity: '0', transform: 'translate(130%, 0)'});
+    $(".large-img-item09").css({ opacity: '0', transform: 'translate(120%, 0)'});
+    $(".large-img-item10").css({ opacity: '0', transform: 'translate(110%, 0)'});
+    $(".large-img-item11").css({ opacity: '0', transform: 'translate(100%, 0)'});
+  }
+  else if(el === '13') {
+    $(".large-img-item13").css({ opacity: '1', transform: 'translate(0, 0)' , transition: '0.5s'});
+
+    $(".large-img-item01").css({ transform: 'translate(-100%, 0)'});
+    $(".large-img-item02").css({ transform: 'translate(-110%, 0)'});
+    $(".large-img-item03").css({ transform: 'translate(-120%, 0)'});
+    $(".large-img-item04").css({ transform: 'translate(-130%, 0)'});
+    $(".large-img-item05").css({ transform: 'translate(-140%, 0)'});
+    $(".large-img-item06").css({ transform: 'translate(-150%, 0)'});
+    $(".large-img-item07").css({ transform: 'translate(150%, 0)'});
+    $(".large-img-item08").css({ transform: 'translate(140%, 0)'});
+    $(".large-img-item09").css({ transform: 'translate(130%, 0)'});
+    $(".large-img-item10").css({ transform: 'translate(120%, 0)'});
+    $(".large-img-item11").css({ transform: 'translate(110%, 0)'});
+    $(".large-img-item12").css({ transform: 'translate(100%, 0)'});
+  }
   }
 }

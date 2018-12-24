@@ -17,6 +17,8 @@ export class CustomRecreationSliderComponent {
   constructor() {
 
   }
+
+
   itemOnClick(el:string) {
     console.log('hello =>' + el);
     // $('.item_13').trigger('click');
@@ -69,23 +71,24 @@ export class CustomRecreationSliderComponent {
   itemHideAndSeek(item:string, afterItem:string, beforeItem:string, farAfterItem:string, farBeforeItem:string, hideItems:string) {
     $('' + hideItems).css({ opacity: '0', transition: '0.35s' });
     setTimeout(function(){
-      $('' + hideItems).css({ display: 'none'});
+      $('' + hideItems).hide();
     }, 350);
 
-    $('' + item).css({ display: 'inherit'});
+
+    $('' + item).show();
     setTimeout(function(){
       $('' + item).css({ opacity: '1', transition: '0.4s' });
     }, 400);
 
-    $('' + afterItem).css({ display: 'inherit'});
-    $('' + beforeItem).css({ display: 'inherit'});
+    $('' + afterItem).show();
+    $('' + beforeItem).show();
     setTimeout(function(){
       $('' + afterItem).css({ opacity: '1', transition: '0.40s' });
       $('' + beforeItem).css({ opacity: '1', transition: '0.40s' });
     }, 400);
 
-    $('' + farAfterItem).css({ display: 'inherit'});
-    $('' + farBeforeItem ).css({ display: 'inherit'});
+    $('' + farAfterItem).show();
+    $('' + farBeforeItem ).show();
     setTimeout(function(){
       $('' + farAfterItem).css({ opacity: '1', transition: '0.5s' });
       $('' + farBeforeItem ).css({ opacity: '1', transition: '0.5s' });
@@ -95,7 +98,7 @@ export class CustomRecreationSliderComponent {
 
   triggerSlider(el:string) {
   if(el === '01') {
-    $(".large-img-item01").css({ opacity: '1', transform: 'translate(0, 0)', transition: '0.4s'});
+    $(".large-img-item01").css({ opacity: '1', transform: 'translate(0, 0)', transition: '0.5s'});
 
     $(".large-img-item02").css({ opacity: '0', transform: 'translate(-100%, 0)'});
     $(".large-img-item03").css({ opacity: '0', transform: 'translate(-110%, 0)'});

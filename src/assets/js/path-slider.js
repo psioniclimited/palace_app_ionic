@@ -32,7 +32,7 @@ function PathSlider(path, items, options) {
 PathSlider.prototype = {
     defaults: {
         paddingSeparation: 0,
-        duration: 1000,
+        duration: 750,
         delay: 0,
         stagger: 0,
         easing: 'easeInOutCubic',

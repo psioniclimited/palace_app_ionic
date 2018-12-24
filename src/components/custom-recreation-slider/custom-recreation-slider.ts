@@ -33,11 +33,18 @@ export class CustomRecreationSliderComponent {
     var afterItemPosition = '.postion-' + 'a' + el;
     var beforeItemPosition = '.postion-' + 'b' + el;
 
+    this.showText(el);
     this.itemHideAndSeek(item, afterItem, beforeItem, farAfterItem, farBeforeItem, hideItems);
     this.adjacentItemsResizing(
       item, afterItem, beforeItem, farAfterItem, farBeforeItem, itemPosition, farAfterItemPosition,
       farBeforeItemPosition, afterItemPosition, beforeItemPosition );
 
+  }
+
+  showText(el:string) {
+    var textClass = '.custom-paragraph-' + el;
+    $('.paragraph').css({ opacity: '0', transition: '0.3s'});
+    $('' + textClass).css({ opacity: '1', transition: '0.7s'});
   }
 
   adjacentItemsResizing( item:string, afterItem:string,

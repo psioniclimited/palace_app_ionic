@@ -35,16 +35,33 @@ custom-recreation-slider {
   .item02, .item13 {
     margin-top: -10px;
   }
-  .item_02, .item_13 {
-    transform: scale(1.05);
-  }
   .item12 {
     margin-top: -25px;
   }
   .item03 {
     margin-top: -25px;
   }
+  .item_02, .item_13 {
+    transform: scale(1.05);
+  }
   .item_03, .item_12 {
     transform: scale(0.9);
+  }
+  .custom-slider-text {
+    position: relative;
+    top: 40%;
+    z-index: 2000;
+  }
+  .custom-paragraph-div {
+    position: absolute;
+    z-index: 2000;
+  }
+  .paragraph {
+    padding: 0 225px;
+    text-align: justify;
+    opacity: 0;
+  }
+  .custom-paragraph-01 {
+    opacity: 1;
   }
 }

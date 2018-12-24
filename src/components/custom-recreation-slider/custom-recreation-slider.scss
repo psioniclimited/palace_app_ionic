@@ -26,10 +26,11 @@ custom-recreation-slider {
   .path-slider__item.path-slider__current-item {
     margin-top: -10px;
   }
-  //.item__circle {
-  //  opacity: 0;
-  //}
-  //.item_01, .item_02, .item_03, .item_12, .item_13  {
-  //  opacity: 1;
-  //}
+  .item__circle {
+    opacity: 0;
+  }
+  .item_01, .item_02, .item_03, .item_12, .item_13  {
+    opacity: 1;
+  }
+
 }

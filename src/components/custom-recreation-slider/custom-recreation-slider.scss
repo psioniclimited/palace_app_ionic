@@ -15,7 +15,7 @@ custom-recreation-slider {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -5.5%);
+    transform: translate(-50%, -4%);
     width: 1405px;
     height: 1405px;
     /* border-top-left-radius: 50%; */
@@ -32,5 +32,19 @@ custom-recreation-slider {
   .item_01, .item_02, .item_03, .item_12, .item_13  {
     opacity: 1;
   }
-
+  .item02, .item13 {
+    margin-top: -10px;
+  }
+  .item_02, .item_13 {
+    transform: scale(1.05);
+  }
+  .item12 {
+    margin-top: -25px;
+  }
+  .item03 {
+    margin-top: -25px;
+  }
+  .item_03, .item_12 {
+    transform: scale(0.9);
+  }
 }

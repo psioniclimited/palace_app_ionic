@@ -8,7 +8,7 @@
     easing: 'easeInOutCubic', // easing function (used by anime.js)
     elasticity: 100, // elasticity factor (used by anime.js)
     rotate: true, // This indicates that items should be rotated properly to match the SVG path curve
-    activeSeparation: 65
+    activeSeparation: 68
   };
 
   // Initialize the slider using our SVG path, items, and options

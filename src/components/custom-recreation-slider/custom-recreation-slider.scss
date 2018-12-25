@@ -125,7 +125,7 @@ custom-recreation-slider {
     z-index: 2000;
   }
   .paragraph {
-    padding: 0 225px;
+    padding: 0 250px;
     text-align: justify;
     opacity: 0;
   }
@@ -137,4 +137,17 @@ custom-recreation-slider {
     opacity: 1 !important;
   }
 
+  .custom-svg-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .custom-svg-icon-path {
+    fill: #000;
+  }
+  .path-slider__current-item .st1 {
+    fill: #B29D5D;
+  }
+  .path-slider__current-item .custom-svg-icon-path {
+    fill: #fff;
+  }
 }

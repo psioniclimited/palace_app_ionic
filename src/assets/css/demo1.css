@@ -54,18 +54,19 @@ path {
 }
 
 .path-slider__item:hover .item__circle, .path-slider__item:focus .item__circle {
-  background-color: #45905e;
+  /*background-color: #45905e;*/
 }
 
 .item__circle {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #55B375;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+  /*background-color: #55B375;*/
+  /*box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);*/
   border-radius: 100%;
   text-align: center;
   transition: 0.5s;
+  box-shadow: 2px 15px 50px 0px rgba(0, 0, 0, 0.3);
 }
 
 .item__title {
@@ -92,10 +93,11 @@ path {
 }
 
 .path-slider__current-item .item__circle {
-  background-color: #4DA169;
+  /*background-color: #4DA169;*/
   -webkit-transform: scale(1.5);
   -ms-transform: scale(1.5);
   transform: scale(1.25);
+
 }
 
 .path-slider__current-item .item__title {

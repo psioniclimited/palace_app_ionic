@@ -192,10 +192,7 @@ export class CustomRecreationSliderComponent {
     $('' + textClass).css({ opacity: '1', transition: '1s'});
   }
 
-  adjacentItemsResizing( item:string, afterItem:string,
-                         beforeItem:string, farAfterItem:string, farBeforeItem:string, itemPosition:string,
-                         farAfterItemPosition:string, farBeforeItemPosition:string, afterItemPosition:string, beforeItemPosition:string )
-  {
+  adjacentItemsResizing( item:string, afterItem:string, beforeItem:string, farAfterItem:string, farBeforeItem:string, itemPosition:string, farAfterItemPosition:string, farBeforeItemPosition:string, afterItemPosition:string, beforeItemPosition:string ) {
 
     $('' + itemPosition).css({ margin: '-10px 0 0 0'});
     $('' + farAfterItemPosition).css({ margin: '-25px 0 0 0'});

@@ -17,7 +17,144 @@ export class CustomRecreationSliderComponent {
   constructor() {
 
   }
+  swipeEvent(e, el:string) {
 
+    if(el === '01') {
+      if(e.deltaX > 0) {
+        $('.item_02').trigger('click');
+        this.itemOnClick('02');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_13').trigger('click');
+        this.itemOnClick('13');
+      }
+    }
+    else if(el === '02') {
+      if(e.deltaX > 0) {
+        $('.item_03').trigger('click');
+        this.itemOnClick('03');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_01').trigger('click');
+        this.itemOnClick('01');
+      }
+    }
+    else if(el === '03') {
+      if(e.deltaX > 0) {
+        $('.item_04').trigger('click');
+        this.itemOnClick('04');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_02').trigger('click');
+        this.itemOnClick('02');
+      }
+    }
+    else if(el === '04') {
+      if(e.deltaX > 0) {
+        $('.item_05').trigger('click');
+
+        this.itemOnClick('05');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_03').trigger('click');
+
+        this.itemOnClick('03');
+      }
+    }
+    else if(el === '05') {
+      if(e.deltaX > 0) {
+        $('.item_06').trigger('click');
+
+        this.itemOnClick('06');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_04').trigger('click');
+
+        this.itemOnClick('04');
+      }
+    }
+    else if(el === '06') {
+      if(e.deltaX > 0) {
+        $('.item_07').trigger('click');
+        this.itemOnClick('07');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_05').trigger('click');
+        this.itemOnClick('05');
+      }
+    }
+    else if(el === '07') {
+      if(e.deltaX > 0) {
+        $('.item_08').trigger('click');
+        this.itemOnClick('08');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_06').trigger('click');
+        this.itemOnClick('06');
+      }
+    }
+    else if(el === '08') {
+      if(e.deltaX > 0) {
+        $('.item_09').trigger('click');
+        this.itemOnClick('09');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_07').trigger('click');
+        this.itemOnClick('07');
+      }
+    }
+    else if(el === '09') {
+      if(e.deltaX > 0) {
+        $('.item_10').trigger('click');
+        this.itemOnClick('10');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_08').trigger('click');
+        this.itemOnClick('08');
+      }
+    }
+    else if(el === '10') {
+      if(e.deltaX > 0) {
+        $('.item_11').trigger('click');
+        this.itemOnClick('11');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_09').trigger('click');
+        this.itemOnClick('09');
+      }
+    }
+    else if(el === '11') {
+      if(e.deltaX > 0) {
+        $('.item_12').trigger('click');
+        this.itemOnClick('12');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_10').trigger('click');
+        this.itemOnClick('10');
+      }
+    }
+    else if(el === '12') {
+      if(e.deltaX > 0) {
+        $('.item_13').trigger('click');
+        this.itemOnClick('13');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_11').trigger('click');
+        this.itemOnClick('11');
+      }
+    }
+    else if(el === '13') {
+      if(e.deltaX > 0) {
+        $('.item_01').trigger('click');
+        this.itemOnClick('01');
+      }
+      else if (e.deltaX < 0) {
+        $('.item_12').trigger('click');
+        this.itemOnClick('12');
+      }
+    }
+
+  }
 
   itemOnClick(el:string) {
     console.log('hello =>' + el);
@@ -52,7 +189,7 @@ export class CustomRecreationSliderComponent {
   showText(el:string) {
     var textClass = '.custom-paragraph-' + el;
     $('.paragraph').css({ opacity: '0', transition: '0.3s'});
-    $('' + textClass).css({ opacity: '1', transition: '0.7s'});
+    $('' + textClass).css({ opacity: '1', transition: '1s'});
   }
 
   adjacentItemsResizing( item:string, afterItem:string,
@@ -82,7 +219,7 @@ export class CustomRecreationSliderComponent {
 
     $('' + hideItems).css({ opacity: '0', transition: '0.35s' });
     setTimeout(function(){
-      $('' + hideItems).hide();
+      $('' + hideItems).hide(300);
     }, 350);
 
 

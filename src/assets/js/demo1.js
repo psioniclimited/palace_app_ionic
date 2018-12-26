@@ -3,7 +3,7 @@
   // Setting up the options
   var options = {
     startLength: 0, // start positioning the slider items at the beginning of the SVG path
-    duration: 750, // animation duration (used by anime.js)
+    duration: 700, // animation duration (used by anime.js)
     stagger: 0, // incrementally delays among items, producing an staggering effect
     easing: 'easeInOutCubic', // easing function (used by anime.js)
     elasticity: 100, // elasticity factor (used by anime.js)

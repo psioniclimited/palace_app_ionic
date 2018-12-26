@@ -86,7 +86,7 @@ custom-recreation-slider {
     z-index: 1000;
   }
   .path-slider__item.path-slider__current-item {
-    margin-top: -10px;
+    margin-top: -20px;
   }
   .item01, .item02, .item03, .item04, .item05, .item06, .item07, .item08, .item09, .item10, .item11, .item12, .item13  {
     display: none;
@@ -100,21 +100,27 @@ custom-recreation-slider {
   .item_01, .item_02, .item_03, .item_12, .item_13  {
     display: inherit;
   }
-  .item02, .item13 {
-    margin-top: -10px;
+  .item01 {
+    margin: -20px 0px 0px;
   }
   .item12 {
-    margin-top: -25px;
+    margin-top: -35px;
+    margin-left: -90px;
   }
   .item03 {
-    margin-top: -25px;
-  }
-  .item_02, .item_13 {
-    transform: scale(1.05);
+    margin-top: -35px;
+    margin-left: 90px;
   }
   .item_03, .item_12 {
     transform: scale(0.9);
   }
+  .item02, .item13 {
+    margin: -10px 0px 0px;
+  }
+  .item_02, .item_13 {
+    transform: scale(1.05);
+  }
+
   .custom-slider-text {
     position: relative;
     top: 45%;

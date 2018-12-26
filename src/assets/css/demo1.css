@@ -19,7 +19,7 @@ html, body {
   position: absolute;
   top: 0%;
   left: 50%;
-  transform: translate(-66%, 3%);
+  transform: translate(-66%, 0%);
 }
 
 path {
@@ -66,7 +66,7 @@ path {
   border-radius: 100%;
   text-align: center;
   transition: 0.5s;
-  box-shadow: 5px 7px 27px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 7px 5px 27px -1px rgba(0, 0, 0, 0.3);
 }
 
 .item__title {

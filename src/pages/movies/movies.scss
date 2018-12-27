@@ -89,4 +89,13 @@ page-movies {
   .arrow-right{
     margin-left: 2vw;
   }
+  .timing-buttons{
+    border-radius: 2.4em;
+    width: 100%;
+    height: 78%;
+  }
+  .timing-buttons.mid-button{
+    background-color: red;
+  }
+
 }

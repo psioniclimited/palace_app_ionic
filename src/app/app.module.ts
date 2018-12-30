@@ -10,6 +10,7 @@ import {FacalitiesPage} from "../pages/facalities/facalities";
 import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../pages/restaurant/restaurant";
 import {MoviesPage} from "../pages/movies/movies";
+import {MapImagePage} from "../pages/map-image/map-image";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MoviesPage} from "../pages/movies/movies";
     FacalitiesPage,
     KhalenRnDPage,
     RestaurantPage,
-    MoviesPage
+    MoviesPage,
+    MapImagePage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {MoviesPage} from "../pages/movies/movies";
     FacalitiesPage,
     KhalenRnDPage,
     RestaurantPage,
-    MoviesPage
+    MoviesPage,
+    MapImagePage
   ],
   providers: [
     StatusBar,

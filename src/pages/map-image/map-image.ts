@@ -14,12 +14,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'map-image.html',
 })
 export class MapImagePage {
+  width_increse: number = 0;
+  height_increase: number = 0;
+
+  width_decrease: number = 0;
+  height_decrease: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapImagePage');
+  }
+
+  testing(){
+    document.getElementById("map").style.width = "10%";
+    console.log(document.getElementById("map"));
   }
 
 }

@@ -14,11 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'map-image.html',
 })
 export class MapImagePage {
-  width_increse: number = 0;
-  height_increase: number = 0;
-
-  width_decrease: number = 0;
-  height_decrease: number = 0;
+  width_increse: number = 100;
+  height_increase: number = 100;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -30,6 +27,13 @@ export class MapImagePage {
   testing(){
     document.getElementById("map").style.width = "10%";
     console.log(document.getElementById("map"));
+  }
+
+  sizeIncrease(){
+    this.width_increse = this.width_increse + 10;
+    this.height_increase = this.height_increase = 10;
+    document.getElementById("map").style.width = this.width_increse+"%";
+    document.getElementById("map").style.height = this.height_increase+"%";
   }
 
 }

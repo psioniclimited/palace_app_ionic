@@ -10,6 +10,8 @@ import {FacalitiesPage} from "../pages/facalities/facalities";
 import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../pages/restaurant/restaurant";
 import {MoviesPage} from "../pages/movies/movies";
+import {ComponentsModule} from "../components/components.module";
+import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import {MoviesPage} from "../pages/movies/movies";
     FacalitiesPage,
     KhalenRnDPage,
     RestaurantPage,
-    MoviesPage
+    MoviesPage,
+    CustomSliderPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,6 +35,7 @@ import {MoviesPage} from "../pages/movies/movies";
     FacalitiesPage,
     KhalenRnDPage,
     RestaurantPage,
+    CustomSliderPage,
     MoviesPage
   ],
   providers: [

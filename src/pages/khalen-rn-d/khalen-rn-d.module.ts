@@ -4,7 +4,7 @@ import { KhalenRnDPage } from './khalen-rn-d';
 
 @NgModule({
   declarations: [
-    KhalenRnDPage,
+    KhalenRnDPage
   ],
   imports: [
     IonicPageModule.forChild(KhalenRnDPage),

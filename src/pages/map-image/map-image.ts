@@ -24,16 +24,19 @@ export class MapImagePage {
     console.log('ionViewDidLoad MapImagePage');
   }
 
-  testing(){
-    document.getElementById("map").style.width = "10%";
-    console.log(document.getElementById("map"));
-  }
-
   sizeIncrease(){
     this.width_increse = this.width_increse + 10;
     this.height_increase = this.height_increase = 10;
     document.getElementById("map").style.width = this.width_increse+"%";
     document.getElementById("map").style.height = this.height_increase+"%";
   }
+
+  sizeDecrease(){
+    this.height_increase = this.height_increase - 10;
+    this.width_increse = this.width_increse - 10;
+    document.getElementById("map").style.width = this.width_increse+"%";
+    document.getElementById("map").style.height = this.height_increase+"%";
+  }
+
 
 }

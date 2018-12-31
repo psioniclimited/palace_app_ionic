@@ -19,9 +19,10 @@
 // - index: Index of item
 // - node: The DOM node
 // - selected: True if item has been selected
-// - unselected: True if item has been unselected
-
 function PathSlider(path, items, options) {
+  console.log('Im first, log me in as path-slider-js');
+
+// - unselected: True if item has been unselected
   this.path = is.str(path) ? document.querySelector(path) : path;
   this.pathLength = this.path.getTotalLength();
   this.items = is.str(items) ? document.querySelectorAll(items) : items;

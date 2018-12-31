@@ -10,9 +10,9 @@ import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // settingsPage = HomePage;
+  settingsPage = HomePage;
   // settingsPage = KhalenRnDPage;
-  settingsPage = CustomSliderPage;
+  // settingsPage = CustomSliderPage;
 
   @ViewChild('nav') nav: NavController;
 

@@ -6,6 +6,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {FacalitiesPage} from "../facalities/facalities";
 import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../restaurant/restaurant";
+import {CustomSliderPage} from "../custom-slider/custom-slider";
 
 
 @Component({
@@ -38,7 +39,7 @@ export class HomePage {
     if (index === 1) {
       this.navCtrl.push(FacalitiesPage);
     } else if (index === 3) {
-      this.navCtrl.push(KhalenRnDPage);
+      this.navCtrl.push(CustomSliderPage);
     } else if(index === 2){
       this.navCtrl.push(RestaurantPage);
     }

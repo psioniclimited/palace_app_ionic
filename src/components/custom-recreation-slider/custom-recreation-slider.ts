@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 /**
  * Generated class for the CustomRecreationSliderComponent component.
@@ -10,7 +10,7 @@ import * as $ from 'jquery';
   selector: 'custom-recreation-slider',
   templateUrl: 'custom-recreation-slider.html'
 })
-export class CustomRecreationSliderComponent {
+export class CustomRecreationSliderComponent implements OnInit{
 
   text: string;
   prevEl: string  = '01';
@@ -18,6 +18,22 @@ export class CustomRecreationSliderComponent {
 
   }
 
+  //###################################################################################################################
+  ngOnInit() {
+    this.loadScript('../assets/js/path-slider.js');
+    this.loadScript('../assets/js/demo1.js');
+  }
+  public loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = url;
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
+  }
+
+  //####################################################################################################################
   swipeEvent(e, el:string) {
 
     if(this.prevEl === '01') {

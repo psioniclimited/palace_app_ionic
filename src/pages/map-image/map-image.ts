@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {_document} from "@angular/platform-browser/src/browser";
 
 /**
  * Generated class for the MapImagePage page.
@@ -36,6 +37,11 @@ export class MapImagePage {
     this.width_increse = this.width_increse - 10;
     document.getElementById("map").style.width = this.width_increse+"%";
     document.getElementById("map").style.height = this.height_increase+"%";
+  }
+
+  villas(){
+    console.log('working on it');
+
   }
 
 

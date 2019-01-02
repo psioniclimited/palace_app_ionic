@@ -41,7 +41,8 @@ export class MapImagePage {
 
   villas(){
     console.log('working on it');
-
+    //east_villa
+    document.getElementById("east_villa").removeAttribute('hidden');
   }
 
 

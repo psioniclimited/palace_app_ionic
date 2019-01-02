@@ -43,6 +43,7 @@ export class MapImagePage {
     console.log('working on it');
     //east_villa
     document.getElementById("east_villa").removeAttribute('hidden');
+    document.getElementById("west_villa").removeAttribute('hidden');
   }
 
 

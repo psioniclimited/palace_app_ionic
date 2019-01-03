@@ -15,8 +15,8 @@ import {_document} from "@angular/platform-browser/src/browser";
   templateUrl: 'map-image.html',
 })
 export class MapImagePage {
-  width_increse: number = 100;
-  height_increase: number = 100;
+  width_increse: number = 150;
+  height_increase: number = 150;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,17 +26,21 @@ export class MapImagePage {
   }
 
   sizeIncrease(){
-    this.width_increse = this.width_increse + 10;
-    this.height_increase = this.height_increase = 10;
-    document.getElementById("map").style.width = this.width_increse+"%";
-    document.getElementById("map").style.height = this.height_increase+"%";
+    if(this.width_increse < 300 && this.height_increase < 300) {
+      this.width_increse = this.width_increse + 10;
+      this.height_increase = this.height_increase + 10;
+      document.getElementById("map").style.width = this.width_increse+"%";
+      document.getElementById("map").style.height = this.height_increase+"%";
+    }
   }
 
   sizeDecrease(){
-    this.height_increase = this.height_increase - 10;
-    this.width_increse = this.width_increse - 10;
-    document.getElementById("map").style.width = this.width_increse+"%";
-    document.getElementById("map").style.height = this.height_increase+"%";
+    if(this.width_increse > 100 && this.height_increase > 100) {
+      this.height_increase = this.height_increase - 10;
+      this.width_increse = this.width_increse - 10;
+      document.getElementById("map").style.width = this.width_increse+"%";
+      document.getElementById("map").style.height = this.height_increase+"%";
+    }
   }
 
   hideAllElements(){

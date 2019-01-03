@@ -39,12 +39,50 @@ export class MapImagePage {
     document.getElementById("map").style.height = this.height_increase+"%";
   }
 
-  villas(){
-    console.log('working on it');
-    //east_villa
-    document.getElementById("east_villa").removeAttribute('hidden');
-    document.getElementById("west_villa").removeAttribute('hidden');
+  hideAllElements(){
+    document.getElementById("east_villa").setAttribute('hidden','true');
+    document.getElementById("west_villa").setAttribute('hidden','true');
+    document.getElementById("honey_moon_villa").setAttribute('hidden','true');
+    document.getElementById("revolution_cafe").setAttribute('hidden','true');
+    document.getElementById("bar_code").setAttribute('hidden','true');
+    document.getElementById("presidential_villa_1").setAttribute('hidden','true');
+    document.getElementById("presidential_villa_2").setAttribute('hidden','true');
+    document.getElementById("maze").setAttribute('hidden','true');
+    document.getElementById("basketball").setAttribute('hidden','true');
+    document.getElementById("water_fall").setAttribute('hidden','true');
+    document.getElementById("parking").setAttribute('hidden','true');
+    document.getElementById("nostalgia_cafe").setAttribute('hidden','true');
+    document.getElementById("helipad").setAttribute('hidden','true');
+    document.getElementById("amphitheater").setAttribute('hidden','true');
+    document.getElementById("mosque").setAttribute('hidden','true');
+    document.getElementById("tower_building").setAttribute('hidden','true');
   }
 
+  villas(){
+    this.hideAllElements();
+    document.getElementById("east_villa").removeAttribute('hidden');
+    document.getElementById("west_villa").removeAttribute('hidden');
+    document.getElementById("presidential_villa_1").removeAttribute('hidden');
+    document.getElementById("presidential_villa_2").removeAttribute('hidden');
+    document.getElementById("honey_moon_villa").removeAttribute('hidden');
 
+  }
+
+  restaurants() {
+    this.hideAllElements();
+    document.getElementById("revolution_cafe").removeAttribute('hidden');
+    document.getElementById("nostalgia_cafe").removeAttribute('hidden');
+    document.getElementById("bar_code").removeAttribute('hidden');
+  }
+
+  mosque(){
+    this.hideAllElements();
+    document.getElementById("mosque").removeAttribute('hidden');
+  }
+
+  entertainment(){
+    this.hideAllElements();
+    document.getElementById("basketball").removeAttribute('hidden');
+    document.getElementById("water_fall").removeAttribute('hidden');
+  }
 }

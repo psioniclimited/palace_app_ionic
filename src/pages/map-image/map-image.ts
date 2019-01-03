@@ -56,6 +56,7 @@ export class MapImagePage {
     document.getElementById("amphitheater").setAttribute('hidden','true');
     document.getElementById("mosque").setAttribute('hidden','true');
     document.getElementById("tower_building").setAttribute('hidden','true');
+    document.getElementById("tennis").setAttribute('hidden','true');
   }
 
   villas(){
@@ -84,5 +85,6 @@ export class MapImagePage {
     this.hideAllElements();
     document.getElementById("basketball").removeAttribute('hidden');
     document.getElementById("water_fall").removeAttribute('hidden');
+    document.getElementById("tennis").removeAttribute('hidden');
   }
 }

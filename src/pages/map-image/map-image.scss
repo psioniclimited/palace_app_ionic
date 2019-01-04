@@ -25,5 +25,20 @@ page-map-image {
     height: 150%;
   }
 
+  .increase-btn{
+    position: fixed;
+    top: 75vh;
+    right: 0.5vw;
+    width: 15%;
+    z-index: 1;
+  }
+
+  .decrease-btn{
+    position: fixed;
+    top: 83vh;
+    right: 0.5vw;
+    width: 15%;
+    z-index: 1;
+  }
 
 }

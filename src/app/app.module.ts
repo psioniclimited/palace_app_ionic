@@ -11,6 +11,8 @@ import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../pages/restaurant/restaurant";
 import {MoviesPage} from "../pages/movies/movies";
 import {MapImagePage} from "../pages/map-image/map-image";
+import * as ionicGalleryModal from 'ionic-gallery-modal';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {MapImagePage} from "../pages/map-image/map-image";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ionicGalleryModal.GalleryModalModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,7 +42,11 @@ import {MapImagePage} from "../pages/map-image/map-image";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: ionicGalleryModal.GalleryModalHammerConfig,
+    },
   ]
 })
 export class AppModule {}

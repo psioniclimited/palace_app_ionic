@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {_document} from "@angular/platform-browser/src/browser";
-
-/**
- * Generated class for the MapImagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ModalController } from 'ionic-angular/components/modal/modal-controller';
+import { GalleryModal } from 'ionic-gallery-modal';
 
 @IonicPage()
 @Component({
@@ -18,7 +13,14 @@ export class MapImagePage {
   width_increse: number = 150;
   height_increase: number = 150;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  westVillaImages: any[]= [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {
+    this.westVillaImages.push(
+      {url: 'assets/imgs/movies/iceAge.png'},
+      {url: 'assets/imgs/movies/kungfu.png'},
+      {url: 'assets/imgs/movies/parrot.png'}
+    )
   }
 
   ionViewDidLoad() {
@@ -90,5 +92,15 @@ export class MapImagePage {
     document.getElementById("basketball").removeAttribute('hidden');
     document.getElementById("water_fall").removeAttribute('hidden');
     document.getElementById("tennis").removeAttribute('hidden');
+  }
+
+  openWestVilla(){
+    console.log('testing');
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.westVillaImages,
+      initialSlide: 0,
+      closeIcon: 'back'
+    });
+    modal.present();
   }
 }

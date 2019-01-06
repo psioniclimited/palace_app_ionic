@@ -15,6 +15,7 @@ import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
 import {MapImagePage} from "../pages/map-image/map-image";
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     RestaurantPage,
     MoviesPage,
     MapImagePage,
-    CustomSliderPage
+    CustomSliderPage,
+    WheelOfFortunePage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
     RestaurantPage,
     CustomSliderPage,
     MoviesPage,
-    MapImagePage
+    MapImagePage,
+    WheelOfFortunePage
   ],
   providers: [
     StatusBar,

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 import {MoviesPage} from "../movies/movies";
+import {WheelOfFortunePage} from "../wheel-of-fortune/wheel-of-fortune";
 
 /**
  * Generated class for the FacalitiesPage page.
@@ -40,5 +41,9 @@ export class FacalitiesPage {
 
   theaterPage() {
     this.navCtrl.push(MoviesPage);
+  }
+
+  wheelGame(){
+    this.navCtrl.push(WheelOfFortunePage);
   }
 }

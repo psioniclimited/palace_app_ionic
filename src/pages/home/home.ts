@@ -7,6 +7,7 @@ import {FacalitiesPage} from "../facalities/facalities";
 import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../restaurant/restaurant";
 import {CustomSliderPage} from "../custom-slider/custom-slider";
+import {MapImagePage} from "../map-image/map-image";
 
 
 @Component({
@@ -46,6 +47,10 @@ export class HomePage {
     console.log(index);
 
     // console.log(event);
+  }
+
+  mapPage(){
+    this.navCtrl.push(MapImagePage);
   }
 
 }

@@ -1,0 +1,44 @@
+page-map-image {
+  .toolbar{
+    height: 8vh;
+  }
+
+  .nav-buttons{
+    margin-top: -1vh;
+    margin-left: 0vw;
+  }
+
+  .button-clr{
+    color: #f3f3f3;
+    background-color: #303c47;
+    box-shadow: 0px 1vh 1.25vh #757575;
+    height: 8vh;
+  }
+
+  .button-text{
+    font-size: 1.15rem;
+  }
+
+  #map{
+    margin-top: 2vh;
+    width: 150%;
+    height: 150%;
+  }
+
+  .increase-btn{
+    position: fixed;
+    top: 75vh;
+    right: 0.5vw;
+    width: 15%;
+    z-index: 1;
+  }
+
+  .decrease-btn{
+    position: fixed;
+    top: 83vh;
+    right: 0.5vw;
+    width: 15%;
+    z-index: 1;
+  }
+
+}

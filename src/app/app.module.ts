@@ -12,6 +12,9 @@ import {RestaurantPage} from "../pages/restaurant/restaurant";
 import {MoviesPage} from "../pages/movies/movies";
 import {ComponentsModule} from "../components/components.module";
 import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
+import {MapImagePage} from "../pages/map-image/map-image";
+import * as ionicGalleryModal from 'ionic-gallery-modal';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,14 @@ import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
     KhalenRnDPage,
     RestaurantPage,
     MoviesPage,
+    MapImagePage,
     CustomSliderPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ComponentsModule
+    ComponentsModule,
+    ionicGalleryModal.GalleryModalModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,12 +41,17 @@ import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
     KhalenRnDPage,
     RestaurantPage,
     CustomSliderPage,
-    MoviesPage
+    MoviesPage,
+    MapImagePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: ionicGalleryModal.GalleryModalHammerConfig,
+    },
   ]
 })
 export class AppModule {}

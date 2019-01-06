@@ -13,21 +13,42 @@ export class MapImagePage {
   width_increse: number = 150;
   height_increase: number = 150;
 
-  westVillaImages: any[] = [];
-  mosqueImages: any[] = [];
+  westVillaImages: any [] = [];
+  mosqueImages: any [] = [];
+  tennisImages: any [] = [];
+  basketballImages: any [] = [];
+  waterfallImages: any [] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {
     this.westVillaImages.push(
       {url: 'assets/imgs/movies/iceAge.png'},
       {url: 'assets/imgs/movies/kungfu.png'},
       {url: 'assets/imgs/movies/parrot.png'}
-    )
+    );
 
     this.mosqueImages.push(
       {url: 'assets/imgs/map/modal_mosque_1.png'},
       {url: 'assets/imgs/map/modal_mosque_2.png'},
       {url: 'assets/imgs/map/modal_mosque_3.png'}
-    )
+    );
+
+    this.tennisImages.push(
+      {url: 'assets/imgs/map/modal_tennis_1.png'},
+      {url: 'assets/imgs/map/modal_tennis_2.png'},
+      {url: 'assets/imgs/map/modal_tennis_3.png'}
+    );
+
+    this.basketballImages.push(
+      {url: 'assets/imgs/map/modal_basketball_1.png'},
+      {url: 'assets/imgs/map/modal_basketball_2.png'},
+      {url: 'assets/imgs/map/modal_basketball_3.png'}
+    );
+
+    this.waterfallImages.push(
+      {url: 'assets/imgs/map/modal_waterfall_1.png'},
+      {url: 'assets/imgs/map/modal_waterfall_2.png'},
+      {url: 'assets/imgs/map/modal_waterfall_3.png'}
+    );
   }
 
   ionViewDidLoad() {
@@ -112,7 +133,6 @@ export class MapImagePage {
   }
 
   openMosque(){
-    console.log('testing');
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.mosqueImages,
       initialSlide: 0,
@@ -120,4 +140,32 @@ export class MapImagePage {
     });
     modal.present();
   }
+
+  openTennis(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.tennisImages,
+      initialSlide: 0,
+      closeIcon: 'back'
+    });
+    modal.present();
+  }
+
+  openBasketBall(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.basketballImages,
+      initialSlide: 0,
+      closeIcon: 'back'
+    });
+    modal.present();
+  }
+
+  openWaterFall() {
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.waterfallImages,
+      initialSlide: 0,
+      closeIcon: 'back'
+    });
+    modal.present();
+  }
+
 }

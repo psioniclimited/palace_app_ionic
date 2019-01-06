@@ -13,13 +13,20 @@ export class MapImagePage {
   width_increse: number = 150;
   height_increase: number = 150;
 
-  westVillaImages: any[]= [];
+  westVillaImages: any[] = [];
+  mosqueImages: any[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {
     this.westVillaImages.push(
       {url: 'assets/imgs/movies/iceAge.png'},
       {url: 'assets/imgs/movies/kungfu.png'},
       {url: 'assets/imgs/movies/parrot.png'}
+    )
+
+    this.mosqueImages.push(
+      {url: 'assets/imgs/map/modal_mosque_1.png'},
+      {url: 'assets/imgs/map/modal_mosque_2.png'},
+      {url: 'assets/imgs/map/modal_mosque_3.png'}
     )
   }
 
@@ -98,6 +105,16 @@ export class MapImagePage {
     console.log('testing');
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.westVillaImages,
+      initialSlide: 0,
+      closeIcon: 'back'
+    });
+    modal.present();
+  }
+
+  openMosque(){
+    console.log('testing');
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.mosqueImages,
       initialSlide: 0,
       closeIcon: 'back'
     });

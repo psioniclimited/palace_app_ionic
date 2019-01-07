@@ -15,7 +15,7 @@ export class WheelOfFortunePage {
   scale = 1;
   slowingDown = false;
   pressed = {};
-
+  transform :any [] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,23 +26,50 @@ export class WheelOfFortunePage {
       y: -72,
       ease:  Power1.easeOut
     });
+    this.transform.push('matrix(0, -1, 1, 0, 0, 0)');
+    this.transform.push('matrix(0.5, -0.86602, 0.86602, 0.5, 0, 0)');
   }
 
 
 
-  spin(){
+  async spin(){
     console.log('testing');
-    this.animateWheel(40);
+    let sth = await this.animateWheel(40);
+    console.log(sth);
+    setTimeout(this.getTransform,10000);
+
   }
 
-  animateWheel(duration){
-    let randomNum = Math.floor((Math.random() * 10));
-    this.rotation += (30 * duration) + (30 * randomNum);
-    TweenMax.to('.wheel', 20, {
-      ease: Power4.easeOut,
-      rotation: this.rotation,
-      onComplete: this.resetWheel()
+  getTransform(){
+    var styleElements = document.getElementById('wheel');
+    var computedStyle = window.getComputedStyle(styleElements, null);
+    // console.log(styleElements.hasOwnProperty('transform'));
+    console.log(computedStyle['transform']);
+  }
+
+  async animateWheel(duration){
+
+    return new Promise((resolve) => {
+      console.log('asdsd');
+      var sth = 'ds';
+      let randomNum = Math.floor((Math.random() * 10));
+      this.rotation += (30 * duration) + (30 * randomNum);
+      TweenMax.to('.wheel', 10, {
+        ease: Power4.easeOut,
+        rotation: this.rotation,
+        onComplete: this.resetWheel()
+      });
+      resolve (sth);
     });
+
+    // let randomNum = Math.floor((Math.random() * 10));
+    // this.rotation += (30 * duration) + (30 * randomNum);
+    // TweenMax.to('.wheel', 10, {
+    //   ease: Power4.easeOut,
+    //   rotation: this.rotation,
+    //   onComplete: this.resetWheel()
+    // });
+
   }
 
   resetWheel(){

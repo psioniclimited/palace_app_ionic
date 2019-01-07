@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the WheelOfFortunePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-wheel-of-fortune',
   templateUrl: 'wheel-of-fortune.html',
 })
 export class WheelOfFortunePage {
+  wheel = document.getElementById('wheel');
+  resetBtn = document.getElementsByClassName('reset-btn')[0];
+  rotation = 0;
+  scale = 1;
+  slowingDown = false;
+  pressed = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

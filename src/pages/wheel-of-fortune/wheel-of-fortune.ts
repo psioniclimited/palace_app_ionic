@@ -22,4 +22,8 @@ export class WheelOfFortunePage {
     console.log('ionViewDidLoad WheelOfFortunePage');
   }
 
+  spin(){
+    console.log('testing');
+  }
+
 }

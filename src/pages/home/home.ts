@@ -34,7 +34,16 @@ export class HomePage {
 
   slideTapped(event) {
     // let index = this.slides.ge
-    const index = event.clickedIndex;
+    var index = event.clickedIndex;
+
+    if(index === 0){
+      index = 3;
+    }
+
+    if(index > 3){
+      index = 1;
+    }
+
     if (index === 1) {
       this.navCtrl.push(FacalitiesPage);
     } else if (index === 3) {

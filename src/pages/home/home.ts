@@ -4,7 +4,6 @@ import {ViewChild} from '@angular/core';
 import {Slides} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {FacalitiesPage} from "../facalities/facalities";
-import {KhalenRnDPage} from "../khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../restaurant/restaurant";
 import {CustomSliderPage} from "../custom-slider/custom-slider";
 import {MapImagePage} from "../map-image/map-image";
@@ -17,7 +16,6 @@ import {MapImagePage} from "../map-image/map-image";
 export class HomePage {
 
   @ViewChild(Slides) slides: Slides;
-  sliderOptions = {pager: true, autoHeight: true};
 
   // myColour: string  = 'green';
 

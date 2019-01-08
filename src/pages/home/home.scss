@@ -2,19 +2,22 @@ page-home {
 
   .toolbar{
     box-shadow: 0px 1vh 1.50vh #757575;
-    height: 8vh;
+    height: 4vh;
   }
 
   .cards{
     display: inline;
+  }
 
+  .card-image{
+    margin-top: -2vh;
   }
 
   .facilities{
     position: absolute;
-    width: 62%;
-    top: 46%;
-    left: 70%;
+    width: 60vw;
+    top: 40vh;
+    left: 70vw;
     transform: translate(-58%, -50%);
     font-weight: bold;
     font-size: 1.25em;

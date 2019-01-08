@@ -36,7 +36,7 @@ export class WheelOfFortunePage {
     console.log('testing');
     let sth = await this.animateWheel(40);
     console.log(sth);
-    setTimeout(this.getTransform,10000);
+    setTimeout(this.getTransform,15000);
 
   }
 
@@ -44,7 +44,29 @@ export class WheelOfFortunePage {
     var styleElements = document.getElementById('wheel');
     var computedStyle = window.getComputedStyle(styleElements, null);
     // console.log(styleElements.hasOwnProperty('transform'));
-    console.log(computedStyle['transform']);
+    var matrix  = computedStyle['transform'];
+    var test = matrix.split("(")[1];
+    test = test.split(")")[0];
+    var test2 = test.toString().split(",");
+
+    var a = parseFloat(test2[0]);
+    var b = parseFloat(test2[1]);
+    var c = parseFloat(test2[2]);
+    var d = parseFloat(test2[3]);
+    var scale = Math.sqrt(a*a + c*c);
+    console.log(a);
+    var sin = c/scale;
+    var angle = Math.round(Math.asin(sin) * (180/Math.PI));
+    console.log('original angle ' + angle);
+    if(angle < 0){
+      angle = 180 + angle;
+    }
+
+    // test = test.split(",");
+    // var degree = parseFloat(test[2]);
+    // var actual_degree = Math.round(Math.asin(degree) * (180/Math.PI));
+    // console.log(actual_degree);
+    console.log(angle);
   }
 
   async animateWheel(duration){

@@ -127,7 +127,7 @@ export class MapImagePage {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.westVillaImages,
       initialSlide: 0,
-      closeIcon: 'back'
+      closeIcon: 'close'
     });
     modal.present();
   }
@@ -136,7 +136,7 @@ export class MapImagePage {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.mosqueImages,
       initialSlide: 0,
-      closeIcon: 'back'
+      closeIcon: 'close'
     });
     modal.present();
   }
@@ -145,7 +145,7 @@ export class MapImagePage {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.tennisImages,
       initialSlide: 0,
-      closeIcon: 'back'
+      closeIcon: 'close'
     });
     modal.present();
   }
@@ -154,7 +154,7 @@ export class MapImagePage {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.basketballImages,
       initialSlide: 0,
-      closeIcon: 'back'
+      closeIcon: 'close'
     });
     modal.present();
   }
@@ -163,7 +163,7 @@ export class MapImagePage {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.waterfallImages,
       initialSlide: 0,
-      closeIcon: 'back'
+      closeIcon: 'close'
     });
     modal.present();
   }

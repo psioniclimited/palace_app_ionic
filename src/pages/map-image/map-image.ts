@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {_document} from "@angular/platform-browser/src/browser";
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { GalleryModal } from 'ionic-gallery-modal';
 

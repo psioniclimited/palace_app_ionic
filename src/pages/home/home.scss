@@ -49,17 +49,17 @@ page-home {
     font-weight: normal;
     //text-align: justify;
   }
-
-  .swiper-slide-next{
-    //width: 120%;
-    //height: 120%;
+  .bigger-slide-text{
+    position: absolute;
+    width: 62%;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 0.875em;
+    font-weight: normal;
   }
-  //.swiper-slide {
-  //  width: 90% !important;
-  //  &:last-child {
-  //    width: 100% !important;
-  //  }
-  //}
+
   .pool.swiper-slide.swiper-slide-active{
     //width: 245px !important;
     margin-right: 1px;

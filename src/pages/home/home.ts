@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Component, ElementRef} from '@angular/core';
+import {NavController, Platform} from 'ionic-angular';
 import {ViewChild} from '@angular/core';
 import {Slides} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
@@ -16,12 +16,23 @@ import {MapImagePage} from "../map-image/map-image";
 export class HomePage {
 
   @ViewChild(Slides) slides: Slides;
+  @ViewChild('title') title: ElementRef;
 
+  slideText: string = "slide-text";
   // myColour: string  = 'green';
 
-  constructor(public navCtrl: NavController, private statusBar: StatusBar) {
+  constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform) {
     this.statusBar.overlaysWebView(true);
     this.statusBar.styleLightContent();
+  }
+
+  ionViewDidLoad() {
+    if(this.platform.height() > 800) {
+      // document.getElementsByClassName('facilities').
+      document.getElementById('facilities').style.top = '40vh';
+      document.getElementById('ion-slides').style.height= '60vh';
+      this.slideText = "bigger-slide-text";
+    }
 
   }
 

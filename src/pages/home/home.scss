@@ -13,18 +13,25 @@ page-home {
     margin-top: -2vh;
   }
 
+  .header-holder{
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
   .facilities{
-    position: absolute;
-    width: 60vw;
-    top: 40vh;
-    left: 70vw;
-    transform: translate(-58%, -50%);
+    text-align: center;
     font-weight: bold;
     font-size: 1.25em;
   }
+
+  .slide-zoom{
+    margin-bottom: 3vh;
+  }
+
   .slide-height{
     //background-color: red;
-    height: 45vh;
+    height: auto;
+    //height: 45vh;
 
   }
   .pool{
@@ -40,13 +47,12 @@ page-home {
 
   .slide-text{
     position: absolute;
-    width: 62%;
-    top: 63%;
+    top: 65%;
     left: 50%;
-    transform: translate(-50%, -50%);
     color: black;
     font-size: 0.875em;
     font-weight: normal;
+    transform: translate(-50%, -50%);
     //text-align: justify;
   }
   .bigger-slide-text{

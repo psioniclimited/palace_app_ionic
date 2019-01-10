@@ -12,25 +12,34 @@
 </ion-header>
 <ion-content style="background-color: #f3f3f3">
   <ion-card no-margin no-padding class="cards" (click)="mapPage()">
-    <img class="card-image"  src="assets/imgs/resort_map.png"/>
-  </ion-card>
-  <p class="facilities" id="facilities">FACILITIES</p>
-  <ion-slides no-margin no-padding id="ion-slides" (ionSlideDidChange)="slideChanged()" (ionSlideTap)="slideTapped($event)"
-              class="slide-height"
-               slidesPerView="1.5" spaceBetween="0.5" centeredSlides=true loop="true" pager>
-    <ion-slide class="pool">
+    <div>
+      <img class="card-image"  src="assets/imgs/resort_map.png"/>
+    </div>
+
+    <div class="header-holder">
+      <h1 class="facilities" id="facilities">FACILITIES</h1>
+    </div>
+
+
+    <ion-slides no-margin no-padding id="ion-slides" (ionSlideDidChange)="slideChanged()" (ionSlideTap)="slideTapped($event)"
+                class="slide-height"
+                slidesPerView="1.5" spaceBetween="0.5" centeredSlides=true loop="true" pager>
+      <ion-slide class="pool">
         <img  src="assets/imgs/pool.png"/>
-      <p  [class]="slideText">pppp pppp pppp pppp</p>
-    </ion-slide>
-    <ion-slide class="pool">
+        <p  class="slide-text">pppp pppp pppp pppp</p>
+      </ion-slide>
+      <ion-slide class="pool">
         <img  src="assets/imgs/restaurant.png"/>
-      <p [class]="slideText">cccc cccc cccc cccc</p>
-    </ion-slide>
-    <ion-slide class="pool" >
-      <img  src="assets/imgs/recreation.png"/>
-      <p [class]="slideText">dddd dddd dddd dddd</p>
-    </ion-slide>
-  </ion-slides>
+        <p class="slide-text">cccc cccc cccc cccc</p>
+      </ion-slide>
+      <ion-slide class="pool" >
+        <img  src="assets/imgs/recreation.png"/>
+        <p class="slide-text">dddd dddd dddd dddd</p>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+
   <!--<ion-slides class="super-class">-->
 
     <!--<ion-slide class="single-slide slide-color1">-->

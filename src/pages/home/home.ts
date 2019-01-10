@@ -29,8 +29,8 @@ export class HomePage {
   ionViewDidLoad() {
     if(this.platform.height() > 800) {
       // document.getElementsByClassName('facilities').
-      document.getElementById('facilities').style.top = '40vh';
-      document.getElementById('ion-slides').style.height= '60vh';
+      // document.getElementById('facilities').style.top = '40vh';
+      // document.getElementById('ion-slides').style.height= '60vh';
       this.slideText = "bigger-slide-text";
     }
 

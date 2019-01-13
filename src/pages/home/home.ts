@@ -7,7 +7,6 @@ import {FacalitiesPage} from "../facalities/facalities";
 import {RestaurantPage} from "../restaurant/restaurant";
 import {CustomSliderPage} from "../custom-slider/custom-slider";
 import {MapImagePage} from "../map-image/map-image";
-import * as $ from 'jquery';
 
 @Component({
   selector: 'page-home',
@@ -41,44 +40,15 @@ export class HomePage implements OnInit {
   }
   ionViewDidLoad() {
     if(this.platform.height() > 800) {
-      // document.getElementsByClassName('facilities').
-      // document.getElementById('facilities').style.top = '40vh';
-      // document.getElementById('ion-slides').style.height= '60vh';
       this.slideText = "bigger-slide-text";
     }
 
-  }
+    this.platform.ready().then(() => {
+      this.statusBar.overlaysWebView(true);
+      this.statusBar.styleLightContent();
+    });
 
 
-  slideChanged() {
-    let currentIndex = this.slides.getActiveIndex();
-    // this.slides.slideTo(currentIndex, 300, true)
-    // this.myColour = 'red';
-    console.log('Current index is', currentIndex);
-  }
-
-  slideTapped(event) {
-    // let index = this.slides.ge
-    var index = event.clickedIndex;
-
-    if(index === 0){
-      index = 3;
-    }
-
-    if(index > 3){
-      index = 1;
-    }
-
-    if (index === 1) {
-      this.navCtrl.push(FacalitiesPage);
-    } else if (index === 3) {
-      this.navCtrl.push(CustomSliderPage);
-    } else if(index === 2){
-      this.navCtrl.push(RestaurantPage);
-    }
-    console.log(index);
-
-    // console.log(event);
   }
 
   mapPage(){

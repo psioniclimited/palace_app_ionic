@@ -3,7 +3,7 @@ $(document).on('ready', function() {
     dots: true,
     infinite: true,
     centerMode: true,
-    centerPadding: '70px',
+    centerPadding: '60px',
     slidesToShow: 1,
     slidesToScroll: 1
   });

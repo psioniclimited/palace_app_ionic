@@ -25,65 +25,6 @@ page-home {
     font-size: 1.25em;
   }
 
-  .slide-zoom{
-    margin-bottom: 3vh;
-  }
-
-  .slide-height{
-    //background-color: red;
-    height: auto;
-    //height: 45vh;
-
-  }
-  .pool{
-    width: 40%;
-
-  }
-  .swiper-slide img{
-    width: 100%;
-    //max-width: 150%;
-    //height: auto;
-    //max-height: 100%;
-  }
-
-  .slide-text{
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    color: black;
-    font-size: 0.875em;
-    font-weight: normal;
-    transform: translate(-50%, -50%);
-    //text-align: justify;
-  }
-  .bigger-slide-text{
-    position: absolute;
-    width: 62%;
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 0.875em;
-    font-weight: normal;
-  }
-
-  .pool.swiper-slide.swiper-slide-active{
-    //width: 245px !important;
-    margin-right: 1px;
-  }
-
-  .pool.swiper-slide.swiper-slide-next{
-    width: 60vw !important;
-    filter: blur(2px) !important;
-    margin-left: 6vw;
-  }
-  //
-  .pool.swiper-slide.swiper-slide-prev{
-    width: 61vw !important;
-    margin-right: 4vw !important;
-    filter: blur(2px) !important;
-
-  }
-  //pool swiper-slide swiper-slide-prev
+  
 
 }

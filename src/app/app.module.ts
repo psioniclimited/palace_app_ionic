@@ -31,7 +31,7 @@ import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{statusbarPadding: true}),
     ComponentsModule,
     ionicGalleryModal.GalleryModalModule
   ],

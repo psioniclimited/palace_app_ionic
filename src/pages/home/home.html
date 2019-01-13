@@ -21,22 +21,35 @@
     </div>
 
 
-    <ion-slides no-margin no-padding id="ion-slides" (ionSlideDidChange)="slideChanged()" (ionSlideTap)="slideTapped($event)"
-                class="slide-height"
-                slidesPerView="1.5" spaceBetween="0.5" centeredSlides=true loop="true" pager>
-      <ion-slide class="pool">
-        <img  src="assets/imgs/pool.png"/>
-        <p  class="slide-text">pppp pppp pppp pppp</p>
-      </ion-slide>
-      <ion-slide class="pool">
-        <img  src="assets/imgs/restaurant.png"/>
-        <p class="slide-text">cccc cccc cccc cccc</p>
-      </ion-slide>
-      <ion-slide class="pool" >
-        <img  src="assets/imgs/recreation.png"/>
-        <p class="slide-text">dddd dddd dddd dddd</p>
-      </ion-slide>
-    </ion-slides>
-  </ion-card>
+    <!--<ion-slides no-margin no-padding id="ion-slides" (ionSlideDidChange)="slideChanged()" (ionSlideTap)="slideTapped($event)"-->
+                <!--class="slide-height"-->
+                <!--slidesPerView="1.5" spaceBetween="0.5" centeredSlides=true loop="true" pager>-->
+      <!--<ion-slide class="pool">-->
+        <!--<img  src="assets/imgs/pool.png"/>-->
+        <!--<p  class="slide-text">pppp pppp pppp pppp</p>-->
+      <!--</ion-slide>-->
+      <!--<ion-slide class="pool">-->
+        <!--<img  src="assets/imgs/restaurant.png"/>-->
+        <!--<p class="slide-text">cccc cccc cccc cccc</p>-->
+      <!--</ion-slide>-->
+      <!--<ion-slide class="pool" >-->
+        <!--<img  src="assets/imgs/recreation.png"/>-->
+        <!--<p class="slide-text">dddd dddd dddd dddd</p>-->
+      <!--</ion-slide>-->
 
+    <!--</ion-slides>-->
+
+  </ion-card>
+  <div class="center slider">
+    <div>
+      <img src="assets/imgs/pool.png" (click)="pool()">
+    </div>
+    <div>
+      <img src="assets/imgs/restaurant.png" (click)="restaurant()">
+    </div>
+    <div>
+      <img src="assets/imgs/recreation.png" (click)="recreation()">
+    </div>
+  </div>
 </ion-content>
+

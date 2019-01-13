@@ -9,79 +9,24 @@
 
 <ion-content no-padding no-margin style="background-color: #f3f3f3">
 
-  <div class="logo">
-    <span class="logo__text">JACK</span>
-    <span class="logo__text second">POT</span>
-    <span class="logo__shadow">JACK</span>
-    <span class="logo__shadow second">POT</span>
+  <div class="container">
+    <button id="spin">Spin</button>
+    <button id="reset">Reset</button>
+    <div class="backdrop" id="backdrop">
+      <!-- If you add more segments here then you need to change the CSS angles -->
+      <div class="segment segment-1"></div>
+      <div class="segment segment-2"></div>
+      <div class="segment segment-3"></div>
+      <div class="segment segment-4"></div>
+      <div class="segment segment-5"></div>
+      <div class="segment segment-6"></div>
+    </div>
+    <div class="arrow"></div>
+  </div>
+  <div id="result-wrapper" class="result-wrapper">
+    <p id="result"></p>
   </div>
 
-  <div class="arrow"></div>
+  <button ion-button color="secondary" round (click)="spin()">Secondary Round</button>
 
-  <div id="wheel" class="wheel">
-    <div class="wheel__segment" id="wheel_1">
-      <span class="number">2</span>
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment" id="wheel_2">
-      <span class="number">5</span>
-      <span class="number">5</span>
-      <span class="number">5</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">1</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-    <div class="wheel__segment">
-      <span class="number">5</span>
-      <span class="number">0</span>
-      <span class="number">0</span>
-    </div>
-  </div>
-
-  <button ion-button class="reset-btn" (click)="spin()" >Primary Round</button>
 </ion-content>

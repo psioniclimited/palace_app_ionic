@@ -35,3 +35,12 @@
   top: -5em;
   margin-bottom: -0.8em;
 }
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 30px;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: black;
+}

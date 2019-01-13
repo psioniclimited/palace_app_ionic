@@ -25,9 +25,17 @@ export class WheelOfFortunePage {
     console.log('tesitng');
     let wheel = document.getElementById('backdrop');
     wheel.classList.add("animate");
-    wheel.style.webkitTransform = 'rotate('+angle+'deg)';
+    // wheel.style.webkitTransform = 'rotate('+angle+'deg)';
     wheel.style.transform = 'rotate('+angle+'deg)';
+    console.log(prize);
+  }
 
+  reset(){
+    console.log('working on it');
+    let wheel = document.getElementById('backdrop');
+    wheel.classList.remove('animate');
+    // wheel.style.webkitTransform = 'rotate(0)';
+    wheel.style.transform = 'rotate(0)';
   }
 
 }

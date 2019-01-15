@@ -20,9 +20,9 @@ page-map-image {
   }
 
   #map{
-    margin-top: 2vh;
-    width: 150%;
-    height: 150%;
+    //margin-top: 2vh;
+    width: 10%;
+    height: 10%;
   }
 
   .increase-btn{
@@ -41,8 +41,15 @@ page-map-image {
     z-index: 1;
   }
 
-  .gallery-modal{
-    background: rgba(0,0,0,0.1) !important;
+  //.gallery-modal{
+  //  background: rgba(0,0,0,0.1) !important;
+  //}
+  .slider-wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y:scroll;
+    overflow-x:scroll;
+    margin-top: 20px;
   }
-
 }

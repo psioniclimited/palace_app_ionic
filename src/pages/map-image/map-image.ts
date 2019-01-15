@@ -11,8 +11,8 @@ import { GalleryModal } from 'ionic-gallery-modal';
 export class MapImagePage {
   @ViewChild(Content) content: Content;
 
-  width_increse: number = 150;
-  height_increase: number = 150;
+  width_increse: number = 100;
+  height_increase: number = 60;
 
   westVillaImages: any [] = [];
   mosqueImages: any [] = [];
@@ -66,7 +66,7 @@ export class MapImagePage {
   }
 
   sizeDecrease(){
-    if(this.width_increse > 100 && this.height_increase > 100) {
+    if(this.width_increse > 100 && this.height_increase > 60) {
       this.height_increase = this.height_increase - 10;
       this.width_increse = this.width_increse - 10;
       document.getElementById("map").style.width = this.width_increse+"%";
@@ -114,7 +114,7 @@ export class MapImagePage {
   mosque(){
     this.hideAllElements();
     document.getElementById("mosque").removeAttribute('hidden');
-    this.content.scrollTo(400, 500, 200);
+    // this.content.scrollTo(400, 3000, 200);
 
     // console.log(this.scroll.scrollToTop(300));
   }

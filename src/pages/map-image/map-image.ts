@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { GalleryModal } from 'ionic-gallery-modal';
 
@@ -9,6 +9,8 @@ import { GalleryModal } from 'ionic-gallery-modal';
   templateUrl: 'map-image.html',
 })
 export class MapImagePage {
+  @ViewChild(Content) content: Content;
+
   width_increse: number = 150;
   height_increase: number = 150;
 
@@ -112,6 +114,9 @@ export class MapImagePage {
   mosque(){
     this.hideAllElements();
     document.getElementById("mosque").removeAttribute('hidden');
+    this.content.scrollTo(400, 500, 200);
+
+    // console.log(this.scroll.scrollToTop(300));
   }
 
   entertainment(){

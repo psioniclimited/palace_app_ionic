@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { GalleryModal } from 'ionic-gallery-modal';
-
+import * as $ from 'jquery';
 @IonicPage()
 @Component({
   selector: 'page-map-image',
@@ -114,9 +114,10 @@ export class MapImagePage {
   mosque(){
     this.hideAllElements();
     document.getElementById("mosque").removeAttribute('hidden');
-    // this.content.scrollTo(400, 3000, 200);
-
-    // console.log(this.scroll.scrollToTop(300));
+    $('.slider-wrap' ).animate({
+      scrollLeft: $('#mosque').position().left,
+    },'slow');
+    $('.slider-wrap').scrollTop(500);
   }
 
   entertainment(){

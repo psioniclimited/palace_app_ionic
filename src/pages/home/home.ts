@@ -44,8 +44,9 @@ export class HomePage implements OnInit {
     }
 
     this.platform.ready().then(() => {
-      this.statusBar.overlaysWebView(true);
+      this.statusBar.overlaysWebView(false);
       this.statusBar.styleLightContent();
+      // StatusBar.overlaysWebView(false);
     });
 
 

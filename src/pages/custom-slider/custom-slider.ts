@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {StatusBar} from "@ionic-native/status-bar";
 /**
  * Generated class for the CustomSliderPage page.
  *
@@ -14,11 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CustomSliderPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private statusBar: StatusBar) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CustomSliderPage');
+    this.platform.ready().then(() => {
+      this.statusBar.overlaysWebView(false);
+      this.statusBar.styleLightContent();
+      // StatusBar.overlaysWebView(false);
+    });
   }
+
 
 }

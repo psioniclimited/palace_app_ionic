@@ -1,8 +1,9 @@
 import {Component, ViewChild} from '@angular/core';
-import {Content, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Content, IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { GalleryModal } from 'ionic-gallery-modal';
 import * as $ from 'jquery';
+import {StatusBar} from "@ionic-native/status-bar";
 @IonicPage()
 @Component({
   selector: 'page-map-image',
@@ -20,7 +21,8 @@ export class MapImagePage {
   basketballImages: any [] = [];
   waterfallImages: any [] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,
+              private platform: Platform, private statusBar: StatusBar) {
     this.westVillaImages.push(
       {url: 'assets/imgs/movies/iceAge.png'},
       {url: 'assets/imgs/movies/kungfu.png'},
@@ -54,6 +56,11 @@ export class MapImagePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapImagePage');
+    this.platform.ready().then(() => {
+      this.statusBar.overlaysWebView(false);
+      this.statusBar.styleLightContent();
+      // StatusBar.overlaysWebView(false);
+    });
   }
 
   sizeIncrease(){

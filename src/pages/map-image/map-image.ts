@@ -57,7 +57,7 @@ export class MapImagePage {
   }
 
   sizeIncrease(){
-    if(this.width_increse < 300 && this.height_increase < 300) {
+    if(this.width_increse < 200 && this.height_increase < 150) {
       this.width_increse = this.width_increse + 10;
       this.height_increase = this.height_increase + 10;
       document.getElementById("map").style.width = this.width_increse+"%";
@@ -102,6 +102,11 @@ export class MapImagePage {
     document.getElementById("presidential_villa_2").removeAttribute('hidden');
     document.getElementById("honey_moon_villa").removeAttribute('hidden');
 
+    $('.slider-wrap' ).animate({
+      scrollLeft: $('#west_villa').position().left,
+    },'slow');
+    $('.slider-wrap').scrollTop(100);
+
   }
 
   restaurants() {
@@ -109,6 +114,11 @@ export class MapImagePage {
     document.getElementById("revolution_cafe").removeAttribute('hidden');
     document.getElementById("nostalgia_cafe").removeAttribute('hidden');
     document.getElementById("bar_code").removeAttribute('hidden');
+
+    $('.slider-wrap' ).animate({
+      scrollLeft: $('#revolution_cafe').position().left,
+    },'slow');
+    $('.slider-wrap').scrollTop(500);
   }
 
   mosque(){
@@ -125,6 +135,11 @@ export class MapImagePage {
     document.getElementById("basketball").removeAttribute('hidden');
     document.getElementById("water_fall").removeAttribute('hidden');
     document.getElementById("tennis").removeAttribute('hidden');
+
+    $('.slider-wrap' ).animate({
+      scrollLeft: $('#water_fall').position().left,
+    },'slow');
+    $('.slider-wrap').scrollTop(500);
   }
 
   openWestVilla(){

@@ -34,6 +34,7 @@
 
 .slick-dots{
   margin-left: 0.313em;
+  bottom: -11px;
 }
 .slick-dotted.slick-slider {
   /*margin-bottom: 80px;*/

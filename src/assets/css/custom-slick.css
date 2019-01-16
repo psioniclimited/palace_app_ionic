@@ -10,6 +10,7 @@
 
 .slick-slide img {
   width: 100%;
+  margin-left: 0.400em;
 }
 
 .slick-prev:before,

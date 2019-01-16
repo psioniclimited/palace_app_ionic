@@ -21,8 +21,17 @@ export class HomePage implements OnInit {
   // myColour: string  = 'green';
 
   constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform) {
-    this.statusBar.overlaysWebView(true);
-    this.statusBar.styleLightContent();
+
+    this.platform.ready().then(() => {
+      if(this.platform.is('ios')){
+        this.statusBar.overlaysWebView(true);
+        this.statusBar.styleLightContent();
+      }else{
+        this.statusBar.overlaysWebView(false);
+        this.statusBar.styleLightContent();
+      }
+      // StatusBar.overlaysWebView(false);
+    });
   }
   ngOnInit() {
     this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
@@ -39,15 +48,10 @@ export class HomePage implements OnInit {
     body.appendChild(script);
   }
   ionViewDidLoad() {
-    if(this.platform.height() > 800) {
-      this.slideText = "bigger-slide-text";
-    }
+    // if(this.platform.height() > 800) {
+    //   this.slideText = "bigger-slide-text";
+    // }
 
-    this.platform.ready().then(() => {
-      this.statusBar.overlaysWebView(false);
-      this.statusBar.styleLightContent();
-      // StatusBar.overlaysWebView(false);
-    });
 
 
   }

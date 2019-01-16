@@ -15,16 +15,23 @@ import {StatusBar} from "@ionic-native/status-bar";
 })
 export class CustomSliderPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private statusBar: StatusBar) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private platform: Platform, private statusBar: StatusBar) {
+    this.platform.ready().then(() => {
+      if(this.platform.is('ios')){
+        this.statusBar.overlaysWebView(true);
+        this.statusBar.styleLightContent();
+      }else{
+        this.statusBar.overlaysWebView(false);
+        this.statusBar.styleLightContent();
+      }
+      // StatusBar.overlaysWebView(false);
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CustomSliderPage');
-    this.platform.ready().then(() => {
-      this.statusBar.overlaysWebView(false);
-      this.statusBar.styleLightContent();
-      // StatusBar.overlaysWebView(false);
-    });
+
   }
 
 

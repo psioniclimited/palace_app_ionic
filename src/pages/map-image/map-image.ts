@@ -23,6 +23,18 @@ export class MapImagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,
               private platform: Platform, private statusBar: StatusBar) {
+
+    this.platform.ready().then(() => {
+      if(this.platform.is('ios')){
+        this.statusBar.overlaysWebView(true);
+        this.statusBar.styleLightContent();
+      }else{
+        this.statusBar.overlaysWebView(false);
+        this.statusBar.styleLightContent();
+      }
+      // StatusBar.overlaysWebView(false);
+    });
+
     this.westVillaImages.push(
       {url: 'assets/imgs/movies/iceAge.png'},
       {url: 'assets/imgs/movies/kungfu.png'},
@@ -56,11 +68,6 @@ export class MapImagePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapImagePage');
-    this.platform.ready().then(() => {
-      this.statusBar.overlaysWebView(false);
-      this.statusBar.styleLightContent();
-      // StatusBar.overlaysWebView(false);
-    });
   }
 
   sizeIncrease(){

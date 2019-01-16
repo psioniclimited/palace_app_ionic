@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import {MoviesPage} from "../movies/movies";
 import {WheelOfFortunePage} from "../wheel-of-fortune/wheel-of-fortune";
+import {StatusBar} from "@ionic-native/status-bar";
 
 /**
  * Generated class for the FacalitiesPage page.
@@ -18,7 +19,19 @@ import {WheelOfFortunePage} from "../wheel-of-fortune/wheel-of-fortune";
 })
 export class FacalitiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
+              private statusBar: StatusBar, private platform: Platform) {
+
+    this.platform.ready().then(() => {
+      if(this.platform.is('ios')){
+        this.statusBar.overlaysWebView(true);
+        this.statusBar.styleLightContent();
+      }else{
+        this.statusBar.overlaysWebView(false);
+        this.statusBar.styleLightContent();
+      }
+      // StatusBar.overlaysWebView(false);
+    });
   }
 
   ionViewDidLoad() {

@@ -16,7 +16,9 @@ page-map-image {
   }
 
   .button-text{
+    margin-top: 0vh;
     font-size: 1.15rem;
+    color: white;
   }
 
   #map{
@@ -57,5 +59,14 @@ page-map-image {
     position: relative;
     width: 100%;
     overflow-y:scroll;
+  }
+
+  ion-segment-button{
+    border-style: solid;
+  }
+
+
+  .segment-button{
+    border-style: none;
   }
 }

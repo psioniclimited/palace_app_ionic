@@ -28,7 +28,8 @@ page-map-image {
   }
 
   .increase-btn{
-    position: fixed;
+    position: absolute;
+    float: right;
     top: 75vh;
     right: 0.5vw;
     width: 15%;

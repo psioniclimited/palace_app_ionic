@@ -68,6 +68,7 @@ export class MapImagePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapImagePage');
+    $('.slider-wrap').scrollLeft(500);
   }
 
   sizeIncrease(){
@@ -116,10 +117,11 @@ export class MapImagePage {
     document.getElementById("presidential_villa_2").removeAttribute('hidden');
     document.getElementById("honey_moon_villa").removeAttribute('hidden');
 
-    $('.slider-wrap' ).animate({
-      scrollLeft: $('#west_villa').position().left,
-    },'slow');
+    // $('.slider-wrap' ).animate({
+    //   scrollLeft: $('#west_villa').position().left,
+    // },'slow');
     $('.slider-wrap').scrollTop(100);
+    $('.slider-wrap').scrollLeft(50);
 
   }
 
@@ -129,19 +131,20 @@ export class MapImagePage {
     document.getElementById("nostalgia_cafe").removeAttribute('hidden');
     document.getElementById("bar_code").removeAttribute('hidden');
 
-    $('.slider-wrap' ).animate({
-      scrollLeft: $('#revolution_cafe').position().left,
-    },'slow');
+    // $('.slider-wrap' ).animate({
+    //   scrollLeft: $('#revolution_cafe').position().left,
+    // },'slow');
     $('.slider-wrap').scrollTop(500);
   }
 
   mosque(){
     this.hideAllElements();
     document.getElementById("mosque").removeAttribute('hidden');
-    $('.slider-wrap' ).animate({
-      scrollLeft: $('#mosque').position().left,
-    },'slow');
-    $('.slider-wrap').scrollTop(500);
+    // $('.slider-wrap' ).animate({
+    //   scrollLeft: $('#mosque').position().left,
+    // },'slow');
+    $('.slider-wrap').scrollLeft(500);
+
   }
 
   entertainment(){
@@ -150,10 +153,11 @@ export class MapImagePage {
     document.getElementById("water_fall").removeAttribute('hidden');
     document.getElementById("tennis").removeAttribute('hidden');
 
-    $('.slider-wrap' ).animate({
-      scrollLeft: $('#water_fall').position().left,
-    },'slow');
-    $('.slider-wrap').scrollTop(500);
+    // $('.slider-wrap' ).animate({
+    //   scrollLeft: $('#water_fall').position().left,
+    // },'slow');
+    // $('.slider-wrap').scrollTop(500);
+    $('.slider-wrap').scrollLeft(500);
   }
 
   openWestVilla(){

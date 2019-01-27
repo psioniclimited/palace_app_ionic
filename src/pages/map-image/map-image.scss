@@ -26,24 +26,6 @@ page-map-image {
     width: 10%;
     height: 10%;
   }
-
-  .increase-btn{
-    position: absolute;
-    float: right;
-    top: 75vh;
-    right: 0.5vw;
-    width: 15%;
-    z-index: 1;
-  }
-
-  .decrease-btn{
-    position: fixed;
-    top: 83vh;
-    right: 0.5vw;
-    width: 15%;
-    z-index: 1;
-  }
-
   //.gallery-modal{
   //  background: rgba(0,0,0,0.1) !important;
   //}
@@ -69,5 +51,22 @@ page-map-image {
 
   .segment-button{
     border-style: none;
+  }
+
+  .increase-btn{
+    position: fixed;
+    float: right;
+    top: 30%;
+    left: 44%;
+    width: 15%;
+    z-index: 1;
+  }
+
+  .decrease-btn{
+    position: fixed;
+    top: 83vh;
+    right: 0.5vw;
+    width: 15%;
+    z-index: 1;
   }
 }

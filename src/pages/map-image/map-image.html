@@ -2769,12 +2769,14 @@
 		C1047.7,92.5,1044.1,96.1,1039.7,96.1z"/>
 </g>
 </svg>
-    <div (click)="sizeIncrease()" class="increase-btn">
-      <img src="assets/imgs/map/zoom.png" alt="increase">
-    </div>
-    <div (click)="sizeDecrease()" class="decrease-btn">
-      <img src="assets/imgs/map/zoomOut.png" alt="decrease">
-    </div>
   </div>
+
+  <ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="add-circle"></ion-icon></button>
+      <button ion-fab><ion-icon name="remove-circle"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 
 </ion-content>

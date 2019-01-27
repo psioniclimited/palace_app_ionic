@@ -53,20 +53,7 @@ page-map-image {
     border-style: none;
   }
 
-  .increase-btn{
-    position: fixed;
-    float: right;
-    top: 30%;
-    left: 44%;
-    width: 15%;
-    z-index: 1;
-  }
-
-  .decrease-btn{
-    position: fixed;
-    top: 83vh;
-    right: 0.5vw;
-    width: 15%;
-    z-index: 1;
+  .increase_button{
+    margin-bottom: 25%;
   }
 }

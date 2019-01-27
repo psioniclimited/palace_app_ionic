@@ -2772,11 +2772,12 @@
   </div>
 
   <ion-fab right bottom>
-    <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
-    <ion-fab-list side="left">
-      <button ion-fab><ion-icon name="add-circle"></ion-icon></button>
-      <button ion-fab><ion-icon name="remove-circle"></ion-icon></button>
-    </ion-fab-list>
+    <div class="increase_button">
+      <button ion-fab color="light" (click)="sizeIncrease()"><ion-icon name="add"></ion-icon></button>
+    </div>
+    <div>
+      <button ion-fab color="light" (click)="sizeDecrease()"><ion-icon name="remove"></ion-icon></button>
+    </div>
   </ion-fab>
 
 </ion-content>

@@ -12,8 +12,8 @@ import {StatusBar} from "@ionic-native/status-bar";
 export class MapImagePage {
   @ViewChild(Content) content: Content;
 
-  width_increse: number = 100;
-  height_increase: number = 60;
+  width_increse: number = 160;
+  height_increase: number = 120;
 
   westVillaImages: any [] = [];
   mosqueImages: any [] = [];
@@ -69,6 +69,7 @@ export class MapImagePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapImagePage');
     $('.slider-wrap').scrollLeft(500);
+    document.getElementById("tower_building").removeAttribute('hidden');
   }
 
   sizeIncrease(){
@@ -107,6 +108,13 @@ export class MapImagePage {
     document.getElementById("mosque").setAttribute('hidden','true');
     document.getElementById("tower_building").setAttribute('hidden','true');
     document.getElementById("tennis").setAttribute('hidden','true');
+  }
+
+  tower(){
+    this.hideAllElements();
+    document.getElementById("tower_building").removeAttribute('hidden');
+    $('.slider-wrap').scrollTop(100);
+    $('.slider-wrap').scrollLeft(500);
   }
 
   villas(){

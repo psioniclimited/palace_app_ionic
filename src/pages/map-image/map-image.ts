@@ -23,6 +23,7 @@ export class MapImagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,
               private platform: Platform, private statusBar: StatusBar) {
+    //ionic cordova build ios -- --buildFlag="-UseModernBuildSystem=0"
 
     this.platform.ready().then(() => {
       if(this.platform.is('ios')){
@@ -117,6 +118,27 @@ export class MapImagePage {
     $('.slider-wrap').scrollLeft(500);
   }
 
+  amphitheater(){
+    this.hideAllElements();
+    document.getElementById("amphitheater").removeAttribute('hidden');
+    $('.slider-wrap').scrollTop(100);
+    $('.slider-wrap').scrollLeft(200);
+  }
+
+  helipad(){
+    this.hideAllElements();
+    document.getElementById("helipad").removeAttribute('hidden');
+    $('.slider-wrap').scrollTop(200);
+    $('.slider-wrap').scrollLeft(200);
+  }
+
+  maze(){
+    this.hideAllElements();
+    document.getElementById("maze").removeAttribute('hidden');
+    $('.slider-wrap').scrollTop(200);
+    $('.slider-wrap').scrollLeft(300);
+  }
+
   villas(){
     this.hideAllElements();
     document.getElementById("east_villa").removeAttribute('hidden');
@@ -139,10 +161,8 @@ export class MapImagePage {
     document.getElementById("nostalgia_cafe").removeAttribute('hidden');
     document.getElementById("bar_code").removeAttribute('hidden');
 
-    // $('.slider-wrap' ).animate({
-    //   scrollLeft: $('#revolution_cafe').position().left,
-    // },'slow');
-    $('.slider-wrap').scrollTop(500);
+    $('.slider-wrap').scrollTop(100);
+    $('.slider-wrap').scrollLeft(80);
   }
 
   mosque(){

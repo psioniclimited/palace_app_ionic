@@ -23,13 +23,13 @@ page-movies {
     position: relative;
     top: 30px;
     left: 0;
-    width: 60%;
+    width: 65%;
   }
 
   .large-movies-div-img.second-image {
     width: 45%;
     position: relative;
-    top: -33vh;
+    top: -41vh;
     left: 26vw;
     z-index: -1;
     filter: blur(2px);
@@ -40,7 +40,7 @@ page-movies {
   .large-movies-div-img.third-image {
     width: 35%;
     position: relative;
-    top: -35vh;
+    top: -45vh;
     left: -1vw;
     z-index: -2;
     filter: blur(8px);

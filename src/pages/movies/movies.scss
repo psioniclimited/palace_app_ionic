@@ -6,12 +6,13 @@ page-movies {
   }
 
   .image-posters {
-    position: absolute;
+    position: relative;
     width: 100%;
+    height: 60vh;
     top: 0;
     left: 0;
     margin-left: 2vw;
-    margin-top: 6vh;
+    //margin-top: 6vh;
   }
 
   .large-movies-div-img {
@@ -21,7 +22,7 @@ page-movies {
 
   .large-movies-div-img.first-image {
     position: relative;
-    top: 30px;
+    top: 0px;
     left: 0;
     width: 65%;
   }
@@ -78,6 +79,7 @@ page-movies {
   }
 
   .show-details{
+    position: relative;
     margin-top: 2vh;
   }
 
@@ -95,6 +97,8 @@ page-movies {
   .arrow-right{
     margin-left: 2vw;
   }
+
+
   .timing-buttons{
     border-radius: 2.4em;
     width: 100%;

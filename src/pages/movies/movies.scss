@@ -20,7 +20,7 @@ page-movies {
   }
 
   .large-movies-div-img.first-image {
-    position: absolute;
+    position: relative;
     top: 30px;
     left: 0;
     width: 60%;
@@ -28,11 +28,10 @@ page-movies {
 
   .large-movies-div-img.second-image {
     width: 45%;
-    position: absolute;
-    top: 12vh;
+    position: relative;
+    top: -33vh;
     left: 26vw;
     z-index: -1;
-    -webkit-filter: blur(2px);
     filter: blur(2px);
     opacity: 0.8;
 
@@ -40,11 +39,10 @@ page-movies {
 
   .large-movies-div-img.third-image {
     width: 35%;
-    position: absolute;
-    top: 16vh;
-    left: 45vw;
+    position: relative;
+    top: -35vh;
+    left: -1vw;
     z-index: -2;
-    -webkit-filter: blur(8px);
     filter: blur(8px);
     opacity: 0.6;
   }
@@ -61,7 +59,7 @@ page-movies {
   }
 
   .move-btn {
-    position: fixed;
+    position: absolute;
     top: 59%;
     right: 0.5vw;
     width: 15%;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {StatusBar} from "@ionic-native/status-bar";
+import * as $ from 'jquery';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,12 @@ export class MoviesPage {
   secondImage:string = 'large-movies-div-img second-image';
   thirdImage:string = 'large-movies-div-img third-image';
 
+  firstImageLink: string = "assets/imgs/movies/kungfu.png";
+  secondImageLink: string = "assets/imgs/movies/parrot.png";
+  thridImageLink: string = "assets/imgs/movies/iceAge.png";
+
   count:number = 1;
+  rndcount:number = 1;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -32,6 +38,12 @@ export class MoviesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MoviesPage');
+
+  }
+
+  ionViewDidEnter(){
+    let top_height = $('#first_image').height();
+    document.getElementById('movie_btn').style.top = top_height+"";
   }
 
   makeItMove(x:number){
@@ -57,6 +69,41 @@ export class MoviesPage {
 
     }
     this.count++;
+  }
+
+  rndItMove(x:number){
+    console.log(x);
+
+    if (x > 3) {
+      this.rndcount = 1;
+    }
+
+
+    // firstImageLink: string = "assets/imgs/movies/kungfu.png";
+    // secondImageLink: string = "assets/imgs/movies/parrot.png";
+    // thridImageLink: string = "assets/imgs/movies/iceAge.png";
+
+    if(this.rndcount === 1) {
+      this.firstImageLink = 'assets/imgs/movies/iceAge.png';
+      this.secondImageLink = 'assets/imgs/movies/kungfu.png';
+      this.thridImageLink = 'assets/imgs/movies/parrot.png';
+    } else if (this.rndcount === 2) {
+      this.firstImageLink = 'assets/imgs/movies/parrot.png';
+      this.secondImageLink = 'assets/imgs/movies/iceAge.png';
+      this.thridImageLink = 'assets/imgs/movies/kungfu.png';
+    } else if (this.rndcount === 3) {
+
+      this.firstImageLink = 'assets/imgs/movies/kungfu.png';
+      this.secondImageLink = 'assets/imgs/movies/parrot.png';
+      this.thridImageLink = 'assets/imgs/movies/iceAge.png';
+
+    }
+
+    // document.getElementsByClassName('large-movies-div-imgfirst-image');
+    // console.log(document.getElementById('first_image').style.ou);
+    console.log($('#first_image').height());
+    this.rndcount++;
+
   }
 
 }

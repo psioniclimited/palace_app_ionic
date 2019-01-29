@@ -11,12 +11,15 @@
   </div>
 
   <div class="image-posters">
-    <img src="assets/imgs/movies/kungfu.png" [class]="firstImage" alt="img01">
-    <img src="assets/imgs/movies/parrot.png" [class]="secondImage" alt="img02">
-    <img src="assets/imgs/movies/iceAge.png" [class]="thirdImage" alt="img03">
+    <img [src]="firstImageLink" class="large-movies-div-img first-image" alt="img01" id="first_image">
+    <img [src]="secondImageLink" class="large-movies-div-img second-image" alt="img02">
+    <img [src]="thridImageLink" class="large-movies-div-img third-image" alt="img03">
 
-    <div class="move-btn">
-      <img src="assets/imgs/movies/arrow.png" alt="arrow" (click)="makeItMove(count)">
+    <!--<div class="move-btn">-->
+      <!--<img src="assets/imgs/movies/arrow.png" alt="arrow" (click)="makeItMove(count)">-->
+    <!--</div>-->
+    <div class="move-btn" id="movie_btn">
+      <img src="assets/imgs/movies/arrow.png" alt="arrow" (click)="rndItMove(rndcount)">
     </div>
   </div>
 

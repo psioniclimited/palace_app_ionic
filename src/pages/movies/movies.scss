@@ -7,7 +7,7 @@ page-movies {
 
   .image-posters {
     position: absolute;
-    width: 90%;
+    width: 100%;
     top: 0;
     left: 0;
     margin-left: 2vw;
@@ -23,15 +23,16 @@ page-movies {
     position: absolute;
     top: 30px;
     left: 0;
-    width: 75%;
+    width: 60%;
   }
 
   .large-movies-div-img.second-image {
-    width: 55%;
-    position: relative;
-    top: 10vh;
-    left: 28vw;
+    width: 45%;
+    position: absolute;
+    top: 12vh;
+    left: 26vw;
     z-index: -1;
+    -webkit-filter: blur(2px);
     filter: blur(2px);
     opacity: 0.8;
 
@@ -40,9 +41,10 @@ page-movies {
   .large-movies-div-img.third-image {
     width: 35%;
     position: absolute;
-    top: 20vh;
-    left: 55vw;
+    top: 16vh;
+    left: 45vw;
     z-index: -2;
+    -webkit-filter: blur(8px);
     filter: blur(8px);
     opacity: 0.6;
   }
@@ -60,7 +62,7 @@ page-movies {
 
   .move-btn {
     position: fixed;
-    top: 65vh;
+    top: 59%;
     right: 0.5vw;
     width: 15%;
     z-index: 1;
@@ -70,6 +72,11 @@ page-movies {
     margin-top: 64.5vh;
     margin-left: 3vw;
     font-weight: lighter;
+  }
+
+  .description p{
+    font-size: 73%;
+    letter-spacing: 0px;
   }
 
   .show-details{

@@ -8,7 +8,10 @@ page-movies {
     box-shadow: 0px 1vh 1.50vh #757575;
     height: 8vh;
   }
-
+  #image_poster {
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+  }
   .image-posters {
     position: relative;
     width: 100%;
@@ -68,7 +71,7 @@ page-movies {
   .move-btn {
     position: absolute;
     top: 59%;
-    right: 0.5vw;
+    right: 2vw;
     width: 15%;
     z-index: 1;
   }
@@ -78,9 +81,12 @@ page-movies {
     font-weight: lighter;
   }
 
-  .description p{
-    font-size: 73%;
+  .description .description-p{
+    font-size: 1.2rem;
     letter-spacing: 0px;
+    width: 100%;
+    text-align: justify;
+    padding-right: 2rem;
   }
 
   .show-details{
@@ -105,6 +111,7 @@ page-movies {
   }
   ion-icon{
     font-size: 1.5rem;
+    padding-left: 1rem;
   }
   .arrow-right{
     margin-left: 2vw;
@@ -114,7 +121,7 @@ page-movies {
   .timing-buttons{
     border-radius: 2.4em;
     width: 85%;
-    height: 80%;
+    height: 50%;
     margin: 0.8rem 0rem;
     padding: 0;
   }
@@ -122,10 +129,24 @@ page-movies {
     background-color: red;
   }
 
-  .timing-buttons p{
+  .timing-buttons .timing-btns-p{
+    font-size: 1.1rem;
     letter-spacing: 0px;
     font-weight: 400;
-    margin-top: -0.2vh;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    padding: 1rem 0rem;
+  }
+
+  @media (min-width: 321px) and (max-width: 480px){
+    .description .description-p {
+      font-size: 1.3rem;
+      padding-top: 2rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+
   }
 
 }

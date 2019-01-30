@@ -45,6 +45,8 @@ export class MoviesPage {
     let top_height = $('#first_image').height();
     document.getElementById('movie_btn').style.top = (top_height - 30)+"px";
     document.getElementById('image_poster').style.height = (top_height + 10)+"px";
+    document.getElementById('image_poster').style.opacity = "1";
+
 
   }
 

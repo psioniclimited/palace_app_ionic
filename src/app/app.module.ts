@@ -16,6 +16,7 @@ import {MapImagePage} from "../pages/map-image/map-image";
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
+import {FCM} from "@ionic-native/fcm";
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
   providers: [
     StatusBar,
     SplashScreen,
+    FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {
       provide: HAMMER_GESTURE_CONFIG,

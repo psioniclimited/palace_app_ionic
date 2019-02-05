@@ -17,6 +17,7 @@ import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
 import {FCM} from "@ionic-native/fcm";
+import {HTTP} from "@ionic-native/http";
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import {FCM} from "@ionic-native/fcm";
     StatusBar,
     SplashScreen,
     FCM,
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {
       provide: HAMMER_GESTURE_CONFIG,

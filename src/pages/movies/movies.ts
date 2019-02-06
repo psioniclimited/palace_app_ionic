@@ -15,7 +15,7 @@ export class MoviesPage {
   secondImage:string = 'large-movies-div-img second-image';
   thirdImage:string = 'large-movies-div-img third-image';
 
-  firstImageLink: string = "assets/imgs/movies/kungfu.png";
+  firstImageLink: string = "http://192.168.0.102:8000/getMovieImage/1";
   secondImageLink: string = "assets/imgs/movies/parrot.png";
   thridImageLink: string = "assets/imgs/movies/iceAge.png";
 

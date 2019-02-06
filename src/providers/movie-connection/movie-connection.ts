@@ -26,14 +26,18 @@ export class MovieConnectionProvider {
         {}
       ).then((res) => {
         const response = JSON.parse(res.data);
-        console.log('testing    asdasdd '+response[0].name);
-        console.log('testing    asw '+response);
-        resolve(res);
+        // console.log('testing    asdasdd '+response[0].name);
+        // console.log('testing    asw '+response);
+        resolve(response[0].id);
       }, (error) => {
         reject(error);
       });
     }));
+  }
+
+  public downloadMovieImage(id){
 
   }
+
 
 }

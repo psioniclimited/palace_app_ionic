@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {StatusBar} from "@ionic-native/status-bar";
 import * as $ from 'jquery';
+import {MovieConnectionProvider} from "../../providers/movie-connection/movie-connection";
 
 @IonicPage()
 @Component({
@@ -23,7 +24,7 @@ export class MoviesPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private platform: Platform, private statusBar: StatusBar) {
+              private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
     this.platform.ready().then(() => {
       if(this.platform.is('ios')){
         this.statusBar.overlaysWebView(true);
@@ -37,7 +38,12 @@ export class MoviesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MoviesPage');
+
+     this.movieProvider.getMovies().then( (res)=>{
+      console.log(res);
+    }, (error)=>{
+      console.log(error);
+    });
 
   }
 

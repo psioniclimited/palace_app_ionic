@@ -18,6 +18,7 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
 import {FCM} from "@ionic-native/fcm";
 import {HTTP} from "@ionic-native/http";
+import { MovieConnectionProvider } from '../providers/movie-connection/movie-connection';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import {HTTP} from "@ionic-native/http";
       provide: HAMMER_GESTURE_CONFIG,
       useClass: ionicGalleryModal.GalleryModalHammerConfig,
     },
+    MovieConnectionProvider,
   ]
 })
 export class AppModule {}

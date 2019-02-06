@@ -51,21 +51,21 @@ export class HomePage implements OnInit {
   }
   ionViewDidLoad() {
 
-    this.http.get('http://192.168.0.101:8000/movie', {}, {})
-      .then(data => {
-
-        console.log(data.status);
-        console.log(data.data); // data received by server
-        console.log(data.headers);
-
-      })
-      .catch(error => {
-
-        console.log(error.status);
-        console.log(error.error); // error message as string
-        console.log(error.headers);
-
-      });
+    // this.http.get('http://192.168.0.102:8000/movie', {}, {})
+    //   .then(data => {
+    //
+    //     console.log(data.status);
+    //     console.log(data.data); // data received by server
+    //     console.log(data.headers);
+    //
+    //   })
+    //   .catch(error => {
+    //
+    //     console.log(error.status);
+    //     console.log(error.error); // error message as string
+    //     console.log(error.headers);
+    //
+    //   });
 
 
 

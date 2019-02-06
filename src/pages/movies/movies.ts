@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {StatusBar} from "@ionic-native/status-bar";
 import * as $ from 'jquery';
 import {MovieConnectionProvider} from "../../providers/movie-connection/movie-connection";
+import {Movies} from "../../models/movies";
 
 @IonicPage()
 @Component({
@@ -22,6 +23,8 @@ export class MoviesPage {
   count:number = 1;
   rndcount:number = 1;
 
+  movies: Movies[];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
@@ -39,7 +42,9 @@ export class MoviesPage {
 
   ionViewDidLoad() {
 
-     this.movieProvider.getMovies().then( (res)=>{
+     this.movieProvider.getMovies().then( (res: Movies[])=>{
+       console.log(res.length);
+       this.movies = res;
       console.log(res);
     }, (error)=>{
       console.log(error);
@@ -94,18 +99,18 @@ export class MoviesPage {
     // thridImageLink: string = "assets/imgs/movies/iceAge.png";
 
     if(this.rndcount === 1) {
-      this.firstImageLink = 'assets/imgs/movies/iceAge.png';
-      this.secondImageLink = 'assets/imgs/movies/kungfu.png';
-      this.thridImageLink = 'assets/imgs/movies/parrot.png';
+      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
+      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
     } else if (this.rndcount === 2) {
-      this.firstImageLink = 'assets/imgs/movies/parrot.png';
-      this.secondImageLink = 'assets/imgs/movies/iceAge.png';
-      this.thridImageLink = 'assets/imgs/movies/kungfu.png';
+      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
     } else if (this.rndcount === 3) {
 
-      this.firstImageLink = 'assets/imgs/movies/kungfu.png';
-      this.secondImageLink = 'assets/imgs/movies/parrot.png';
-      this.thridImageLink = 'assets/imgs/movies/iceAge.png';
+      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+ this.movies[1].id;
+      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
 
     }
 

@@ -4,6 +4,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 import * as $ from 'jquery';
 import {MovieConnectionProvider} from "../../providers/movie-connection/movie-connection";
 import {Movies} from "../../models/movies";
+import {MovieDetails} from "../../models/movieDetails";
 
 @IonicPage()
 @Component({
@@ -25,7 +26,8 @@ export class MoviesPage {
 
   movies: Movies[];
   movieTitle: string;
-  movieTime: string = "";
+  movieDateArray: MovieDetails[];
+  movieDay: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
@@ -47,6 +49,7 @@ export class MoviesPage {
        this.movies = res;
        this.movieTitle = this.movies[0].name;
       console.log(this.movies[1].movie_details[0].date);
+      this.setMovieDate(0);
     }, (error)=>{
       console.log(error);
     });
@@ -97,8 +100,8 @@ export class MoviesPage {
     if(this.rndcount === 1) {
       this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
       this.movieTitle = this.movies[2].name;
-      this.movieTime = this.movies[2].movie_details[0].date;
-      console.log(this.movieTime);
+      this.setMovieDate(2);
+
       this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
       this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
 
@@ -106,16 +109,16 @@ export class MoviesPage {
 
       this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+ this.movies[1].id;
       this.movieTitle = this.movies[1].name;
-      this.movieTime = this.movies[1].movie_details[0].date;
-      console.log(this.movieTime);
+      this.setMovieDate(1);
+
       this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
       this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
 
     } else if (this.rndcount === 3) {
       this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
       this.movieTitle = this.movies[0].name;
-      this.movieTime = this.movies[0].movie_details[0].date;
-      console.log(this.movieTime);
+      this.setMovieDate(0);
+
       this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
       this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
 
@@ -126,6 +129,14 @@ export class MoviesPage {
     console.log($('#first_image').height());
     this.rndcount++;
 
+  }
+
+  private setMovieDate(id:number){
+    this.movieDateArray = this.movies[id].movie_details;
+    console.log(this.movieDateArray[0].date);
+    let date = new Date(this.movieDateArray[0].date);
+
+    this.movieDay = date.toDateString();
   }
 
 }

@@ -28,6 +28,7 @@ export class MoviesPage {
   movieTitle: string;
   movieDateArray: MovieDetails[];
   movieDay: string;
+  indexOfCurrentDay : number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
@@ -133,10 +134,30 @@ export class MoviesPage {
 
   private setMovieDate(id:number){
     this.movieDateArray = this.movies[id].movie_details;
-    console.log(this.movieDateArray[0].date);
     let date = new Date(this.movieDateArray[0].date);
-
+    this.indexOfCurrentDay = id;
     this.movieDay = date.toDateString();
   }
+
+  public dayLeft(){
+    this.indexOfCurrentDay--;
+    if(this.indexOfCurrentDay < 0){
+      this.indexOfCurrentDay = this.movieDateArray.length-1;
+    }
+    let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
+    this.movieDay = date.toDateString();
+
+   // console.log('day left');
+  }
+
+  public  dayRight(){
+    this.indexOfCurrentDay++;
+    if(this.indexOfCurrentDay > (this.movieDateArray.length-1)){
+      this.indexOfCurrentDay = 0;
+    }
+    let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
+    this.movieDay = date.toDateString();
+  }
+
 
 }

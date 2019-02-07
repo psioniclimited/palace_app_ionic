@@ -17,14 +17,15 @@ export class MoviesPage {
   thirdImage:string = 'large-movies-div-img third-image';
 
   firstImageLink: string = "http://192.168.0.102:8000/getMovieImage/1";
-  secondImageLink: string = "assets/imgs/movies/parrot.png";
-  thridImageLink: string = "assets/imgs/movies/iceAge.png";
+  secondImageLink: string = "http://192.168.0.102:8000/getMovieImage/2";
+  thridImageLink: string = "http://192.168.0.102:8000/getMovieImage/3";
 
   count:number = 1;
   rndcount:number = 1;
 
   movies: Movies[];
-
+  movieTitle: string;
+  movieTime: string = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
@@ -43,9 +44,9 @@ export class MoviesPage {
   ionViewDidLoad() {
 
      this.movieProvider.getMovies().then( (res: Movies[])=>{
-       console.log(res.length);
        this.movies = res;
-      console.log(res);
+       this.movieTitle = this.movies[0].name;
+      console.log(this.movies[1].movie_details[0].date);
     }, (error)=>{
       console.log(error);
     });
@@ -93,24 +94,30 @@ export class MoviesPage {
       this.rndcount = 1;
     }
 
-
-    // firstImageLink: string = "assets/imgs/movies/kungfu.png";
-    // secondImageLink: string = "assets/imgs/movies/parrot.png";
-    // thridImageLink: string = "assets/imgs/movies/iceAge.png";
-
     if(this.rndcount === 1) {
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
-    } else if (this.rndcount === 2) {
       this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+      this.movieTitle = this.movies[2].name;
+      this.movieTime = this.movies[2].movie_details[0].date;
+      console.log(this.movieTime);
       this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
       this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
-    } else if (this.rndcount === 3) {
+
+    } else if (this.rndcount === 2) {
 
       this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+ this.movies[1].id;
+      this.movieTitle = this.movies[1].name;
+      this.movieTime = this.movies[1].movie_details[0].date;
+      console.log(this.movieTime);
       this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
       this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+
+    } else if (this.rndcount === 3) {
+      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+      this.movieTitle = this.movies[0].name;
+      this.movieTime = this.movies[0].movie_details[0].date;
+      console.log(this.movieTime);
+      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
+      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
 
     }
 

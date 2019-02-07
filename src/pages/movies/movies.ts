@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import {MovieConnectionProvider} from "../../providers/movie-connection/movie-connection";
 import {Movies} from "../../models/movies";
 import {MovieDetails} from "../../models/movieDetails";
+import {MovieTimes} from "../../models/movieTimes";
 
 @IonicPage()
 @Component({
@@ -29,6 +30,11 @@ export class MoviesPage {
   movieDateArray: MovieDetails[];
   movieDay: string;
   indexOfCurrentDay : number;
+  movieTimeArray: MovieTimes[];
+  movieTime_1: string;
+  movieTime_2: string;
+  movieTime_3: string;
+  movieTime_4: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
@@ -134,6 +140,13 @@ export class MoviesPage {
 
   private setMovieDate(id:number){
     this.movieDateArray = this.movies[id].movie_details;
+    // this.movieTimeArray = this.movies[id].movie_details[0].movie_times;
+
+    this.movieTime_1 =this.adjustTime(this.movies[id].movie_details[0].movie_times[0].time);
+    this.movieTime_2 =this.adjustTime(this.movies[id].movie_details[0].movie_times[1].time);
+    this.movieTime_3 =this.adjustTime(this.movies[id].movie_details[0].movie_times[2].time);
+    this.movieTime_4 =this.adjustTime(this.movies[id].movie_details[0].movie_times[3].time);
+
     let date = new Date(this.movieDateArray[0].date);
     this.indexOfCurrentDay = id;
     this.movieDay = date.toDateString();
@@ -147,7 +160,14 @@ export class MoviesPage {
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
 
-   // console.log('day left');
+    // this.movieTimeArray = this.movieDateArray[this.indexOfCurrentDay].movie_times;
+    // this.movieTime_1 = this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time;
+
+    this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
+    this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
+    this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
+    this.movieTime_4 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[3].time);
+
   }
 
   public  dayRight(){
@@ -157,7 +177,28 @@ export class MoviesPage {
     }
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
+    // this.movieTimeArray = this.movieDateArray[this.indexOfCurrentDay].movie_times;
+    this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
+    this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
+    this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
+    this.movieTime_4 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[3].time);
   }
 
+
+  private adjustTime(timeString: string) {
+    let test = timeString.split(":");
+    let adjustedTime = "";
+    if(parseInt(test[0]) < 12) {
+      adjustedTime = "AM";
+    } else {
+      adjustedTime = "PM";
+    }
+
+    let time = parseInt(test[0]) % 12 || 12;
+
+    adjustedTime = time + ":" + test[1] + " "+ adjustedTime;
+
+    return adjustedTime;
+  }
 
 }

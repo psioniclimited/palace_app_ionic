@@ -37,8 +37,10 @@ page-home {
     }
   }
 
-  @media (max-width: 320px) {
-
+  @media (min-width: 320px) {
+    //.center{
+    //  margin-top: 12vh;
+    //}
   }
   
 

@@ -16,9 +16,20 @@ import {MapImagePage} from "../pages/map-image/map-image";
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {WheelOfFortunePage} from "../pages/wheel-of-fortune/wheel-of-fortune";
-import {FCM} from "@ionic-native/fcm";
 import {HTTP} from "@ionic-native/http";
 import { MovieConnectionProvider } from '../providers/movie-connection/movie-connection';
+import {AngularFireModule} from "@angular/fire";
+import {Firebase} from "@ionic-native/firebase";
+import { FcmProvider } from '../providers/fcm/fcm';
+
+var firebase = {
+  apiKey: "AIzaSyB4uPpyGaI6P1QUre84ZO8RtVoNNJS9BSw",
+  authDomain: "palace-1533018406267.firebaseapp.com",
+  databaseURL: "https://palace-1533018406267.firebaseio.com",
+  projectId: "palace-1533018406267",
+  storageBucket: "palace-1533018406267.appspot.com",
+  messagingSenderId: "423379491312"
+};
 
 @NgModule({
   declarations: [
@@ -36,7 +47,8 @@ import { MovieConnectionProvider } from '../providers/movie-connection/movie-con
     BrowserModule,
     IonicModule.forRoot(MyApp,{statusbarPadding: true}),
     ComponentsModule,
-    ionicGalleryModal.GalleryModalModule
+    ionicGalleryModal.GalleryModalModule,
+    AngularFireModule.initializeApp(firebase)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,7 +65,6 @@ import { MovieConnectionProvider } from '../providers/movie-connection/movie-con
   providers: [
     StatusBar,
     SplashScreen,
-    FCM,
     HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {
@@ -61,6 +72,8 @@ import { MovieConnectionProvider } from '../providers/movie-connection/movie-con
       useClass: ionicGalleryModal.GalleryModalHammerConfig,
     },
     MovieConnectionProvider,
+    Firebase,
+    FcmProvider
   ]
 })
 export class AppModule {}

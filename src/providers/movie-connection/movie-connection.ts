@@ -14,7 +14,7 @@ import {MovieTimes} from "../../models/movieTimes";
 @Injectable()
 export class MovieConnectionProvider {
 
-  api_url = ENV.API_ENDPOINT + 'getMovies';
+  api_url = ENV.API_ENDPOINT + 'movies';
 
   movies: Movies[] = [];
 

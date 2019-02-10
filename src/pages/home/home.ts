@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {NavController, Platform} from 'ionic-angular';
+import {NavController, Platform, ToastController} from 'ionic-angular';
 import {ViewChild} from '@angular/core';
 import {Slides} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
@@ -8,6 +8,8 @@ import {RestaurantPage} from "../restaurant/restaurant";
 import {CustomSliderPage} from "../custom-slider/custom-slider";
 import {MapImagePage} from "../map-image/map-image";
 import {HTTP} from "@ionic-native/http";
+import {FcmProvider} from "../../providers/fcm/fcm";
+import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'page-home',
@@ -22,7 +24,7 @@ export class HomePage implements OnInit {
   // myColour: string  = 'green';
 
   constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform,
-              private http: HTTP) {
+              private http: HTTP, public fcm: FcmProvider, private toastCtrl: ToastController) {
 
     this.platform.ready().then(() => {
       if(this.platform.is('ios')){
@@ -51,8 +53,19 @@ export class HomePage implements OnInit {
   }
   ionViewDidLoad() {
 
-   console.log("width " +screen.width);
+    let token = this.fcm.getToken();
 
+    console.log(token);
+
+    this.fcm.listenToNotifications().pipe(
+      tap(msg => {
+        const toast = this.toastCtrl.create({
+          message: msg.body,
+          duration: 3000
+        });
+        toast.present();
+      })
+    ).subscribe();
 
   }
 

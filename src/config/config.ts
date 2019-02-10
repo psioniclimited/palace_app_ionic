@@ -1,3 +1,3 @@
 export const ENV = {
-  API_ENDPOINT: 'http://192.168.0.102:8000/'
+  API_ENDPOINT: 'http://psionic.io/palace_app/'
 };

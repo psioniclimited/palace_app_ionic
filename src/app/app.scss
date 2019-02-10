@@ -25,3 +25,15 @@
   font-size: 1.5rem;
 }
 
+.bg-image{
+  background-image: url("../assets/imgs/navbar_images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item{
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+

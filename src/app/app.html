@@ -5,12 +5,29 @@
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <ion-list>
-      <button ion-item (click)="onLoad(settingsPage)">
-        <ion-icon name="settings" item-left></ion-icon>
-        Main Page
+  <ion-content class="bg-image">
+    <ion-list no-lines>
+      <button ion-item (click)="onLoad(settingsPage)" class="item">
+        <ion-icon name="home" item-left></ion-icon>
+        HOME
       </button>
+      <button ion-item (click)="setNavigation(facilitiesPage)" class="item">
+        <ion-icon name="apps" item-left></ion-icon>
+        FACILITIES
+      </button>
+      <button ion-item (click)="setNavigation(restaurantPage)" class="item">
+        <ion-icon name="restaurant" item-left></ion-icon>
+        RESTAURANT
+      </button><button ion-item (click)="setNavigation(mapPage)" class="item">
+      <ion-icon name="pin" item-left></ion-icon>
+      MAP
+    </button><button ion-item (click)="setNavigation(reactionPage)" class="item">
+      <ion-icon name="bicycle" item-left></ion-icon>
+      REACTION
+    </button><button ion-item (click)="setNavigation(moviesPage)" class="item">
+      <ion-icon name="film" item-left></ion-icon>
+      MOVIES
+    </button>
     </ion-list>
   </ion-content>
 </ion-menu>

@@ -15,15 +15,14 @@ import {ENV} from "../../config/config";
 })
 export class MoviesPage {
 
-  firstImage: string = 'large-movies-div-img  first-image';
-  secondImage:string = 'large-movies-div-img second-image';
-  thirdImage:string = 'large-movies-div-img third-image';
 
   api_url = ENV.API_ENDPOINT + 'getMovieImage';
 
-  firstImageLink: string = this.api_url+"/1";
-  secondImageLink: string = this.api_url+"/2";
-  thridImageLink: string = this.api_url+"/3";
+  loadingImage = "assets/imgs/movies/loading.gif";
+
+  firstImageLink = null;
+  secondImageLink;
+  thridImageLink;
 
   count:number = 1;
   rndcount:number = 1;
@@ -33,14 +32,14 @@ export class MoviesPage {
   movieDateArray: MovieDetails[];
   movieDay: string;
   indexOfCurrentDay : number;
-  movieTimeArray: MovieTimes[];
+
   movieTime_1: string;
   movieTime_2: string;
   movieTime_3: string;
   movieTime_4: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
+  constructor(private platform: Platform, private statusBar: StatusBar,
+              private movieProvider: MovieConnectionProvider) {
     this.platform.ready().then(() => {
       if(this.platform.is('ios')){
         this.statusBar.overlaysWebView(true);
@@ -55,6 +54,10 @@ export class MoviesPage {
 
   ionViewDidLoad() {
 
+    this.firstImageLink = this.api_url+"/1";
+    this.secondImageLink = this.api_url+"/2";
+    this.thridImageLink = this.api_url+"/3";
+
      this.movieProvider.getMovies().then( (res: Movies[])=>{
        this.movies = res;
        this.movieTitle = this.movies[0].name;
@@ -67,37 +70,11 @@ export class MoviesPage {
   }
 
   ionViewDidEnter(){
-    let top_height = $('#first_image').height();
-    document.getElementById('movie_btn').style.top = (top_height - 30)+"px";
+    let top_height = $(window).height();
+    console.log("top height "+top_height);
+    document.getElementById('movie_btn').style.top = (top_height - 350)+"px";
     document.getElementById('image_poster').style.height = (top_height + 10)+"px";
     document.getElementById('image_poster').style.opacity = "1";
-
-
-  }
-
-  makeItMove(x:number){
-    console.log(x);
-
-     if (x > 3) {
-      this.count = 1;
-    }
-
-    if(this.count === 1) {
-      this.firstImage = 'large-movies-div-img third-image';
-      this.secondImage = 'large-movies-div-img  first-image';
-      this.thirdImage = 'large-movies-div-img second-image';
-    } else if (this.count === 2) {
-      this.firstImage = 'large-movies-div-img second-image';
-      this.secondImage = 'large-movies-div-img  third-image';
-      this.thirdImage = 'large-movies-div-img  first-image';
-    } else if (this.count === 3) {
-
-      this.firstImage = 'large-movies-div-img first-image';
-      this.secondImage = 'large-movies-div-img second-image';
-      this.thirdImage = 'large-movies-div-img third-image';
-
-    }
-    this.count++;
   }
 
   rndItMove(x:number){
@@ -134,8 +111,6 @@ export class MoviesPage {
 
     }
 
-    // document.getElementsByClassName('large-movies-div-imgfirst-image');
-    // console.log(document.getElementById('first_image').style.ou);
     console.log($('#first_image').height());
     this.rndcount++;
 
@@ -143,7 +118,6 @@ export class MoviesPage {
 
   private setMovieDate(id:number){
     this.movieDateArray = this.movies[id].movie_details;
-    // this.movieTimeArray = this.movies[id].movie_details[0].movie_times;
 
     this.movieTime_1 =this.adjustTime(this.movies[id].movie_details[0].movie_times[0].time);
     this.movieTime_2 =this.adjustTime(this.movies[id].movie_details[0].movie_times[1].time);
@@ -162,9 +136,6 @@ export class MoviesPage {
     }
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
-
-    // this.movieTimeArray = this.movieDateArray[this.indexOfCurrentDay].movie_times;
-    // this.movieTime_1 = this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time;
 
     this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
     this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);

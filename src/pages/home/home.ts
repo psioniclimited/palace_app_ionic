@@ -55,7 +55,7 @@ export class HomePage implements OnInit {
 
     let token = this.fcm.getToken();
 
-    console.log(token);
+    console.log(this.platform.width());
 
     this.fcm.listenToNotifications().pipe(
       tap(msg => {

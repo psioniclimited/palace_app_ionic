@@ -6,6 +6,7 @@ import {MovieConnectionProvider} from "../../providers/movie-connection/movie-co
 import {Movies} from "../../models/movies";
 import {MovieDetails} from "../../models/movieDetails";
 import {MovieTimes} from "../../models/movieTimes";
+import {ENV} from "../../config/config";
 
 @IonicPage()
 @Component({
@@ -18,9 +19,11 @@ export class MoviesPage {
   secondImage:string = 'large-movies-div-img second-image';
   thirdImage:string = 'large-movies-div-img third-image';
 
-  firstImageLink: string = "http://psionic.io/palace_app/getMovieImage/1";
-  secondImageLink: string = "http://psionic.io/palace_app/getMovieImage/2";
-  thridImageLink: string = "http://psionic.io/palace_app/getMovieImage/3";
+  api_url = ENV.API_ENDPOINT + 'getMovieImage';
+
+  firstImageLink: string = this.api_url+"/1";
+  secondImageLink: string = this.api_url+"/2";
+  thridImageLink: string = this.api_url+"/3";
 
   count:number = 1;
   rndcount:number = 1;
@@ -105,29 +108,29 @@ export class MoviesPage {
     }
 
     if(this.rndcount === 1) {
-      this.firstImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[2].id;
+      this.firstImageLink = this.api_url+"/"+this.movies[2].id;
       this.movieTitle = this.movies[2].name;
       this.setMovieDate(2);
 
-      this.secondImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[0].id;
-      this.thridImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[1].id;
+      this.secondImageLink = this.api_url+"/"+this.movies[0].id;
+      this.thridImageLink = this.api_url+"/"+this.movies[1].id;
 
     } else if (this.rndcount === 2) {
 
-      this.firstImageLink = "http://psionic.io/palace_app/getMovieImage/"+ this.movies[1].id;
+      this.firstImageLink = this.api_url+"/"+this.movies[1].id;
       this.movieTitle = this.movies[1].name;
       this.setMovieDate(1);
 
-      this.secondImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[2].id;
-      this.thridImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[0].id;
+      this.secondImageLink = this.api_url+"/"+this.movies[2].id;
+      this.thridImageLink = this.api_url+"/"+this.movies[0].id;
 
     } else if (this.rndcount === 3) {
-      this.firstImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[0].id;
+      this.firstImageLink = this.api_url+"/"+this.movies[0].id;
       this.movieTitle = this.movies[0].name;
       this.setMovieDate(0);
 
-      this.secondImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[1].id;
-      this.thridImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[2].id;
+      this.secondImageLink = this.api_url+"/"+this.movies[1].id;
+      this.thridImageLink = this.api_url+"/"+this.movies[2].id;
 
     }
 

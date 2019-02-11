@@ -18,9 +18,9 @@ export class MoviesPage {
   secondImage:string = 'large-movies-div-img second-image';
   thirdImage:string = 'large-movies-div-img third-image';
 
-  firstImageLink: string = "http://192.168.0.102:8000/getMovieImage/1";
-  secondImageLink: string = "http://192.168.0.102:8000/getMovieImage/2";
-  thridImageLink: string = "http://192.168.0.102:8000/getMovieImage/3";
+  firstImageLink: string = "http://psionic.io/palace_app/getMovieImage/1";
+  secondImageLink: string = "http://psionic.io/palace_app/getMovieImage/2";
+  thridImageLink: string = "http://psionic.io/palace_app/getMovieImage/3";
 
   count:number = 1;
   rndcount:number = 1;
@@ -105,29 +105,29 @@ export class MoviesPage {
     }
 
     if(this.rndcount === 1) {
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+      this.firstImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[2].id;
       this.movieTitle = this.movies[2].name;
       this.setMovieDate(2);
 
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
+      this.secondImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[0].id;
+      this.thridImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[1].id;
 
     } else if (this.rndcount === 2) {
 
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+ this.movies[1].id;
+      this.firstImageLink = "http://psionic.io/palace_app/getMovieImage/"+ this.movies[1].id;
       this.movieTitle = this.movies[1].name;
       this.setMovieDate(1);
 
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+      this.secondImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[2].id;
+      this.thridImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[0].id;
 
     } else if (this.rndcount === 3) {
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+      this.firstImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[0].id;
       this.movieTitle = this.movies[0].name;
       this.setMovieDate(0);
 
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+      this.secondImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[1].id;
+      this.thridImageLink = "http://psionic.io/palace_app/getMovieImage/"+this.movies[2].id;
 
     }
 

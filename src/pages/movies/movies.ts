@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {IonicPage, Platform} from 'ionic-angular';
 import {StatusBar} from "@ionic-native/status-bar";
 import * as $ from 'jquery';
 import {MovieConnectionProvider} from "../../providers/movie-connection/movie-connection";
 import {Movies} from "../../models/movies";
 import {MovieDetails} from "../../models/movieDetails";
-import {MovieTimes} from "../../models/movieTimes";
+import {ENV} from "../../config/config";
 
 @IonicPage()
 @Component({
@@ -13,31 +13,29 @@ import {MovieTimes} from "../../models/movieTimes";
   templateUrl: 'movies.html',
 })
 export class MoviesPage {
+  api_url = ENV.API_ENDPOINT + 'getMovieImage';
 
-  firstImage: string = 'large-movies-div-img  first-image';
-  secondImage:string = 'large-movies-div-img second-image';
-  thirdImage:string = 'large-movies-div-img third-image';
+  loadingImage = "assets/imgs/movies/loading.gif";
 
-  firstImageLink: string = "http://192.168.0.102:8000/getMovieImage/1";
-  secondImageLink: string = "http://192.168.0.102:8000/getMovieImage/2";
-  thridImageLink: string = "http://192.168.0.102:8000/getMovieImage/3";
+  firstImageLink = null;
+  secondImageLink;
+  thridImageLink;
 
   count:number = 1;
-  rndcount:number = 1;
 
   movies: Movies[];
   movieTitle: string;
   movieDateArray: MovieDetails[];
   movieDay: string;
   indexOfCurrentDay : number;
-  movieTimeArray: MovieTimes[];
+
   movieTime_1: string;
   movieTime_2: string;
   movieTime_3: string;
   movieTime_4: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              private platform: Platform, private statusBar: StatusBar, private movieProvider: MovieConnectionProvider) {
+  constructor(private platform: Platform, private statusBar: StatusBar,
+              private movieProvider: MovieConnectionProvider) {
     this.platform.ready().then(() => {
       if(this.platform.is('ios')){
         this.statusBar.overlaysWebView(true);
@@ -46,11 +44,15 @@ export class MoviesPage {
         this.statusBar.overlaysWebView(false);
         this.statusBar.styleLightContent();
       }
-      // StatusBar.overlaysWebView(false);
+
     });
   }
 
   ionViewDidLoad() {
+
+    this.firstImageLink = this.api_url+"/1";
+    this.secondImageLink = this.api_url+"/2";
+    this.thridImageLink = this.api_url+"/3";
 
      this.movieProvider.getMovies().then( (res: Movies[])=>{
        this.movies = res;
@@ -64,83 +66,53 @@ export class MoviesPage {
   }
 
   ionViewDidEnter(){
-    let top_height = $('#first_image').height();
-    document.getElementById('movie_btn').style.top = (top_height - 30)+"px";
+    let top_height = $(window).height();
+    console.log("width "+this.platform.width());
+
+    // document.getElementById('movie_btn').style.top = (top_height - 350)+"px";
     document.getElementById('image_poster').style.height = (top_height + 10)+"px";
     document.getElementById('image_poster').style.opacity = "1";
-
-
-  }
-
-  makeItMove(x:number){
-    console.log(x);
-
-     if (x > 3) {
-      this.count = 1;
-    }
-
-    if(this.count === 1) {
-      this.firstImage = 'large-movies-div-img third-image';
-      this.secondImage = 'large-movies-div-img  first-image';
-      this.thirdImage = 'large-movies-div-img second-image';
-    } else if (this.count === 2) {
-      this.firstImage = 'large-movies-div-img second-image';
-      this.secondImage = 'large-movies-div-img  third-image';
-      this.thirdImage = 'large-movies-div-img  first-image';
-    } else if (this.count === 3) {
-
-      this.firstImage = 'large-movies-div-img first-image';
-      this.secondImage = 'large-movies-div-img second-image';
-      this.thirdImage = 'large-movies-div-img third-image';
-
-    }
-    this.count++;
   }
 
   rndItMove(x:number){
     console.log(x);
 
     if (x > 3) {
-      this.rndcount = 1;
+      this.count = 1;
     }
 
-    if(this.rndcount === 1) {
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+    if(this.count === 1) {
+      this.firstImageLink = this.api_url+"/"+this.movies[2].id;
       this.movieTitle = this.movies[2].name;
       this.setMovieDate(2);
 
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
+      this.secondImageLink = this.api_url+"/"+this.movies[0].id;
+      this.thridImageLink = this.api_url+"/"+this.movies[1].id;
 
-    } else if (this.rndcount === 2) {
+    } else if (this.count === 2) {
 
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+ this.movies[1].id;
+      this.firstImageLink = this.api_url+"/"+this.movies[1].id;
       this.movieTitle = this.movies[1].name;
       this.setMovieDate(1);
 
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+      this.secondImageLink = this.api_url+"/"+this.movies[2].id;
+      this.thridImageLink = this.api_url+"/"+this.movies[0].id;
 
-    } else if (this.rndcount === 3) {
-      this.firstImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[0].id;
+    } else if (this.count === 3) {
+      this.firstImageLink = this.api_url+"/"+this.movies[0].id;
       this.movieTitle = this.movies[0].name;
       this.setMovieDate(0);
 
-      this.secondImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[1].id;
-      this.thridImageLink = "http://192.168.0.102:8000/getMovieImage/"+this.movies[2].id;
+      this.secondImageLink = this.api_url+"/"+this.movies[1].id;
+      this.thridImageLink = this.api_url+"/"+this.movies[2].id;
 
     }
-
-    // document.getElementsByClassName('large-movies-div-imgfirst-image');
-    // console.log(document.getElementById('first_image').style.ou);
-    console.log($('#first_image').height());
-    this.rndcount++;
+    this.count++;
 
   }
 
   private setMovieDate(id:number){
     this.movieDateArray = this.movies[id].movie_details;
-    // this.movieTimeArray = this.movies[id].movie_details[0].movie_times;
 
     this.movieTime_1 =this.adjustTime(this.movies[id].movie_details[0].movie_times[0].time);
     this.movieTime_2 =this.adjustTime(this.movies[id].movie_details[0].movie_times[1].time);
@@ -160,9 +132,6 @@ export class MoviesPage {
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
 
-    // this.movieTimeArray = this.movieDateArray[this.indexOfCurrentDay].movie_times;
-    // this.movieTime_1 = this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time;
-
     this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
     this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
     this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
@@ -177,7 +146,7 @@ export class MoviesPage {
     }
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
-    // this.movieTimeArray = this.movieDateArray[this.indexOfCurrentDay].movie_times;
+
     this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
     this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
     this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);

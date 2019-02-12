@@ -176,9 +176,24 @@ page-movies {
   }
 
   @media (min-width: 320px) {
-    //.center{
-    //  margin-top: 12vh;
-    //}
+    .movie-heading{
+      margin-top: -2vh;
+    }
+    .movie-title{
+      margin-top: -4.25vh;
+    }
+    .image-posters{
+      width: 95%;
+    }
+    .move-btn{
+      top: 270px;
+    }
+    .description{
+      margin-top: -40vh;
+    }
+    .sm-devices{
+      margin-top: -2vh;
+    }
   }
 
 }

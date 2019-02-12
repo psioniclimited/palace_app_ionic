@@ -169,16 +169,22 @@ page-movies {
 
   @media (min-width: 321px) and (max-width: 360px){
     .movie-heading{
-      margin-top: 0vh;
+      margin-top:-2vh;
     }
     .movie-title{
-      margin-top: -1.25vh;
+      margin-top: -3.25vh;
+    }
+    .image-posters{
+      width: 95%;
     }
     .move-btn{
       top: 300px;
     }
     .description{
-      margin-top: -42vh;
+      margin-top: -38vh;
+    }
+    .sm-devices{
+      margin-top: -2vh;
     }
   }
 
@@ -190,8 +196,8 @@ page-movies {
       margin-top: -4.25vh;
     }
     .image-posters{
-      width: 95%;
-    }
+       width: 95%;
+     }
     .move-btn{
       top: 270px;
     }

@@ -67,8 +67,9 @@ export class MoviesPage {
 
   ionViewDidEnter(){
     let top_height = $(window).height();
-    console.log("top height "+top_height);
-    document.getElementById('movie_btn').style.top = (top_height - 350)+"px";
+    console.log("width "+this.platform.width());
+
+    // document.getElementById('movie_btn').style.top = (top_height - 350)+"px";
     document.getElementById('image_poster').style.height = (top_height + 10)+"px";
     document.getElementById('image_poster').style.opacity = "1";
   }

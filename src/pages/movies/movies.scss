@@ -159,11 +159,20 @@ page-movies {
     }
   }
   @media (min-width: 361px) and (max-width: 380px){
+    .movie-heading{
+      margin-top:-2vh;
+    }
+    .movie-title{
+      margin-top: -2.25vh;
+    }
+    .image-posters{
+      width: 95%;
+    }
     .move-btn{
-      top: 365px;
+      top: 308px;
     }
     .description{
-      margin-top: -30vh;
+      margin-top: -40vh;
     }
   }
 

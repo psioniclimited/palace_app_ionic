@@ -20,6 +20,13 @@ export class MapImagePage {
   honeyMoonVila: any [] = [];
   firstPresidentVilla1: any [] = [];
   secondPresidentVilla: any [] = [];
+  towerImage: any [] = [];
+  amphitheaterImages: any [] = [];
+  helipadImage: any [] = [];
+  revolutionImage: any [] = [];
+  nostalgiaImage: any [] = [];
+  barCodeImage: any [] = [];
+  mazeImage: any [] = [];
   mosqueImages: any [] = [];
   tennisImages: any [] = [];
   basketballImages: any [] = [];
@@ -68,6 +75,40 @@ export class MapImagePage {
       {url: 'assets/imgs/map/modal_mosque_1.png'},
       {url: 'assets/imgs/map/modal_mosque_2.png'},
       {url: 'assets/imgs/map/modal_mosque_3.png'}
+    );
+
+    this.towerImage.push(
+      {url: 'assets/imgs/map/towerImage1.png'},
+      {url: 'assets/imgs/map/towerImage2.png'}
+    );
+    this.helipadImage.push(
+      {url: 'assets/imgs/map/helipad1.png'},
+      {url: 'assets/imgs/map/helipad2.png'}
+    );
+
+    this.amphitheaterImages.push(
+      {url: 'assets/imgs/map/amphitheater1.png'},
+      {url: 'assets/imgs/map/amphitheater2.png'}
+    );
+
+    this.revolutionImage.push(
+      {url: 'assets/imgs/map/revolution1.png'},
+      {url: 'assets/imgs/map/revolution2.png'}
+    );
+
+    this.nostalgiaImage.push(
+      {url: 'assets/imgs/map/nostalgia1.png'},
+      {url: 'assets/imgs/map/nostalgia2.png'}
+    );
+
+    this.barCodeImage.push(
+      {url: 'assets/imgs/map/barCode1.png'},
+      {url: 'assets/imgs/map/barCode2.png'}
+    );
+
+    this.mazeImage.push(
+      {url: 'assets/imgs/map/maze1.png'},
+      {url: 'assets/imgs/map/maze2.png'}
     );
 
     this.tennisImages.push(
@@ -292,4 +333,66 @@ export class MapImagePage {
     modal.present();
   }
 
+  openHelipad(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.helipadImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openTower(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.towerImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openAmphitheater(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.amphitheaterImages,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openRevolution(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.revolutionImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openNostalgia(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.nostalgiaImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openBarCode(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.barCodeImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openMaze(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.mazeImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
 }

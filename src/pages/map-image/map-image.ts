@@ -16,12 +16,16 @@ export class MapImagePage {
   height_increase: number = 120;
 
   westVillaImages: any [] = [];
+  eastVillaImages: any [] = [];
+  honeyMoonVila: any [] = [];
+  firstPresidentVilla1: any [] = [];
+  secondPresidentVilla: any [] = [];
   mosqueImages: any [] = [];
   tennisImages: any [] = [];
   basketballImages: any [] = [];
   waterfallImages: any [] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,
+  constructor(private modalCtrl: ModalController,
               private platform: Platform, private statusBar: StatusBar) {
     //ionic cordova build ios -- --buildFlag="-UseModernBuildSystem=0"
 
@@ -37,9 +41,27 @@ export class MapImagePage {
     });
 
     this.westVillaImages.push(
-      {url: 'assets/imgs/movies/iceAge.png'},
-      {url: 'assets/imgs/movies/kungfu.png'},
-      {url: 'assets/imgs/movies/parrot.png'}
+      {url: 'assets/imgs/map/westVilla1.png'},
+      {url: 'assets/imgs/map/westVilla2.png'}
+    );
+
+    this.eastVillaImages.push(
+      {url: 'assets/imgs/map/eastVilla1.png'},
+      {url: 'assets/imgs/map/eastVilla2.png'}
+    );
+
+    this.honeyMoonVila.push(
+      {url: 'assets/imgs/map/honeyMoon1.png'},
+      {url: 'assets/imgs/map/honeyMoon2.png'}
+    );
+    this.firstPresidentVilla1.push(
+      {url: 'assets/imgs/map/firstPresidentVilla1.png'},
+      {url: 'assets/imgs/map/firstPresidentVilla2.png'}
+    );
+
+    this.secondPresidentVilla.push(
+      {url: 'assets/imgs/map/secondPresidentVilla1.png'},
+      {url: 'assets/imgs/map/secondPresidentVilla2.png'}
     );
 
     this.mosqueImages.push(
@@ -228,6 +250,42 @@ export class MapImagePage {
   openWaterFall() {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.waterfallImages,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openEastVilla(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.eastVillaImages,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openHoneymoonVilla(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.honeyMoonVila,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openPresidentVilla1(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.firstPresidentVilla1,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openPresidentVilla2(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.secondPresidentVilla,
       initialSlide: 0,
       closeIcon: 'close'
     });

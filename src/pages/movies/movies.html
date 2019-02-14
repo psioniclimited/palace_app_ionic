@@ -11,15 +11,15 @@
   </div>
 
   <div class="image-posters" id="image_poster">
-    <img [src]="firstImageLink ? firstImageLink:loadingImage" class="large-movies-div-img first-image" alt="img01" id="first_image">
+    <img [src]="firstImageLink" class="large-movies-div-img first-image" alt="img01" id="first_image">
     <img [src]="secondImageLink" class="large-movies-div-img second-image" alt="img02">
-    <img [src]="thridImageLink" class="large-movies-div-img third-image" alt="img03">
+    <img [src]="thirdImageLink" class="large-movies-div-img third-image" alt="img03">
 
     <!--<div class="move-btn">-->
       <!--<img src="assets/imgs/movies/arrow.png" alt="arrow" (click)="makeItMove(count)">-->
     <!--</div>-->
     <div class="move-btn" id="movie_btn">
-      <img src="assets/imgs/movies/arrow.png" alt="arrow" (click)="rndItMove(count)">
+      <img src="assets/imgs/movies/arrow.png" alt="arrow" (click)="rndItMove()">
     </div>
   </div>
 
@@ -37,7 +37,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row no-padding no-margin>
+    <ion-row no-padding no-margin class="sm-devices">
       <ion-col col-3>
         <button ion-button color="dark" class="timing-buttons" outline><p class="timing-btns-p">{{movieTime_1}}</p></button>
       </ion-col>

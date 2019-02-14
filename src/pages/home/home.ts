@@ -61,7 +61,7 @@ export class HomePage implements OnInit {
       tap(msg => {
         const toast = this.toastCtrl.create({
           message: msg.body,
-          duration: 3000
+          duration: 10000
         });
         toast.present();
       })

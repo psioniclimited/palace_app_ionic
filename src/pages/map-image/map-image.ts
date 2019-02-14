@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Content, IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {Content, IonicPage, Platform} from 'ionic-angular';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { GalleryModal } from 'ionic-gallery-modal';
 import * as $ from 'jquery';
@@ -16,12 +16,23 @@ export class MapImagePage {
   height_increase: number = 120;
 
   westVillaImages: any [] = [];
+  eastVillaImages: any [] = [];
+  honeyMoonVila: any [] = [];
+  firstPresidentVilla1: any [] = [];
+  secondPresidentVilla: any [] = [];
+  towerImage: any [] = [];
+  amphitheaterImages: any [] = [];
+  helipadImage: any [] = [];
+  revolutionImage: any [] = [];
+  nostalgiaImage: any [] = [];
+  barCodeImage: any [] = [];
+  mazeImage: any [] = [];
   mosqueImages: any [] = [];
   tennisImages: any [] = [];
   basketballImages: any [] = [];
   waterfallImages: any [] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,
+  constructor(private modalCtrl: ModalController,
               private platform: Platform, private statusBar: StatusBar) {
     //ionic cordova build ios -- --buildFlag="-UseModernBuildSystem=0"
 
@@ -37,15 +48,67 @@ export class MapImagePage {
     });
 
     this.westVillaImages.push(
-      {url: 'assets/imgs/movies/iceAge.png'},
-      {url: 'assets/imgs/movies/kungfu.png'},
-      {url: 'assets/imgs/movies/parrot.png'}
+      {url: 'assets/imgs/map/westVilla1.png'},
+      {url: 'assets/imgs/map/westVilla2.png'}
+    );
+
+    this.eastVillaImages.push(
+      {url: 'assets/imgs/map/eastVilla1.png'},
+      {url: 'assets/imgs/map/eastVilla2.png'}
+    );
+
+    this.honeyMoonVila.push(
+      {url: 'assets/imgs/map/honeyMoon1.png'},
+      {url: 'assets/imgs/map/honeyMoon2.png'}
+    );
+    this.firstPresidentVilla1.push(
+      {url: 'assets/imgs/map/firstPresidentVilla1.png'},
+      {url: 'assets/imgs/map/firstPresidentVilla2.png'}
+    );
+
+    this.secondPresidentVilla.push(
+      {url: 'assets/imgs/map/secondPresidentVilla1.png'},
+      {url: 'assets/imgs/map/secondPresidentVilla2.png'}
     );
 
     this.mosqueImages.push(
       {url: 'assets/imgs/map/modal_mosque_1.png'},
       {url: 'assets/imgs/map/modal_mosque_2.png'},
       {url: 'assets/imgs/map/modal_mosque_3.png'}
+    );
+
+    this.towerImage.push(
+      {url: 'assets/imgs/map/towerImage1.png'},
+      {url: 'assets/imgs/map/towerImage2.png'}
+    );
+    this.helipadImage.push(
+      {url: 'assets/imgs/map/helipad1.png'},
+      {url: 'assets/imgs/map/helipad2.png'}
+    );
+
+    this.amphitheaterImages.push(
+      {url: 'assets/imgs/map/amphitheater1.png'},
+      {url: 'assets/imgs/map/amphitheater2.png'}
+    );
+
+    this.revolutionImage.push(
+      {url: 'assets/imgs/map/revolution1.png'},
+      {url: 'assets/imgs/map/revolution2.png'}
+    );
+
+    this.nostalgiaImage.push(
+      {url: 'assets/imgs/map/nostalgia1.png'},
+      {url: 'assets/imgs/map/nostalgia2.png'}
+    );
+
+    this.barCodeImage.push(
+      {url: 'assets/imgs/map/barCode1.png'},
+      {url: 'assets/imgs/map/barCode2.png'}
+    );
+
+    this.mazeImage.push(
+      {url: 'assets/imgs/map/maze1.png'},
+      {url: 'assets/imgs/map/maze2.png'}
     );
 
     this.tennisImages.push(
@@ -234,4 +297,102 @@ export class MapImagePage {
     modal.present();
   }
 
+  openEastVilla(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.eastVillaImages,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openHoneymoonVilla(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.honeyMoonVila,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openPresidentVilla1(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.firstPresidentVilla1,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openPresidentVilla2(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.secondPresidentVilla,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openHelipad(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.helipadImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openTower(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.towerImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openAmphitheater(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.amphitheaterImages,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openRevolution(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.revolutionImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openNostalgia(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.nostalgiaImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openBarCode(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.barCodeImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
+
+  openMaze(){
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.mazeImage,
+      initialSlide: 0,
+      closeIcon: 'close'
+    });
+    modal.present();
+  }
 }

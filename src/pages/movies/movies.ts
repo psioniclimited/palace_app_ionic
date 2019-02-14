@@ -57,7 +57,7 @@ export class MoviesPage {
      this.movieProvider.getMovies().then( (res: Movies[])=>{
        this.movies = res;
        this.movieTitle = this.movies[0].name;
-      console.log(this.movies[1].movie_details[0].date);
+
       this.setMovieDate(0);
     }, (error)=>{
       console.log(error);
@@ -75,7 +75,11 @@ export class MoviesPage {
   }
 
   rndItMove(x:number){
-    console.log(x);
+    this.movieTime_1 = "";
+    this.movieTime_2 = "";
+    this.movieTime_3 = "";
+    this.movieTime_4 = "";
+
 
     if (x > 3) {
       this.count = 1;
@@ -112,12 +116,30 @@ export class MoviesPage {
   }
 
   private setMovieDate(id:number){
+
+    this.movieTime_1 = "";
+    this.movieTime_2 = "";
+    this.movieTime_3 = "";
+    this.movieTime_4 = "";
+
     this.movieDateArray = this.movies[id].movie_details;
 
-    this.movieTime_1 =this.adjustTime(this.movies[id].movie_details[0].movie_times[0].time);
-    this.movieTime_2 =this.adjustTime(this.movies[id].movie_details[0].movie_times[1].time);
-    this.movieTime_3 =this.adjustTime(this.movies[id].movie_details[0].movie_times[2].time);
-    this.movieTime_4 =this.adjustTime(this.movies[id].movie_details[0].movie_times[3].time);
+    if(this.movies[id].movie_details[0].movie_times[0] !== undefined){
+      this.movieTime_1 =this.adjustTime(this.movies[id].movie_details[0].movie_times[0].time);
+    }
+
+    if(this.movies[id].movie_details[0].movie_times[1] !== undefined){
+      this.movieTime_2 =this.adjustTime(this.movies[id].movie_details[0].movie_times[1].time);
+    }
+
+
+    if(this.movies[id].movie_details[0].movie_times[2] !== undefined){
+      this.movieTime_3 =this.adjustTime(this.movies[id].movie_details[0].movie_times[2].time);
+    }
+
+    if(this.movies[id].movie_details[0].movie_times[3] !== undefined){
+      this.movieTime_4 =this.adjustTime(this.movies[id].movie_details[0].movie_times[3].time);
+    }
 
     let date = new Date(this.movieDateArray[0].date);
     this.indexOfCurrentDay = id;
@@ -125,32 +147,84 @@ export class MoviesPage {
   }
 
   public dayLeft(){
-    this.indexOfCurrentDay--;
+
+    this.movieTime_1 = "";
+    this.movieTime_2 = "";
+    this.movieTime_3 = "";
+    this.movieTime_4 = "";
+
+    if(this.indexOfCurrentDay > (this.movieDateArray.length-1)){
+      this.indexOfCurrentDay = 0;
+    }
+
     if(this.indexOfCurrentDay < 0){
       this.indexOfCurrentDay = this.movieDateArray.length-1;
     }
+
+    console.log('left ' + this.indexOfCurrentDay);
+
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
 
-    this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
-    this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
-    this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
-    this.movieTime_4 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[3].time);
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[0] !== undefined){
+      this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
+    }
+
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[1] !== undefined){
+      this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
+    }
+
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[2] !== undefined){
+      this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
+    }
+
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[3] !== undefined){
+      this.movieTime_4 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[3].time);
+    }
+
+
+    this.indexOfCurrentDay--;
 
   }
 
   public  dayRight(){
-    this.indexOfCurrentDay++;
+
+    this.movieTime_1 = "";
+    this.movieTime_2 = "";
+    this.movieTime_3 = "";
+    this.movieTime_4 = "";
+
+    if(this.indexOfCurrentDay < 0){
+      this.indexOfCurrentDay = 1;
+    }
+
     if(this.indexOfCurrentDay > (this.movieDateArray.length-1)){
       this.indexOfCurrentDay = 0;
+
     }
+
+    console.log('right ' + this.indexOfCurrentDay);
+
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
 
-    this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
-    this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
-    this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
-    this.movieTime_4 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[3].time);
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[0] !== undefined){
+      this.movieTime_1 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[0].time);
+    }
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[1] !== undefined){
+      this.movieTime_2 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[1].time);
+    }
+
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[2] !== undefined){
+      this.movieTime_3 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[2].time);
+    }
+
+    if(this.movieDateArray[this.indexOfCurrentDay].movie_times[3]!== undefined){
+      this.movieTime_4 =this.adjustTime(this.movieDateArray[this.indexOfCurrentDay].movie_times[3].time);
+    }
+
+
+    this.indexOfCurrentDay++;
   }
 
 

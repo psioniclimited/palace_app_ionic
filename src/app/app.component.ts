@@ -7,8 +7,8 @@ import { HomePage } from '../pages/home/home';
 import {FacalitiesPage} from "../pages/facalities/facalities";
 import {RestaurantPage} from "../pages/restaurant/restaurant";
 import {MapImagePage} from "../pages/map-image/map-image";
-import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 import {MoviesPage} from "../pages/movies/movies";
+import {CustomSliderPage} from "../pages/custom-slider/custom-slider";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +18,7 @@ export class MyApp {
   facilitiesPage = FacalitiesPage;
   restaurantPage = RestaurantPage;
   mapPage = MapImagePage;
-  reactionPage = KhalenRnDPage;
+  reactionPage = CustomSliderPage;
   moviesPage = MoviesPage;
 
   @ViewChild('nav') nav: NavController;

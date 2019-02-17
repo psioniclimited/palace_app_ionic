@@ -7,7 +7,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {FacalitiesPage} from "../pages/facalities/facalities";
-import {KhalenRnDPage} from "../pages/khalen-rn-d/khalen-rn-d";
 import {RestaurantPage} from "../pages/restaurant/restaurant";
 import {MoviesPage} from "../pages/movies/movies";
 import {ComponentsModule} from "../components/components.module";
@@ -22,7 +21,7 @@ import {AngularFireModule} from "@angular/fire";
 import {Firebase} from "@ionic-native/firebase";
 import { FcmProvider } from '../providers/fcm/fcm';
 
-var firebase = {
+let firebase = {
   apiKey: "AIzaSyB4uPpyGaI6P1QUre84ZO8RtVoNNJS9BSw",
   authDomain: "palace-1533018406267.firebaseapp.com",
   databaseURL: "https://palace-1533018406267.firebaseio.com",
@@ -36,7 +35,6 @@ var firebase = {
     MyApp,
     HomePage,
     FacalitiesPage,
-    KhalenRnDPage,
     RestaurantPage,
     MoviesPage,
     MapImagePage,
@@ -55,7 +53,6 @@ var firebase = {
     MyApp,
     HomePage,
     FacalitiesPage,
-    KhalenRnDPage,
     RestaurantPage,
     CustomSliderPage,
     MoviesPage,

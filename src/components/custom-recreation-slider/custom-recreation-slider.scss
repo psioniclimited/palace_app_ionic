@@ -144,4 +144,23 @@ custom-recreation-slider {
   .path-slider__current-item .custom-svg-icon-path {
     fill: #fff;
   }
+
+  @media (min-width: 341px) and (max-width: 360px){
+    .paragraph{
+      font-size: small;
+    }
+  }
+
+  @media (min-width: 321px) and (max-width: 340px){
+    .paragraph{
+      font-size: small;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .paragraph{
+      font-size: small;
+    }
+  }
+
 }

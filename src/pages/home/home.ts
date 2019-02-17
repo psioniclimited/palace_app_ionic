@@ -7,7 +7,6 @@ import {FacalitiesPage} from "../facalities/facalities";
 import {RestaurantPage} from "../restaurant/restaurant";
 import {CustomSliderPage} from "../custom-slider/custom-slider";
 import {MapImagePage} from "../map-image/map-image";
-import {HTTP} from "@ionic-native/http";
 import {FcmProvider} from "../../providers/fcm/fcm";
 import {tap} from "rxjs/operators";
 
@@ -19,12 +18,10 @@ export class HomePage implements OnInit {
 
   @ViewChild(Slides) slides: Slides;
   @ViewChild('title') title: ElementRef;
-
-  slideText: string = "slide-text";
   // myColour: string  = 'green';
 
   constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform,
-              private http: HTTP, public fcm: FcmProvider, private toastCtrl: ToastController) {
+              public fcm: FcmProvider, private toastCtrl: ToastController) {
 
     this.platform.ready().then(() => {
       if(this.platform.is('ios')){

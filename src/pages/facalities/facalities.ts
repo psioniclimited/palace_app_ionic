@@ -1,16 +1,8 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {IonicPage, Platform} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import {MoviesPage} from "../movies/movies";
-import {WheelOfFortunePage} from "../wheel-of-fortune/wheel-of-fortune";
 import {StatusBar} from "@ionic-native/status-bar";
 
-/**
- * Generated class for the FacalitiesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,7 +11,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 })
 export class FacalitiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
+  constructor(public alertCtrl: AlertController,
               private statusBar: StatusBar, private platform: Platform) {
 
     this.platform.ready().then(() => {
@@ -35,12 +27,10 @@ export class FacalitiesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FacalitiesPage');
+    // console.log('ionViewDidLoad FacalitiesPage');
   }
 
-  rndPage(){
-    // this.navCtrl.push(KhalenRnDPage);
-  }
+
 
   timingAlert(){
     const alert = this.alertCtrl.create({
@@ -51,11 +41,5 @@ export class FacalitiesPage {
     alert.present();
   }
 
-  theaterPage() {
-    this.navCtrl.push(MoviesPage);
-  }
 
-  wheelGame(){
-    this.navCtrl.push(WheelOfFortunePage);
-  }
 }

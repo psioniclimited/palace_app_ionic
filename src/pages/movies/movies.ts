@@ -44,6 +44,8 @@ export class MoviesPage {
       }
 
     });
+
+    this.resetMovieTime();
   }
 
   ionViewDidLoad() {
@@ -63,9 +65,6 @@ export class MoviesPage {
 
   ionViewDidEnter() {
     let top_height = $(window).height();
-    console.log("width " + this.platform.width());
-
-    // document.getElementById('movie_btn').style.top = (top_height - 350)+"px";
     document.getElementById('image_poster').style.height = (top_height + 10) + "px";
     document.getElementById('image_poster').style.opacity = "1";
   }
@@ -94,42 +93,17 @@ export class MoviesPage {
     this.thirdImageLink = this.api_url + "/" + this.movies[this.checkArrayLength(this.count + 2)].id;
     this.count++;
 
-    // if(this.count === 1) {
-    //   this.firstImageLink = this.api_url+"/"+this.movies[2].id;
-    //   this.movieTitle = this.movies[2].name;
-    //   this.setMovieDate(2);
-    //
-    //   this.secondImageLink = this.api_url+"/"+this.movies[0].id;
-    //   this.thirdImageLink = this.api_url+"/"+this.movies[1].id;
-    //
-    // } else if (this.count === 2) {
-    //
-    //   this.firstImageLink = this.api_url+"/"+this.movies[1].id;
-    //   this.movieTitle = this.movies[1].name;
-    //   this.setMovieDate(1);
-    //
-    //   this.secondImageLink = this.api_url+"/"+this.movies[2].id;
-    //   this.thirdImageLink = this.api_url+"/"+this.movies[0].id;
-    //
-    // } else if (this.count === 3) {
-    //   this.firstImageLink = this.api_url+"/"+this.movies[0].id;
-    //   this.movieTitle = this.movies[0].name;
-    //   this.setMovieDate(0);
-    //
-    //   this.secondImageLink = this.api_url+"/"+this.movies[1].id;
-    //   this.thirdImageLink = this.api_url+"/"+this.movies[2].id;
-    //
-    // }
-
-
   }
 
-  private setMovieDate(id: number) {
-
+  private resetMovieTime(){
     this.movieTime_1 = "";
     this.movieTime_2 = "";
     this.movieTime_3 = "";
     this.movieTime_4 = "";
+  }
+
+  private setMovieDate(id: number) {
+      this.resetMovieTime();
 
     this.movieDateArray = this.movies[id].movie_details;
 
@@ -156,11 +130,7 @@ export class MoviesPage {
   }
 
   public dayLeft() {
-
-    this.movieTime_1 = "";
-    this.movieTime_2 = "";
-    this.movieTime_3 = "";
-    this.movieTime_4 = "";
+    this.resetMovieTime();
 
     if (this.indexOfCurrentDay > (this.movieDateArray.length - 1)) {
       this.indexOfCurrentDay = 0;
@@ -169,8 +139,6 @@ export class MoviesPage {
     if (this.indexOfCurrentDay < 0) {
       this.indexOfCurrentDay = this.movieDateArray.length - 1;
     }
-
-    console.log('left ' + this.indexOfCurrentDay);
 
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();
@@ -198,10 +166,7 @@ export class MoviesPage {
 
   public dayRight() {
 
-    this.movieTime_1 = "";
-    this.movieTime_2 = "";
-    this.movieTime_3 = "";
-    this.movieTime_4 = "";
+    this.resetMovieTime();
 
     if (this.indexOfCurrentDay < 0) {
       this.indexOfCurrentDay = 1;
@@ -211,8 +176,6 @@ export class MoviesPage {
       this.indexOfCurrentDay = 0;
 
     }
-
-    console.log('right ' + this.indexOfCurrentDay);
 
     let date = new Date(this.movieDateArray[this.indexOfCurrentDay].date);
     this.movieDay = date.toDateString();

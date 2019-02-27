@@ -31,6 +31,14 @@ page-home {
     //margin-top: 2vh;
   }
   @media (min-width: 461px) and (max-width: 480px){
+    .card-image{
+      width: 100%;
+      margin-left: 0%;
+    }
+    .facilities{
+      font-weight: normal;
+      font-size: 2.25em;
+    }
     .center{
       margin-top: 14vh;
     }

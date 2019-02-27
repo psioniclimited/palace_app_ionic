@@ -32,12 +32,30 @@ export class HomePage implements OnInit {
         this.statusBar.styleLightContent();
       }
       // StatusBar.overlaysWebView(false);
+
+      this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+      this.loadScript('../assets/js/slick.js');
+      this.loadScript('../assets/js/custom-slick.js');
+
+      let token = this.fcm.getToken();
+
+      this.fcm.listenToNotifications().pipe(
+        tap(msg => {
+          const toast = this.toastCtrl.create({
+            message: msg.body,
+            duration: 10000
+          });
+          toast.present();
+        })
+      ).subscribe();
+
+
+      console.log(this.platform.width());
+
     });
   }
   ngOnInit() {
-    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
-    this.loadScript('../assets/js/slick.js');
-    this.loadScript('../assets/js/custom-slick.js');
+
   }
   public loadScript(url: string) {
     const body = <HTMLDivElement> document.body;
@@ -49,20 +67,6 @@ export class HomePage implements OnInit {
     body.appendChild(script);
   }
   ionViewDidLoad() {
-
-    let token = this.fcm.getToken();
-
-    console.log(token);
-
-    this.fcm.listenToNotifications().pipe(
-      tap(msg => {
-        const toast = this.toastCtrl.create({
-          message: msg.body,
-          duration: 10000
-        });
-        toast.present();
-      })
-    ).subscribe();
 
   }
 

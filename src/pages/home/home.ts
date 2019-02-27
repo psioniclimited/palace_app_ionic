@@ -18,24 +18,24 @@ export class HomePage implements OnInit {
 
   @ViewChild(Slides) slides: Slides;
   @ViewChild('title') title: ElementRef;
+
   // myColour: string  = 'green';
 
   constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform,
               public fcm: FcmProvider, private toastCtrl: ToastController) {
 
     this.platform.ready().then(() => {
-      if(this.platform.is('ios')){
+      if (this.platform.is('ios')) {
         this.statusBar.overlaysWebView(true);
         this.statusBar.styleLightContent();
-      }else{
+
+      } else {
         this.statusBar.overlaysWebView(false);
         this.statusBar.styleLightContent();
+
       }
       // StatusBar.overlaysWebView(false);
 
-      this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
-      this.loadScript('../assets/js/slick.js');
-      this.loadScript('../assets/js/custom-slick.js');
 
       let token = this.fcm.getToken();
 
@@ -50,13 +50,27 @@ export class HomePage implements OnInit {
       ).subscribe();
 
 
-      console.log(this.platform.width());
+      console.log('this is platform ios ' + this.platform.width());
 
     });
   }
+
+  ionViewDidEnter(){
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
+    // this.loadScript('../assets/js/custom-slick.js');
+  }
+
+  ionViewWillEnter() {
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
+    // this.loadScript('../assets/js/custom-slick.js');
+  }
+
   ngOnInit() {
 
   }
+
   public loadScript(url: string) {
     const body = <HTMLDivElement> document.body;
     const script = document.createElement('script');
@@ -66,23 +80,28 @@ export class HomePage implements OnInit {
     script.defer = true;
     body.appendChild(script);
   }
-  ionViewDidLoad() {
 
+  ionViewDidLoad() {
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
+    this.loadScript('../assets/js/custom-slick.js');
   }
 
-  mapPage(){
+  mapPage() {
     this.navCtrl.push(MapImagePage);
   }
 
-  pool(){
+  pool() {
     // console.log('sldfskjdfh');
     this.navCtrl.push(FacalitiesPage);
   }
-  recreation(){
+
+  recreation() {
 
     this.navCtrl.push(CustomSliderPage);
   }
-  restaurant(){
+
+  restaurant() {
     this.navCtrl.push(RestaurantPage);
   }
 

@@ -49,6 +49,10 @@ page-home {
     }
   }
   @media (min-width: 381px) and (max-width: 420px){
+    .card-image{
+      width: 120%;
+      margin-left: -1%;
+    }
     .center{
       margin-top: 16vh;
     }

@@ -33,9 +33,15 @@ export class HomePage implements OnInit {
         this.statusBar.overlaysWebView(false);
         this.statusBar.styleLightContent();
 
-      }
-      // StatusBar.overlaysWebView(false);
+        let css = document.getElementById('map-image');
+        if(this.platform.width() > 360){
+          css.style.width = "87%";
+          css.style.marginLeft = "6%";
 
+        }
+
+
+      }
 
       let token = this.fcm.getToken();
 
@@ -51,6 +57,11 @@ export class HomePage implements OnInit {
 
 
       console.log('this is platform ios ' + this.platform.width());
+
+
+
+
+
 
     });
   }

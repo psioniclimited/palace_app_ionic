@@ -34,10 +34,10 @@ export class HomePage implements OnInit {
         this.statusBar.styleLightContent();
 
         let css = document.getElementById('map-image');
-        if(this.platform.width() > 360){
+        console.log(this.platform.width());
+        if(this.platform.width() >= 360 && this.platform.width() <= 380){
           css.style.width = "87%";
           css.style.marginLeft = "6%";
-
         }
 
 
@@ -54,15 +54,6 @@ export class HomePage implements OnInit {
           toast.present();
         })
       ).subscribe();
-
-
-      console.log('this is platform ios ' + this.platform.width());
-
-
-
-
-
-
     });
   }
 

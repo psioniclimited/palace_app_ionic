@@ -70,7 +70,8 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
   }
 
   public loadScript(url: string) {

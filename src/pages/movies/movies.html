@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content no-padding no-margin style="background-color: #f3f3f3">
-  <div class="movie-heading">
+  <div class="movie-heading" id="movie-heading">
     <p>NOW SHOWING</p>
-    <p class="movie-title">{{movieTitle}}</p>
+    <p class="movie-title" id="movie-title">{{movieTitle}}</p>
   </div>
 
   <div class="image-posters" id="image_poster">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <ion-grid no-padding no-margin class="description">
+  <ion-grid no-padding no-margin class="description" id="description">
     <ion-row class="show-details">
       <ion-col col-4 class="show-time">
         SHOW TIME

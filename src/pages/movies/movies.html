@@ -32,8 +32,12 @@
         {{movieDay}}
       </ion-col>
       <ion-col col-3 class="movie-swipe-arrow">
-        <ion-icon name="arrow-dropleft" (click)="dayLeft()"></ion-icon>
-        <ion-icon name="arrow-dropright" class="arrow-right" (click)="dayRight()"></ion-icon>
+        <div class="left-arrow">
+          <img src="assets/imgs/movies/left_arrow.png" alt="arrow" (click)="dayLeft()">
+        </div>
+        <div class="right-arrow">
+          <img src="assets/imgs/movies/right_arrow.png" alt="arrow" (click)="dayRight()">
+        </div>
       </ion-col>
     </ion-row>
 

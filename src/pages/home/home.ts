@@ -18,27 +18,76 @@ export class HomePage implements OnInit {
 
   @ViewChild(Slides) slides: Slides;
   @ViewChild('title') title: ElementRef;
+
   // myColour: string  = 'green';
 
   constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform,
               public fcm: FcmProvider, private toastCtrl: ToastController) {
 
     this.platform.ready().then(() => {
-      if(this.platform.is('ios')){
+      if (this.platform.is('ios')) {
         this.statusBar.overlaysWebView(true);
         this.statusBar.styleLightContent();
-      }else{
+
+      } else {
         this.statusBar.overlaysWebView(false);
         this.statusBar.styleLightContent();
+
+        let css = document.getElementById('map-image');
+        if(this.platform.width() >= 360 && this.platform.width() <= 380){
+          css.style.width = "87%";
+          css.style.marginLeft = "6%";
+        }
+
+
       }
-      // StatusBar.overlaysWebView(false);
+
+      let token = this.fcm.getToken();
+
+      this.fcm.listenToNotifications().pipe(
+        tap(msg => {
+          const toast = this.toastCtrl.create({
+            message: msg.body,
+            duration: 10000
+          });
+          toast.present();
+        })
+      ).subscribe();
     });
   }
+
+  ionViewDidEnter(){
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
+    // this.loadScript('../assets/js/custom-slick.js');
+
+    let facalities = document.getElementById('facilities');
+    if(this.platform.is('ios') && this.platform.height() == 667){
+      facalities.style.marginTop = "5vh";
+    }
+
+    if(this.platform.is('android')){
+      let mapImage = document.getElementById('map-image');
+      if(this.platform.width() >= 381 && this.platform.width() <421){
+        mapImage.style.width = "85%";
+        mapImage.style.marginLeft = "7%";
+      }
+    }
+
+
+  }
+
+  ionViewWillEnter() {
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
+    // this.loadScript('../assets/js/custom-slick.js');
+  }
+
   ngOnInit() {
     this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
     this.loadScript('../assets/js/slick.js');
-    this.loadScript('../assets/js/custom-slick.js');
   }
+
   public loadScript(url: string) {
     const body = <HTMLDivElement> document.body;
     const script = document.createElement('script');
@@ -48,37 +97,28 @@ export class HomePage implements OnInit {
     script.defer = true;
     body.appendChild(script);
   }
+
   ionViewDidLoad() {
-
-    let token = this.fcm.getToken();
-
-    console.log(this.platform.width());
-
-    this.fcm.listenToNotifications().pipe(
-      tap(msg => {
-        const toast = this.toastCtrl.create({
-          message: msg.body,
-          duration: 10000
-        });
-        toast.present();
-      })
-    ).subscribe();
-
+    this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
+    this.loadScript('../assets/js/slick.js');
+    this.loadScript('../assets/js/custom-slick.js');
   }
 
-  mapPage(){
+  mapPage() {
     this.navCtrl.push(MapImagePage);
   }
 
-  pool(){
+  pool() {
     // console.log('sldfskjdfh');
     this.navCtrl.push(FacalitiesPage);
   }
-  recreation(){
+
+  recreation() {
 
     this.navCtrl.push(CustomSliderPage);
   }
-  restaurant(){
+
+  restaurant() {
     this.navCtrl.push(RestaurantPage);
   }
 

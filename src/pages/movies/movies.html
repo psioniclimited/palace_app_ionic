@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content no-padding no-margin style="background-color: #f3f3f3">
-  <div class="movie-heading">
+  <div class="movie-heading" id="movie-heading">
     <p>NOW SHOWING</p>
-    <p class="movie-title">{{movieTitle}}</p>
+    <p class="movie-title" id="movie-title">{{movieTitle}}</p>
   </div>
 
   <div class="image-posters" id="image_poster">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <ion-grid no-padding no-margin class="description">
+  <ion-grid no-padding no-margin class="description" id="description">
     <ion-row class="show-details">
       <ion-col col-4 class="show-time">
         SHOW TIME
@@ -32,8 +32,12 @@
         {{movieDay}}
       </ion-col>
       <ion-col col-3 class="movie-swipe-arrow">
-        <ion-icon name="arrow-dropleft" (click)="dayLeft()"></ion-icon>
-        <ion-icon name="arrow-dropright" class="arrow-right" (click)="dayRight()"></ion-icon>
+        <div class="left-arrow">
+          <img src="assets/imgs/movies/left_arrow.png" alt="arrow" (click)="dayLeft()">
+        </div>
+        <div class="right-arrow">
+          <img src="assets/imgs/movies/right_arrow.png" alt="arrow" (click)="dayRight()">
+        </div>
       </ion-col>
     </ion-row>
 
@@ -42,7 +46,7 @@
         <button ion-button color="dark" class="timing-buttons" outline><p class="timing-btns-p">{{movieTime_1}}</p></button>
       </ion-col>
       <ion-col col-3 *ngIf="movieTime_2.length > 0">
-        <button ion-button color="dark" class="timing-buttons mid-button"><p class="timing-btns-p">{{movieTime_2}}</p></button>
+        <button ion-button color="dark"  class="timing-buttons" outline><p class="timing-btns-p">{{movieTime_2}}</p></button>
       </ion-col>
       <ion-col col-3 *ngIf="movieTime_3.length > 0">
         <button ion-button color="dark" class="timing-buttons" outline><p class="timing-btns-p">{{movieTime_3}}</p></button>

@@ -31,6 +31,14 @@ page-home {
     //margin-top: 2vh;
   }
   @media (min-width: 461px) and (max-width: 480px){
+    .card-image{
+      width: 100%;
+      margin-left: 0%;
+    }
+    .facilities{
+      font-weight: normal;
+      font-size: 2.25em;
+    }
     .center{
       margin-top: 14vh;
     }
@@ -41,15 +49,24 @@ page-home {
     }
   }
   @media (min-width: 381px) and (max-width: 420px){
+    .card-image{
+      width: 120%;
+      margin-left: -1%;
+    }
     .center{
       margin-top: 16vh;
     }
   }
   @media (min-width: 361px) and (max-width: 380px){
+    .card-image{
+      width: 110%;
+      margin-left: -1%;
+    }
     .center{
       margin-top: 18vh;
     }
   }
+
   @media (min-width: 321px) and (max-width: 360px){
     .center{
       margin-top: 20vh;
@@ -61,6 +78,7 @@ page-home {
     //  margin-top: 12vh;
     //}
   }
-  
+
+
 
 }

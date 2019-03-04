@@ -38,10 +38,14 @@ export class MoviesPage {
       if (this.platform.is('ios')) {
         this.statusBar.overlaysWebView(true);
         this.statusBar.styleLightContent();
+
+        console.log('ios width ' + this.platform.height());
+
       } else {
         this.statusBar.overlaysWebView(false);
         this.statusBar.styleLightContent();
       }
+
 
     });
 
@@ -67,6 +71,62 @@ export class MoviesPage {
     let top_height = $(window).height();
     document.getElementById('image_poster').style.height = (top_height + 10) + "px";
     document.getElementById('image_poster').style.opacity = "1";
+
+    if(this.platform.is('ios')){
+
+      if(this.platform.height() == 568){
+        let movieHeading = document.getElementById('movie-heading');
+        movieHeading.style.marginTop = "1vh";
+
+        let movieTitle = document.getElementById('movie-title');
+        movieTitle.style.marginTop = "0.5vh";
+
+      }
+
+      if(this.platform.height() == 667){
+        let movieHeading = document.getElementById('movie-heading');
+        movieHeading.style.marginTop = "1vh";
+
+        let movieTitle = document.getElementById('movie-title');
+        movieTitle.style.marginTop = "1vh";
+
+        let imagePoster = document.getElementById('image_poster');
+        imagePoster.style.marginTop = "2vh";
+
+        let css = document.getElementById('description');
+        css.style.marginTop = "-42vh";
+      }
+
+      if(this.platform.height() == 812){
+        let movieHeading = document.getElementById('movie-heading');
+        movieHeading.style.marginTop = "1vh";
+
+        let movieTitle = document.getElementById('movie-title');
+        movieTitle.style.marginTop = "2vh";
+
+        let imagePoster = document.getElementById('image_poster');
+        imagePoster.style.marginTop = "3vh";
+
+        let css = document.getElementById('description');
+        css.style.marginTop = "-50vh";
+      }
+
+      if(this.platform.height() == 896){
+        let movieHeading = document.getElementById('movie-heading');
+        movieHeading.style.marginTop = "4vh";
+
+        let movieTitle = document.getElementById('movie-title');
+        movieTitle.style.marginTop = "2vh";
+
+        let imagePoster = document.getElementById('image_poster');
+        imagePoster.style.marginTop = "3vh";
+
+        let css = document.getElementById('description');
+        css.style.marginTop = "-50vh";
+      }
+    }
+
+
   }
 
   checkArrayLength(count: number) {

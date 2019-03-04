@@ -103,26 +103,28 @@ page-movies {
 
   .movie-swipe-arrow{
     margin-top: -0.7vh;
-    zoom: 240.0%;
   }
-  ion-icon{
-    font-size: 1.5rem;
-    padding-left: 1rem;
+
+  .left-arrow{
+    float: left;
+    width: 25.33%;
+    padding: 5px;
   }
-  .arrow-right{
-    margin-left: 2vw;
+
+  .right-arrow{
+    float: left;
+    width: 25.33%;
+    padding: 5px;
+    margin-left: 35%;
   }
 
 
   .timing-buttons{
     border-radius: 2.4em;
     width: 85%;
-    height: 50%;
+    height: 75%;
     margin: 0.8rem 0rem;
     padding: 0;
-  }
-  .timing-buttons.mid-button{
-    background-color: red;
   }
 
   .timing-buttons .timing-btns-p{
@@ -135,11 +137,14 @@ page-movies {
   }
 
   @media (min-width: 461px) and (max-width: 480px){
+    .image-posters{
+      margin-top: 4vh;
+    }
     .move-btn{
       top: 423px;
     }
     .description{
-      margin-top: -38vh;
+      margin-top: -42vh;
     }
   }
   @media (min-width: 421px) and (max-width: 460px){

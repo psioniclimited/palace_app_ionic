@@ -34,7 +34,6 @@ export class HomePage implements OnInit {
         this.statusBar.styleLightContent();
 
         let css = document.getElementById('map-image');
-        console.log(this.platform.width());
         if(this.platform.width() >= 360 && this.platform.width() <= 380){
           css.style.width = "87%";
           css.style.marginLeft = "6%";
@@ -61,6 +60,12 @@ export class HomePage implements OnInit {
     this.loadScript('../assets/js/old-jquery-1.11.0.min.js');
     this.loadScript('../assets/js/slick.js');
     // this.loadScript('../assets/js/custom-slick.js');
+
+    let facalities = document.getElementById('facilities');
+    if(this.platform.is('ios') && this.platform.height() == 667){
+      facalities.style.marginTop = "5vh";
+    }
+
   }
 
   ionViewWillEnter() {

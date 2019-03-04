@@ -66,6 +66,15 @@ export class HomePage implements OnInit {
       facalities.style.marginTop = "5vh";
     }
 
+    if(this.platform.is('android')){
+      let mapImage = document.getElementById('map-image');
+      if(this.platform.width() >= 381 && this.platform.width() <421){
+        mapImage.style.width = "85%";
+        mapImage.style.marginLeft = "7%";
+      }
+    }
+
+
   }
 
   ionViewWillEnter() {
